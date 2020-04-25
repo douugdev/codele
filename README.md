@@ -11,7 +11,7 @@ Codele is an free, open-source web app for learning how to code.
 ### Tech
 
 Codele is built in Python, Django, HTML and CSS currently.
-Its code is open source with a [public repository][dill]on GitHub.
+Its code is open source with a [public repository][dill] on GitHub.
 
 ### Development
 
