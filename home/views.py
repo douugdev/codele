@@ -3,4 +3,7 @@ from django.http import HttpResponse
 
 # Create your views here.
 def home(request):
-    return  render(request, 'home/index.html')
+    var = {
+        'range' : list(range(5))
+    }
+    return  render(request, 'home/index.html', var)
