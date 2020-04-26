@@ -25,7 +25,7 @@ SECRET_KEY = 'ph#=3r*d6g$sxk&3w*wx1k(v#1mbjudfezbe&t#9*pgqce%4)j'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ['localhost', 'codele.herokuapp.com']
 
 
 # Application definition
