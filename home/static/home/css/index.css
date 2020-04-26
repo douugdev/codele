@@ -35,8 +35,6 @@ main {
 }
 
 .navbar {
-  width: 5rem;
-  height: 100vh;
   position: fixed;
   background-color: var(--bg-primary);
   transition: width 200ms ease;
@@ -47,7 +45,6 @@ main {
   padding: 0;
   margin: 0;
   display: flex;
-  flex-direction: column;
   align-items: center;
 }
 
@@ -75,14 +72,6 @@ main {
   transition: 200ms;
 }
 
-.link-text {
-  font-weight: 900;
-  overflow: hidden;
-  margin-left: 2rem;
-  color: #229be8;
-  opacity: 0;
-  transition: 200ms;
-}
 
 .icon {
   min-width: 2rem;
@@ -90,15 +79,66 @@ main {
   color: #229be8;
 }
 
-.navbar:hover {
-  width: 16rem;
+/* For pc */
+@media only screen and (min-width: 601px){
+  .navbar {
+    width: 5rem;
+    height: 100vh;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+  }
+
+  .nav-link:hover {
+    filter: grayscale(0%) opacity(1);
+    background: var(--bg-secondary);
+  }
+
+  .navbar:hover .link-text {
+    opacity: 1;
+  }
+
+  .navbar:hover {
+    width: 16rem;
+  }
+
+  .link-text {
+    font-weight: 900;
+    overflow: hidden;
+    margin-left: 2rem;
+    color: #229be8;
+    opacity: 0;
+    transition: 200ms;
+  }
+
 }
 
-.navbar:hover .link-text {
-  opacity: 1;
-}
+/* For mobile */
+@media only screen and (max-width: 600px){
+  .navbar {
+    bottom: 0;
+    width: 100vw;
+    height: 5rem;
+  }
 
-.nav-link:hover {
-  filter: grayscale(0%) opacity(1);
-  background: var(--bg-secondary);
+  .link-text{
+    display: none;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .navbar-nav {
+    flex-direction: row;
+  }
+
+  .nav-link{
+    justify-content: center;
+  }
+
+  main {
+    margin: 0;
+  }
 }
