@@ -1,6 +1,8 @@
-# Codele
+# CODELE
 
 Codele is an free, open-source web app for learning how to code.
+
+[![Issues](https://img.shields.io/github/issues/douugbr/codele)](https://github.com/douugbr/codele/issues) [![Forks](https://img.shields.io/github/forks/douugbr/codele)][myrepo] [![Issues](https://img.shields.io/github/stars/douugbr/codele)][myrepo] [![License](https://img.shields.io/github/license/douugbr/codele)](https://opensource.org/licenses/gpl-3.0.html)
 
 # Features
 
@@ -11,7 +13,7 @@ Codele is an free, open-source web app for learning how to code.
 ### Tech
 
 Codele is built in Python, Django, HTML and CSS currently.
-Its code is open source with a [public repository][dill] on GitHub.
+Its code is open source with a [public repository][myrepo] on GitHub.
 
 ### Development
 
@@ -30,4 +32,4 @@ GPL V3
 
 [//]: #
 
-   [dill]: <https://github.com/douugbr/codele>
+   [myrepo]: <https://github.com/douugbr/codele>
