@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <!--OCTAVIA BEST PONE-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block css_import %}{% endblock %}
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/aa4d38daba.js" crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+    <title>Codele</title>
+  </head>
+  <body>
+    <div>
+    <nav class="navbar">
+      <ul class="navbar-nav">
+        <li class="logo">
+          <a href="#" class="nav-link">
+            <i class="icon fas fa-bars"></i>
+            <span class="link-text">CODELE</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="icon fas fa-pencil-ruler"></i>
+            <span class="link-text">Learn</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="icon fas fa-question-circle"></i>
+            <span class="link-text">About</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="icon fas fa-columns"></i>
+            <span class="link-text">Blog</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="icon far fa-comments"></i>
+            <span class="link-text">Forum</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <main>
+      {% block main %}
+      {% endblock %}
+    </main>
+    </div>
+  </body>
+</html>
