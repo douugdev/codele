@@ -35,15 +35,16 @@ body::-webkit-scrollbar-thumb{
 }
 
 main {
-  display: flex;
-  flex-direction: column;
+  display: block;
   align-items: center;
   text-align: center;
+  justify-items: center;
   justify-content: center;
   color: white;
   margin-left: 5rem;
   padding: 1rem;
 }
+
 
 .separator {
   width: 60%;
@@ -53,9 +54,11 @@ main {
   padding: 1rem;
 }
 
-.logo-img {
-  padding: 5rem;
+.slogan {
+  color: var(--bg-primary);
+  padding: 1rem;
 }
+
 
 .navbar {
   position: fixed;
@@ -104,8 +107,62 @@ main {
   color: #229be8;
 }
 
+.javascript-icon {
+  color: #e3c10f;
+}
+
+.grid-languages{
+  margin: auto;
+  display: grid;
+  justify-content: center;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 10rem));
+  grid-auto-rows: 10rem;
+  font-size: 2rem;
+}
+
+.card-language {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg-primary);
+    font-size: 3rem;
+    color: #fff;
+    box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
+    height: 100%;
+    width: 100%;
+    border-radius: 1rem;
+    transition: ;
+    transition: box-shadow 400ms, transform 400ms, background 200ms;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+ }
+
+ .card-language .icon {
+   font-size: 5rem;
+   filter: grayscale(100%) opacity(0.7) brightness(10%);
+   transition: 200ms;
+ }
+
+.card-language:hover {
+    background: var(--bg-secondary);
+    box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
+    transform: translateY(-3px) scale(1.1);
+}
+
+.card-language:hover .icon {
+  filter: grayscale(0%) opacity(1) brightness(100%);
+}
+
 /* For pc */
 @media only screen and (min-width: 601px){
+  .logo-img {
+    padding: 5rem;
+  }
+
   .navbar {
     width: 5rem;
     height: 100vh;
@@ -152,6 +209,19 @@ main {
 
 /* For mobile */
 @media only screen and (max-width: 600px){
+  .card-title {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .logo-img {
+    align-self: center;
+    width: 100%;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
   .navbar {
     top: 0;
     width: 100vw;
