@@ -34,17 +34,6 @@ body::-webkit-scrollbar-thumb{
   border-radius: 0.75rem;
 }
 
-main {
-  display: block;
-  align-items: center;
-  text-align: center;
-  justify-items: center;
-  justify-content: center;
-  color: white;
-  margin-left: 5rem;
-  padding: 1rem;
-}
-
 .navbar {
   position: fixed;
   background-color: var(--bg-primary);
@@ -94,6 +83,10 @@ main {
 
 /* For pc */
 @media only screen and (min-width: 601px){
+
+  main {
+    margin-left: 5rem;
+  }
 
   .navbar {
     width: 5rem;

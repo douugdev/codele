@@ -1,0 +1,115 @@
+:root {
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  --text-primary: #b6b6b6;
+  --text-secondary: #ececec;
+  --bg-primary: #299d49;
+  --bg-secondary: #0b131a;
+  --bg-thirdoption: #01161b;
+}
+
+@font-face {
+  font-family: GothamBook;
+  src: url('/static/home/font/Gotham-Book.otf');
+}
+
+main {
+  display: flex;
+  height: 100vh;
+  width: 100vw
+  flex-direction: row;
+  align-content: center;
+  justify-content: flex-end;
+}
+
+.card {
+  color: var(--text-primary);
+  height: auto;
+  width: 24rem;
+  margin: auto;
+  display: static;
+  border-radius: 0.5rem;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--bg-primary)
+}
+
+a {
+  color: var(--bg-secondary);
+  text-decoration: underline;
+}
+
+.form {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-gap: 0.5rem;
+  grid-template-areas:
+    "welcome welcome"
+    "first-name last-name"
+    "username username"
+    "email email"
+    "passwd passwd"
+    "terms terms"
+    "btn btn";
+}
+
+.title {
+  grid-area: welcome;
+  font-family: GothamBook, sans-serif;
+  text-align: center;
+}
+
+.first-name {
+  grid-area: first-name;
+}
+
+.last-name {
+  grid-area: last-name;
+}
+
+.username {
+  grid-area: username;
+}
+
+.email {
+  grid-area: email;
+}
+
+.passwd {
+  grid-area: passwd;
+}
+
+.already-have {
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+.terms {
+  grid-area: terms;
+  padding: 1rem;
+}
+
+.btn {
+  grid-area: btn;
+  font-family: GothamBook, sans-serif;
+  background-color: var(--bg-thirdoption);
+  border-radius: 2rem;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+input, select {
+  width: 100%;
+  padding: 12px 20px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
