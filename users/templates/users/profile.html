@@ -1,0 +1,19 @@
+{% extends "home/base.html" %}
+{% load static %}
+
+{% block css_import %}<link rel="stylesheet" href="{% static 'users/css/profile.css' %}">{% endblock %}
+
+{% block main %}
+    <div class="card">
+      <div class="profile">
+        <div class="profile-img">
+          <img class="profile-pic" src="{{ user.profile.image.url }}"/>
+        </div>
+        <span>Nome: {{ user.first_name }} {{ user.last_name }}</span>
+        <span>Usuário: {{ user.username }}</span>
+        <span>Membro desde {{ user.date_joined|date:"d/M/Y" }}</span>
+        <span>Lições vistas: {{ user.profile.lessons_completed }}</span>
+        <button class="btn" onclick="window.location={% url 'codele-logout' %};" type="button" name="button">Logout</button>
+      </div>
+    </div>
+{% endblock %}

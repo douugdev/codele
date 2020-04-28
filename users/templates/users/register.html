@@ -8,11 +8,11 @@
       <form class="form" method="post">
         {% csrf_token %}
         <h3 class="title">Bem-vindo ao Codele!</h3>
-        <input placeholder="Nome" type="text" name="first_name" class="first-name" value="">
-        <input placeholder="Sobrenome" type="text" name="last_name" class="last-name" value="">
-        <input placeholder="Usuário" type="text" name="username" class="username" value="">
-        <input placeholder="E-mail" type="email" name="email" class="email" value="">
-        <input placeholder="Senha" type="password" name="password" class="passwd" value="">
+        <input placeholder="Nome" type="text" name="first_name" class="first-name" required value="">
+        <input placeholder="Sobrenome" type="text" name="last_name" class="last-name" required value="">
+        <input placeholder="Usuário" type="text" name="username" class="username" required value="">
+        <input placeholder="E-mail" type="email" name="email" class="email" required value="">
+        <input placeholder="Senha" type="password" name="password" class="passwd" required value="">
         <button class="btn" type="submit" name="button">Cadastrar-se</button>
         <div class="terms"><small>Ao me cadastrar, declaro que concordo com os <a href="https://www.termsandconditionsgenerator.com/live.php?token=1wfOdZFfXugTmgP40ai5yYaNSiWpuQr1">Termos e Condições</a> e com a <a href="https://www.privacypolicygenerator.info/live.php?token=CPkyX8nS7fWUOSJ1mywOwOJMyNDzo7nV">Política de Privacidade</a></small>
         </div>

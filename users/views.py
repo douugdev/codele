@@ -13,7 +13,11 @@ def register(request):
     return render(request, 'users/register.html', {'form':form})
 
 def account_created(request):
-    if request.user.is_authenticated:
         return render(request, 'users/success.html')
+
+
+def profile(request):
+    if request.user.is_authenticated:
+        return render(request, 'users/profile.html')
     else:
         return redirect('codele-home')

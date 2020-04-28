@@ -5,3 +5,4 @@ gunicorn
 whitenoise
 python-dotenv
 dj_database_url
+pillow
