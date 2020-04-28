@@ -69,6 +69,7 @@ main {
   min-width: 2rem;
   margin: 0 1.5rem;
   color: #229be8;
+  z-index: -1;
 }
 
 .icon-language {
@@ -156,12 +157,5 @@ main {
   main {
     margin: 0;
     margin-top: 2rem;
-  }
-
-  .icon {
-    font-size: 1.5rem;
-    min-width: 2rem;
-    margin: 2 1.5rem;
-    color: #229be8;
   }
 }
