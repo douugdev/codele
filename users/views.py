@@ -7,7 +7,8 @@ def register(request):
     if form.is_valid():
 
         form.save()
-        return redirect('codele-learn')
+
+        return redirect('codele-registration-success')
 
     return render(request, 'users/register.html', {'form':form})
 
