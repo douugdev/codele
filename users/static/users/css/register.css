@@ -26,10 +26,10 @@ main {
   width: 24rem;
   margin: auto;
   display: static;
-  border-radius: 0.5rem;
+  border-radius: 2rem;
   align-items: center;
   text-align: center;
-  padding: 1rem;
+  padding: 1rem 2.3rem 2rem 2.3rem;
   background-color: var(--bg-primary)
 }
 
@@ -116,6 +116,10 @@ input, select {
 .already-have {
   display: flex;
   flex-direction: column;
+}
+
+.log-in {
+  margin-top: 1rem;
 }
 
 /* for mobile */
