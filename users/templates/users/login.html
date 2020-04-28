@@ -1,0 +1,22 @@
+{% extends "home/base.html" %}
+{% load static %}
+
+{% block css_import %}<link rel="stylesheet" href="{% static 'users/css/register.css' %}">{% endblock %}
+
+{% block main %}
+    <div class="card">
+      <form class="form" method="post">
+        {% csrf_token %}
+        <h3 class="title">Bem-vindo novamente!</h3>
+        <input placeholder="Usuário" type="text" name="username" class="username" value="">
+        <input placeholder="Senha" type="password" name="password" class="passwd" value="">
+        <button class="btn" type="submit" name="button">Logar</button>
+      </form>
+      <div class="already-have">
+          <span>
+            Ainda não possui uma conta?
+          </span>
+          <button class="btn log-in" type="" onclick="window.location={% url 'codele-register' %};" name="button">Cadastre-se</button>
+      </div>
+    </div>
+{% endblock %}
