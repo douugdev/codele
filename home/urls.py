@@ -3,5 +3,6 @@ from . import views
 
 urlpatterns = [
     path('',views.home,name='codele-home'),
-    path('about',views.home,name='codele-about')
+    #path('home',views.home,name='codele-home'),
+    path('about',views.about,name='codele-about')
 ]

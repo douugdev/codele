@@ -65,47 +65,6 @@ main {
   padding: 2rem;
 }
 
-.navbar {
-  position: fixed;
-  background-color: var(--bg-primary);
-  transition: width 200ms ease;
-  z-index: 20;
-}
-
-.navbar-nav {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  align-items: center;
-}
-
-.nav-item {
-  width: 100%;
-  padding: 0;
-}
-
-.logo {
-  font-family: GothamBook;
-  width: 100%;
-  padding: 0;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-  text-align: center;
-  letter-spacing: 0.3ch;
-}
-
-.nav-link {
-  display: flex;
-  align-items: center;
-  height: 5rem;
-  color: var(--text-primary);
-  text-decoration: none;
-  filter: grayscale(100%) opacity(0.7) brightness(10%);
-  transition: 200ms;
-}
-
-
 .icon {
   font-size: 2rem;
   min-width: 2rem;
@@ -177,48 +136,6 @@ main {
     padding: 2rem;
   }
 
-  .navbar {
-    width: 5rem;
-    height: 100vh;
-  }
-
-  .navbar-nav {
-    flex-direction: column;
-  }
-
-  .nav-link:hover {
-    filter: grayscale(0%) opacity(1) brightness(100%);
-    background: var(--bg-secondary);
-  }
-
-  .navbar:hover .link-text {
-    opacity: 1;
-  }
-
-  .navbar:hover .link-logo {
-    opacity: 1;
-  }
-
-  .navbar:hover {
-    width: 16rem;
-  }
-
-  .link-text {
-    font-weight: 900;
-    overflow: hidden;
-    margin-left: 2rem;
-    color: #229be8;
-    opacity: 0;
-    transition: 200ms;
-  }
-
-  .link-logo {
-    font-size: 2rem;
-    margin-left: 2rem;
-    color: #229be8;
-    opacity: 0;
-    transition: 200ms;
-  }
 }
 
 /* For mobile */
@@ -235,29 +152,6 @@ main {
     width: 100%;
     padding-top: 5rem;
     padding-bottom: 5rem;
-  }
-
-  .navbar {
-    top: 0;
-    width: 100vw;
-    height: 3.5rem;
-  }
-
-  .link-text{
-    display: none;
-  }
-
-  .logo {
-    display: none;
-  }
-
-  .navbar-nav {
-    flex-direction: row;
-  }
-
-  .nav-link{
-    justify-content: center;
-    height: 3.5rem;
   }
 
   main {

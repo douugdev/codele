@@ -4,6 +4,7 @@
   <head>
     <!--OCTAVIA BEST PONE-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'home/css/navbar.css' %}">
     {% block css_import %}{% endblock %}
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
@@ -16,7 +17,7 @@
     <nav class="navbar">
       <ul class="navbar-nav">
         <li class="logo">
-          <a href="#" class="nav-link">
+          <a href="{% url 'codele-home' %}" class="nav-link">
             <i class="icon fas fa-bars"></i>
             <span class="link-text">CODELE</span>
           </a>
@@ -24,13 +25,13 @@
         <li class="nav-item">
           <a href="#" class="nav-link">
             <i class="icon fas fa-pencil-ruler"></i>
-            <span class="link-text">Learn</span>
+            <span class="link-text">Aprenda</span>
           </a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link">
+          <a href="{% url 'codele-about' %}" class="nav-link">
             <i class="icon fas fa-question-circle"></i>
-            <span class="link-text">About</span>
+            <span class="link-text">Sobre</span>
           </a>
         </li>
         <li class="nav-item">
@@ -41,8 +42,14 @@
         </li>
         <li class="nav-item">
           <a href="#" class="nav-link">
-            <i class="icon far fa-comments"></i>
+            <i class="icon fas fa-comments"></i>
             <span class="link-text">Forum</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="icon fas fa-user-circle"></i>
+            <span class="link-text">Minha Conta</span>
           </a>
         </li>
       </ul>
