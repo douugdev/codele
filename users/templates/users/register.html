@@ -7,7 +7,17 @@
     <div class="card">
       <form class="form" method="post">
         {% csrf_token %}
+
         <h3 class="title">Bem-vindo ao Codele!</h3>
+        {% if form.errors %}
+        <div class="title error-card">
+          {% for field in form %}
+          {% for error in field.errors %}
+            <span class="title form-errors">{{ error }}</span>
+          {% endfor %}
+          {% endfor %}
+        </div>
+        {% endif %}
         <input placeholder="Nome" type="text" name="first_name" class="first-name" required value="">
         <input placeholder="Sobrenome" type="text" name="last_name" class="last-name" required value="">
         <input placeholder="Usuário" type="text" name="username" class="username" required value="">

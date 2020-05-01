@@ -43,6 +43,27 @@ main {
   width: 10rem;
 }
 
+.fundador {
+  color: var(--text-secondary);
+  height: auto;
+  width: 100%;
+  margin: auto;
+  display: static;
+  border-radius: 2rem;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  padding: 1rem 0rem 1rem 0rem;
+  margin-bottom: 1rem;
+  background-color: var(--bg-secondary);
+  letter-spacing: 0.3ch;
+  text-decoration: none;
+}
+
+.fundador a {
+  text-decoration: none;
+  color: #229be8;
+}
 
 .profile {
   display: flex;
@@ -65,6 +86,7 @@ main {
   display: inline-block;
   font-size: 16px;
   margin-top: 1.5rem;
+  cursor: pointer;
 }
 
 input, select {
@@ -130,6 +152,8 @@ input, select {
     background-size: cover;
     z-index: -1;
   }
+
+
 
   main{
     height: 90vh;
