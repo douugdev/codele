@@ -16,8 +16,24 @@ def account_created(request):
         return render(request, 'users/success.html')
 
 
-def profile(request):
+def profile(request, user_name):
+
+    user = User.objects.filter(username=f'{user_name}').first()
+    context = {
+        'profile_pic': user.profile.image.url,
+        'username': user.username,
+        'date_joined': user.date_joined,
+        'first_name': user.first_name,
+        'last_name': user.last_name,
+        'email' : user.email,
+        'lessons_completed': user.profile.lessons_completed
+    }
+
+    return render(request, 'users/profile.html', context)
+
+
+def profile_w(request):
     if request.user.is_authenticated:
-        return render(request, 'users/profile.html')
+        return profile(request, request.user.username)
     else:
         return redirect('codele-home')
