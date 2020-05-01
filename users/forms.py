@@ -13,7 +13,7 @@ class RegisterForm(ModelForm):
 
         if User.objects.filter(email__iexact=self.cleaned_data['email']):
             raise ValidationError("E-mail já existente")
-            
+
         return email
 
     def clean_first_name(self):
@@ -35,7 +35,7 @@ class RegisterForm(ModelForm):
 
     def clean_username(self):
         username = self.cleaned_data['username']
-        if User.objects.filter(email__iexact=self.cleaned_data['email']):
+        if User.objects.filter(username__iexact=self.cleaned_data['username']):
             raise ValidationError("Nome de usuário já existente")
         else:
             return username
