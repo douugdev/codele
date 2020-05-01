@@ -20,6 +20,7 @@ def profile(request, user_name):
 
     user = User.objects.filter(username=f'{user_name}').first()
     context = {
+        'badge' : user.profile.badge,
         'profile_pic': user.profile.image.url,
         'username': user.username,
         'date_joined': user.date_joined,

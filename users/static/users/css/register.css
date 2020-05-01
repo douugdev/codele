@@ -6,6 +6,7 @@
   --bg-primary: #299d49;
   --bg-secondary: #0b131a;
   --bg-thirdoption: #01161b;
+  --background-gradient: linear-gradient(110deg, #83bb77, #1f9a41);
 }
 
 @font-face {
@@ -27,7 +28,7 @@ main {
   border-radius: 2rem;
   align-items: center;
   text-align: center;
-  background-color: var(--bg-primary)
+  background-image: var(--background-gradient)
 }
 
 a {

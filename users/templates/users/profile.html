@@ -5,7 +5,7 @@
 {% block css_import %}<link rel="stylesheet" href="{% static 'users/css/profile.css' %}">{% endblock %}
 
 {% block main %}
-{% if user_not_registered %}
+{% if not user.is_authenticated %}
     <meta http-equiv="refresh" content="0; URL='{% url 'codele-home' %}'"/>
 {% else %}
     <div class="card">
@@ -13,11 +13,9 @@
         <div class="profile-img">
           <img class="profile-pic" src="{{ profile_pic }}"/>
         </div>
-        {% if badge == 'fundador' %}
         <div class="fundador">
-          <a href="{% url 'codele-about' %}">FUNDADOR</a>
+          <a href="{% url 'codele-about' %}">{{ badge }}</a>
         </div>
-        {% endif %}
         <h2>{{ first_name }} {{ last_name }}</h2>
         <span style="margin-bottom:0.7rem;">{{ username }}</span>
         {% language 'pt' %}

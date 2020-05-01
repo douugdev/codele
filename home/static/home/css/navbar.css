@@ -15,6 +15,10 @@
   src: url('/static/home/font/Gotham-Book.otf');
 }
 
+button {
+  cursor: pointer;
+}
+
 body {
   color: black;
   background-color: #16181E;
