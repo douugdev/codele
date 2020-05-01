@@ -34,7 +34,11 @@ class RegisterForm(ModelForm):
             return original_password
 
     def clean_username(self):
+        invalid_chars = ['¢','³','²','¹','£',',','>','<','|','\ ','/',' ', '!','@','#','$','%','¨','¬','&','*','(',')','+','=','§',';',':','ª',"'",'"','º','°','~','^']
         username = self.cleaned_data['username']
+        for char in invalid_chars:
+            if char in username:
+                raise ValidationError("Nome de usuário inválido. Use apenas letras, números e/ou . - _")
         if User.objects.filter(username__iexact=self.cleaned_data['username']):
             raise ValidationError("Nome de usuário já existente")
         else:
