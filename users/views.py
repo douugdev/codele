@@ -27,7 +27,8 @@ def profile(request, user_name):
         'first_name': user.first_name,
         'last_name': user.last_name,
         'email' : user.email,
-        'lessons_completed': user.profile.lessons_completed
+        'lessons_completed': user.profile.lessons_completed,
+        'user_banned': user.profile.banned
     }
 
     return render(request, 'users/profile.html', context)

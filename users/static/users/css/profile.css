@@ -89,6 +89,21 @@ main {
   cursor: pointer;
 }
 
+.banido {
+  grid-area: btn;
+  font-family: GothamBook, sans-serif;
+  background-color: var(--bg-thirdoption);
+  border-radius: 2rem;
+  border: none;
+  color: #e94040;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 1.5rem;
+}
+
 input, select {
   font-family: GothamBook;
   width: 100%;

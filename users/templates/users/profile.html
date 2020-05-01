@@ -24,8 +24,8 @@
         <span>{{ lessons_completed }} lições vistas</span>
         {% if username == user.username %}
         <button class="btn" onclick="window.location={% url 'codele-logout' %};" type="button" name="button">Logout</button>
-        {% else %}
-
+        {% elif user_banned %}
+        <span class="banido">USUÁRIO BANIDO</span>
         {% endif %}
       </div>
     </div>
