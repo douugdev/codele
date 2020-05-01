@@ -23,7 +23,7 @@ main {
 .card {
   color: var(--text-secondary);
   height: auto;
-  width: 24rem;
+
   margin: auto;
   display: static;
   border-radius: 2rem;
@@ -153,7 +153,9 @@ input, select {
     z-index: -1;
   }
 
-
+  .card{
+    width: 24rem;
+  }
 
   main{
     height: 90vh;
