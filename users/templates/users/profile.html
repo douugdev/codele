@@ -1,5 +1,6 @@
 {% extends "home/base.html" %}
 {% load static %}
+{% load i18n %}
 
 {% block css_import %}<link rel="stylesheet" href="{% static 'users/css/profile.css' %}">{% endblock %}
 
@@ -12,16 +13,22 @@
         <div class="profile-img">
           <img class="profile-pic" src="{{ profile_pic }}"/>
         </div>
-        {% if username == 'douugbr' or username == 'douglas.silva689' %}
+        {% if badge == 'fundador' %}
         <div class="fundador">
           <a href="{% url 'codele-about' %}">FUNDADOR</a>
         </div>
         {% endif %}
-        <span>Nome: {{ first_name }} {{ last_name }}</span>
-        <span>Usuário: {{ username }}</span>
-        <span>Membro desde {{ date_joined|date:"d/M/Y" }}</span>
-        <span>Lições vistas: {{ lessons_completed }}</span>
+        <h2>{{ first_name }} {{ last_name }}</h2>
+        <span style="margin-bottom:0.7rem;">{{ username }}</span>
+        {% language 'pt' %}
+        <span style="margin-bottom:0.7rem;">Membro desde {{ date_joined|date:"d/M/Y" }}</span>
+        {% endlanguage %}
+        <span>{{ lessons_completed }} lições vistas</span>
+        {% if username == user.username %}
         <button class="btn" onclick="window.location={% url 'codele-logout' %};" type="button" name="button">Logout</button>
+        {% else %}
+
+        {% endif %}
       </div>
     </div>
 

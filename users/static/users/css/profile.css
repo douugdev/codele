@@ -6,6 +6,7 @@
   --bg-primary: #299d49;
   --bg-secondary: #0b131a;
   --bg-thirdoption: #01161b;
+  --background-gradient: linear-gradient(110deg, #83bb77, #1f9a41);
 }
 
 @font-face {
@@ -23,7 +24,6 @@ main {
 .card {
   color: var(--text-secondary);
   height: auto;
-
   margin: auto;
   display: static;
   border-radius: 2rem;
@@ -31,7 +31,7 @@ main {
   text-align: center;
   justify-content: center;
   padding: 1rem 2.3rem 2rem 2.3rem;
-  background-color: var(--bg-primary)
+  background-image: linear-gradient(110deg, #83bb77, #1f9a41);
 }
 
 .profile-pic {
@@ -44,7 +44,6 @@ main {
 }
 
 .fundador {
-  color: var(--text-secondary);
   height: auto;
   width: 100%;
   margin: auto;
@@ -62,7 +61,8 @@ main {
 
 .fundador a {
   text-decoration: none;
-  color: #229be8;
+  color: #38cdd5;
+  font-weight: bold;
 }
 
 .profile {
@@ -141,7 +141,7 @@ input, select {
   main::after {
     content: "";
     background: url("/static/users/img/background.jpg");
-    filter: blur(2px);
+    filter: blur(5px);
     padding: 0;
     opacity: 0.1;
     top: 0;

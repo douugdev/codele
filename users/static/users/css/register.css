@@ -168,7 +168,7 @@ input, select {
   main::after {
     content: "";
     background: url("/static/users/img/background.jpg");
-    filter: blur(2px);
+    filter: blur(5px);
     padding: 0;
     opacity: 0.1;
     top: 0;

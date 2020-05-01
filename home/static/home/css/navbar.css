@@ -3,8 +3,11 @@
   font-family: 'Roboto', sans-serif;
   --text-primary: #b6b6b6;
   --text-secondary: #ececec;
-  --bg-primary: #299d49;
+  --text-blue: #38cdd5;
+  --bg-primary: #4ac448;
   --bg-secondary: #0b131a;
+  --bg-thirdoption: #01161b;
+  --background-gradient: linear-gradient(110deg, #83bb77, #1f9a41);
 }
 
 @font-face {
@@ -37,7 +40,7 @@ body::-webkit-scrollbar-thumb{
 .navbar {
   z-index: 999;
   position: fixed;
-  background-color: var(--bg-primary);
+  background-image: linear-gradient(110deg, #83bb77, #1f9a41);
   transition: width 200ms ease;
 }
 
@@ -68,9 +71,7 @@ body::-webkit-scrollbar-thumb{
   display: flex;
   align-items: center;
   height: 5rem;
-  color: var(--text-primary);
   text-decoration: none;
-  filter: grayscale(100%) opacity(0.7) brightness(10%);
   transition: 200ms;
 }
 
@@ -78,7 +79,8 @@ body::-webkit-scrollbar-thumb{
   font-size: 2rem;
   min-width: 2rem;
   margin: 0 1.5rem;
-  color: #229be8;
+  color: var(--bg-thirdoption);
+  transition: 200ms;
 }
 
 /* For pc */
@@ -97,11 +99,6 @@ body::-webkit-scrollbar-thumb{
     flex-direction: column;
   }
 
-  .nav-link:hover {
-    filter: grayscale(0%) opacity(1) brightness(100%);
-    background: var(--bg-secondary);
-  }
-
   .navbar:hover .link-text {
     opacity: 1;
   }
@@ -114,13 +111,26 @@ body::-webkit-scrollbar-thumb{
     width: 16rem;
   }
 
+  .nav-link:hover {
+    background: var(--bg-secondary);
+  }
+
+  .nav-link:hover .nav-icon {
+    color: var(--text-blue);
+  }
+
+  .nav-link:hover .link-text {
+    color: var(--text-blue);
+  }
+
   .link-text {
     font-weight: 900;
     overflow: hidden;
     margin-left: 2rem;
-    color: #229be8;
+    color: var(--bg-thirdoption);
     opacity: 0;
     transition: 200ms;
+    white-space: nowrap;
   }
 
   .link-logo {

@@ -5,6 +5,8 @@
   --text-secondary: #ececec;
   --bg-primary: #299d49;
   --bg-secondary: #0b131a;
+  --bg-green: #54b13e;
+  --background-gradient: linear-gradient(110deg, #83bb77, #1f9a41);
 }
 
 @font-face {
@@ -44,23 +46,27 @@ main {
   padding: 1rem;
 }
 
+.logo-img {
+  filter: brightness(1.2) contrast(1) hue-rotate(354deg) saturate(0.9);
+}
+
 .separator {
   width: 60%;
-  color: var(--bg-primary);
+  color: var(--bg-green);
   border: none;
-  border-top: 0.2rem solid var(--bg-primary);
+  border-top: 0.2rem solid var(--bg-green);
   padding: 0rem;
 }
 
 .slogan {
   font-family: GothamBook;
   font-weight: normal;
-  color: var(--bg-primary);
+  color: var(--bg-green);
   padding: 2rem;
 }
 
 #aprenda {
-  color: var(--bg-primary);
+  color: var(--bg-green);
   padding: 2rem;
 }
 
@@ -69,7 +75,6 @@ main {
   min-width: 2rem;
   margin: 0 1.5rem;
   color: #229be8;
-  z-index: -1;
 }
 
 .icon-language {
@@ -94,36 +99,38 @@ main {
 }
 
 .card-language {
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: var(--bg-primary);
-    font-size: 3rem;
-    color: #fff;
-    box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
-    height: 100%;
-    width: 100%;
-    border-radius: 1rem;
-    z-index: 0;
-    transition: box-shadow 400ms, transform 400ms, background 200ms;
-    overflow: hidden;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #1f9a41;
+  background-image: linear-gradient(100deg, #6dbb5b, #1f9a41);
+  font-size: 3rem;
+  color: #fff;
+  box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
+  height: 100%;
+  width: 100%;
+  border-radius: 1rem;
+  z-index: 0;
+  transition: box-shadow 400ms, transform 400ms, background-color 200ms;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
  }
 
  .card-language .icon {
-   font-size: 5rem;
-   filter: grayscale(100%) opacity(0.7) brightness(10%);
-   transition: 200ms;
+  font-size: 5rem;
+  filter: grayscale(100%) opacity(0.7) brightness(10%) blur(0.1px);
+  transition: 400ms;
+  z-index: -1;
  }
 
 .card-language:hover {
-    background: var(--bg-secondary);
-    box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
-    transform: translateY(-3px) scale(1.1);
+  background: var(--bg-secondary);
+  box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
+  transform: translateY(-3px) scale(1.1);
 }
 
 .card-language:hover .icon {
@@ -136,6 +143,20 @@ main {
     padding: 2rem;
   }
 
+  main::after {
+    content: "";
+    background: url("/static/users/img/background.jpg");
+    filter: blur(5px);
+    padding: 0;
+    opacity: 0.1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    background-size: cover;
+    z-index: -1;
+  }
 }
 
 /* For mobile */
