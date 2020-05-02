@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['localhost', 'codele.herokuapp.com']
 # Application definition
 
 INSTALLED_APPS = [
+    'questions.apps.QuestionsConfig',
     'home.apps.HomeConfig',
     'users.apps.UsersConfig',
     'django.contrib.admin',

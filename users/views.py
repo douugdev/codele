@@ -1,20 +1,24 @@
 from django.shortcuts import render, redirect
 from .forms import RegisterForm
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
+
 
 def register(request):
-    form = RegisterForm(request.POST or None)
-    if form.is_valid():
+    if not request.user.is_authenticated:
+        form = RegisterForm(request.POST or None)
+        if form.is_valid():
 
-        form.save()
+            form.save()
 
-        return redirect('codele-registration-success')
+            return redirect('codele-registration-success')
 
-    return render(request, 'users/register.html', {'form':form})
+        return render(request, 'users/register.html', {'form':form})
+    else:
+        return redirect('codele-profile-w')
 
 def account_created(request):
         return render(request, 'users/success.html')
-
 
 def profile(request, user_name):
 
