@@ -89,12 +89,12 @@ input:focus, textarea {
   text-align: center;
   background-image: var(--background-gradient);
   text-overflow: ellipsis;
-  font-size: 2vw;
+  font-size: 1rem;
 }
 
 .ttl {
   text-overflow: ellipsis;
-  font-size: 2vw;
+  font-size: 1rem;
 }
 
 /* for mobile */
