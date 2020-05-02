@@ -1,0 +1,141 @@
+:root {
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  --text-primary: #b6b6b6;
+  --text-secondary: #ececec;
+  --bg-primary: #4ac448;
+  --bg-secondary: #0b131a;
+  --bg-green: #54b13e;
+  --background-gradient: linear-gradient(110deg, #83bb77, #1f9a41);
+}
+
+@font-face {
+  font-family: GothamBook;
+  src: url('/static/home/font/Gotham-Book.otf');
+}
+
+body {
+  color: black;
+  background-color: #16181E;
+  margin: 0;
+  padding: 0;
+  scrollbar-width: 0.5rem;
+  scrollbar-color: #229be8 #01161b;
+}
+
+body::-webkit-scrollbar{
+  width: 0.5rem;
+}
+
+body::-webkit-scrollbar-track{
+  background: #01161b;
+}
+
+body::-webkit-scrollbar-thumb{
+  background: var(--bg-primary);
+  border-radius: 0.75rem;
+}
+
+main {
+  display: block;
+  align-items: center;
+  text-align: center;
+  justify-items: center;
+  justify-content: center;
+  margin-left: 5rem;
+  padding: 1rem;
+}
+
+input {
+  font-family: GothamBook;
+  font-weight: 300;
+  width: 15rem;
+  background-color: var(--text-primary);
+  padding: 12px 20px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 2rem;
+  box-sizing: border-box;
+  filter: opacity(0.7);
+  transition: 200ms ease;
+  margin: 2rem;
+}
+
+input:focus {
+  background-color: var(--text-secondary);
+  filter: opacity(1);
+  width: 50rem;
+}
+
+input:focus, textarea {
+    outline: none !important;
+}
+
+.grid {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fill, 15rem);
+  grid-auto-rows: 15rem;
+}
+
+.card {
+  font-family: GothamBook;
+  color: var(--text-secondary);
+  height: auto;
+  margin: 0;
+  border-radius: 2rem;
+  align-items: center;
+  overflow: hidden;
+  text-align: center;
+  background-image: var(--background-gradient);
+  text-overflow: ellipsis;
+  font-size: 2vw;
+}
+
+.ttl {
+  text-overflow: ellipsis;
+  font-size: 2vw;
+}
+
+/* for mobile */
+@media only screen and (max-width: 768px){
+  main {
+    background-color: var(--bg-primary);
+  }
+
+  body {
+    background-color: var(--bg-primary);
+  }
+
+  .card {
+    padding: 1rem;
+    margin-top:0.2rem;
+  }
+}
+
+/* for pc */
+@media only screen and (min-width: 769px){
+  main::after {
+    content: "";
+    background: url("/static/users/img/background.jpg");
+    filter: blur(5px);
+    padding: 0;
+    opacity: 0.1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    background-size: cover;
+    z-index: -1;
+  }
+
+  .card {
+    padding: 2rem;
+  }
+
+  main{
+    height: 90vh;
+    width: 90vw;
+  }
+}

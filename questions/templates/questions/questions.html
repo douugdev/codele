@@ -1,0 +1,32 @@
+{% extends "home/base.html" %}
+
+{% load static %}
+
+{% block css_import %}
+<link rel="stylesheet" href="{% static 'questions/css/questions.css' %}">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="jquery.fittext.js"></script>
+{% endblock %}
+
+{% block main %}
+    <div class="ask-something">
+      <input method type="text" placeholder="Qual a sua dúvida?" name="" value="">
+    </div>
+      <div class="grid">
+      {% for question in questions %}
+        <a style="text-decoration: none" href="{% url 'codele-question' question.id %}" class="card textfit">
+          <div style='text-overflow: ellipsis;font-size: 2vw;overflow:hidden; height:100%; width:100%; text-align: center'>
+            <span class='ttl'>
+              {% if not question.language == 'NONE' %} [{{question.language}}] {% endif %} {{ question.title }}
+            </span>
+          </div>
+        </a>
+      {% endfor %}
+      </div>
+      <script>
+
+      </script>
+
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script src="js/jquery-textfit/textfit.js"></script>
+{% endblock %}

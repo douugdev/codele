@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class ForumConfig(AppConfig):
-    name = 'forum'
+class QuestionsConfig(AppConfig):
+    name = 'questions'
