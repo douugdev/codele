@@ -1,11 +1,43 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Question
+from .forms import QuestionForm
+from django.contrib.auth.models import User
 
 def questions(request):
+    query = request.GET.get("query")
+    if query:
+        queryset_list = Question.objects.filter(title__icontains=query)
+        for item in Question.languages:
+            if query.upper() in item:
+                queryset_list = Question.objects.filter(language__icontains=item[0])
+            elif query.capitalize() in list(map(lambda x: str(x).capitalize(),item)):
+                queryset_list = Question.objects.filter(language__icontains=item[0])
+    else:
+        queryset_list = Question.objects.all()
     context = {
-        'questions': Question.objects.all()
+        'questions': queryset_list
     }
     return render(request, 'questions/questions.html', context)
 
 def question(request, question_id):
-    pass
+    qt = Question.objects.filter(id__icontains=question_id).first()
+    user = User.objects.filter(username=qt.author).first()
+    context = {
+        'title': qt.title,
+        'author': user,
+        'question': qt.question,
+        'lang': qt.language,
+        'authorpic': user.profile.image.url,
+    }
+    return render(request, 'questions/question.html', context)
+
+def create_question(request):
+    if request.user.is_authenticated:
+        form = QuestionForm(request.POST or None)
+        if form.is_valid():
+            form.save()
+            return redirect('codele-questions')
+        print(form.errors)
+        return render(request, 'questions/create_question.html')
+    else:
+        return redirect('codele-home')

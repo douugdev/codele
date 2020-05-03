@@ -1,0 +1,18 @@
+{% extends "home/base.html" %}
+{% load static %}
+
+{% block css_import %}<link rel="stylesheet" href="{% static 'questions/css/question.css' %}">{% endblock %}
+
+{% block main %}
+    <div class="card">
+      <a style="text-decoration: none; cursor: pointer;" href="{% url 'codele-profile' author.username %}" class="author">
+        <img class="author-pic" src='{{ authorpic }}'>
+        <h3 class="author">{{ author.username }}</h3>
+        <span class="btn">{{ author.profile.badge }}</span>
+      </a>
+      <div class="content">
+        <h1>{{ title }}</h1>
+        <p>{{ question }}</p>
+      </div>
+    </div>
+{% endblock %}

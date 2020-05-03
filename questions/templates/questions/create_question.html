@@ -1,0 +1,25 @@
+{% extends "home/base.html" %}
+{% load static %}
+
+{% block css_import %}<link rel="stylesheet" href="{% static 'questions/css/create_question.css' %}">{% endblock %}
+
+{% block main %}
+    <div class="card">
+      <form class="form" method="post">
+        {% csrf_token %}
+        <span class="welcome">Qual a sua dúvida?</span>
+        <input type="hidden" name="author" value="{{ user.username }}" />
+        <input placeholder="Assunto" type="text" name="title" class="title" required value="">
+        <textarea style="resize:none" placeholder="Dúvida" name="question" rows="10" cols="10" class="question" required value=""></textarea>
+        <span class="language">Sobre qual linguagem é essa dúvida?</span>
+        <select name="language" class="language-dd">
+          <option value="NONE">Nenhuma</option>
+          <option value="GML">Game Maker Language</option>
+          <option value="JS">JavaScript</option>
+          <option value="JV">Java</option>
+          <option value="PY">Python</option>
+        </select>  
+        <button class="btn" type="submit" name="button">Perguntar</button>
+        </div>
+      </form>
+{% endblock %}

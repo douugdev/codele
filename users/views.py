@@ -17,6 +17,7 @@ def register(request):
     else:
         return redirect('codele-profile-w')
 
+
 def account_created(request):
         return render(request, 'users/success.html')
 
