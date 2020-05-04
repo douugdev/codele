@@ -16,9 +16,11 @@
         <p>{{ question }}</p>
       </div>
     </div>
+    {% if user.is_authenticated %}
     <div class="responder">
       <a class="btn" href="{% url 'codele-create-answer' id %}">Responder</a>
     </div>
+    {% endif %}
     {% if answers %}
     <h1 style="color: #ececec" >Respostas</h1>
 
