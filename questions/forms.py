@@ -8,8 +8,7 @@ class QuestionForm(ModelForm):
         fields = ['author', 'title', 'question', 'language']
 
     def clean_title(self):
-        title = self.cleaned_data['title']
-        title = title.capitalize()
+        title = self.cleaned_data['title'].capitalize()
         return title
 
     def clean_question(self):

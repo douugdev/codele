@@ -1,5 +1,6 @@
 {% extends "home/base.html" %}
 {% load static %}
+{% load index %}
 
 {% block css_import %}<link rel="stylesheet" href="{% static 'questions/css/question.css' %}">{% endblock %}
 
@@ -15,4 +16,19 @@
         <p>{{ question }}</p>
       </div>
     </div>
+    {% if answers %}
+    <h1 style="color: #ececec" >Respostas</h1>
+    {% endif %}
+    {% for answer in answers %}
+    <div style="margin-top: 1rem;" class="card">
+      <a style="text-decoration: none; cursor: pointer;" href="{% url 'codele-profile' answer.author %}" class="author">
+        <img class="author-pic" src='{{ answer.author|profile_pic }}'>
+        <h3 class="author">{{ answer.author|author }}</h3>
+        <span class="btn">{{ answer.author|badge }}</span>
+      </a>
+      <div class="content">
+        <p>{{ answer.answer }}</p>
+      </div>
+    </div>
+    {% endfor%}
 {% endblock %}

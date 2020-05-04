@@ -10,7 +10,7 @@
         <span class="welcome">Qual a sua dúvida?</span>
         <input type="hidden" name="author" value="{{ user.username }}" />
         <input placeholder="Assunto" type="text" name="title" class="title" required value="">
-        <textarea style="resize:none" placeholder="Dúvida" name="question" rows="10" cols="10" class="question" required value=""></textarea>
+        <textarea style="resize: none, white-space: pre-wrap;" placeholder="Digite sua dúvida &#10;&#13;(Dica: para códigos, use o pastebin.com e para imagens, o imgur.com)" name="question" rows="10" cols="10" class="question" required value=""></textarea>
         <span class="language">Sobre qual linguagem é essa dúvida?</span>
         <select name="language" class="language-dd">
           <option value="NONE">Nenhuma</option>
@@ -18,7 +18,7 @@
           <option value="JS">JavaScript</option>
           <option value="JV">Java</option>
           <option value="PY">Python</option>
-        </select>  
+        </select>
         <button class="btn" type="submit" name="button">Perguntar</button>
         </div>
       </form>
