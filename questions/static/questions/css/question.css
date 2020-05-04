@@ -115,6 +115,24 @@ p {
   font-size: 1rem;
 }
 
+.responder {
+  font-family: GothamBook;
+  color: var(--text-secondary);
+  height: auto;
+  margin: 0;
+  font-weight: 700;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: row;
+  /* align-items: center; */
+  overflow: hidden;
+  /* text-align: center; */
+  background-image: var(--background-gradient);
+  text-overflow: ellipsis;
+  font-size: 1rem;
+  margin: 1rem 0;
+}
+
 .author {
   width: 1fr;
   align-self: left;

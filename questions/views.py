@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Question, Answer
-from .forms import QuestionForm
+from .forms import QuestionForm, AnswerForm
 from django.contrib.auth.models import User
 
 def questions(request):
@@ -28,6 +28,7 @@ def question(request, question_id):
         answersauthors.append(User.objects.filter(username=answer.author).first().username)
 
     context = {
+        'id' : qt.id,
         'title': qt.title,
         'author': user,
         'question': qt.question,
@@ -45,5 +46,21 @@ def create_question(request):
             form.save()
             return redirect('codele-questions')
         return render(request, 'questions/create_question.html')
+    else:
+        return redirect('codele-home')
+
+def answer(request, question_id):
+    if request.user.is_authenticated:
+        form = AnswerForm(request.POST or None)
+        context = {
+            'questionid' : question_id,
+            'qt' : Question.objects.filter(id__icontains=question_id).first().id
+        }
+        if form.is_valid():
+            form.save()
+            return redirect('codele-question', question_id)
+        else:
+            print(form.errors)
+        return render(request, 'questions/answer.html', context)
     else:
         return redirect('codele-home')

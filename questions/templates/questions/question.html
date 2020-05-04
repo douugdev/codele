@@ -16,8 +16,12 @@
         <p>{{ question }}</p>
       </div>
     </div>
+    <div class="responder">
+      <a class="btn" href="{% url 'codele-create-answer' id %}">Responder</a>
+    </div>
     {% if answers %}
     <h1 style="color: #ececec" >Respostas</h1>
+
     {% endif %}
     {% for answer in answers %}
     <div style="margin-top: 1rem;" class="card">
