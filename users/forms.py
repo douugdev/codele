@@ -2,11 +2,18 @@ from django.forms import ModelForm
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.forms import ValidationError
+from django.core.validators import RegexValidator
 
 class RegisterForm(ModelForm):
     class Meta:
         model = User
-        fields = ['first_name', 'last_name', 'username', 'email', 'password']
+        fields = [
+            'first_name',
+            'last_name',
+            'username',
+            'email',
+            'password'
+            ]
 
     def clean_email(self):
         email = self.cleaned_data['email']
@@ -25,6 +32,8 @@ class RegisterForm(ModelForm):
         return " ".join(word.capitalize() for word in last_name.split())
 
     def clean_password(self):
+        # Sets min. password length for 8 chars and max. password 50 chars.
+
         original_password = self.cleaned_data.get('password')
         if len(original_password) < 8:
             raise ValidationError("Senha muito curta")
@@ -34,17 +43,31 @@ class RegisterForm(ModelForm):
             return original_password
 
     def clean_username(self):
-        invalid_chars = ['¢','³','²','¹','£',',','>','<','|','\ ','/',' ', '!','@','#','$','%','¨','¬','&','*','(',')','+','=','§',';',':','ª',"'",'"','º','°','~','^']
+        '''
+        Checks for duplicates usernames and allows only
+        letters, numbers, and the following characters (-_.) to be passed
+        to the database model's username field.
+        '''
+
+        validate = RegexValidator(r"^[a-zA-Z0-9._-]{4,16}$")
         username = self.cleaned_data['username']
-        for char in invalid_chars:
-            if char in username:
-                raise ValidationError("Nome de usuário inválido. Use apenas letras, números e/ou . - _")
         if User.objects.filter(username__iexact=self.cleaned_data['username']):
             raise ValidationError("Nome de usuário já existente")
         else:
-            return username
+            try:
+                validate(username)
+            except:
+                raise ValidationError(
+                    "Nome de usuário contém caracteres proibido, use apenas letras, números ou -_."
+                    )
+        return username
 
     def save(self, commit=True):
+        '''
+        Famous brazilian "Gambiarra" to avoid manually hashing
+        a user's password by overriding the default save method.
+        '''
+
         user = super(RegisterForm, self).save(commit=False)
         user.set_password(self.cleaned_data["password"])
         if commit:

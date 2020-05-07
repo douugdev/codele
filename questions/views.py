@@ -4,6 +4,10 @@ from .forms import QuestionForm, AnswerForm
 from django.contrib.auth.models import User
 
 def questions(request):
+    '''
+    Still needs documentation.
+    '''
+
     query = request.GET.get("query")
     if query:
         queryset_list = Question.objects.filter(title__icontains=query)
@@ -20,6 +24,10 @@ def questions(request):
     return render(request, 'questions/questions.html', context)
 
 def question(request, question_id):
+    '''
+    Still needs documentation.
+    '''
+
     qt = Question.objects.filter(id__icontains=question_id).first()
     user = User.objects.filter(username=qt.author).first()
     answers = Answer.objects.filter(question=qt)
@@ -40,6 +48,10 @@ def question(request, question_id):
     return render(request, 'questions/question.html', context)
 
 def create_question(request):
+    '''
+    Still needs documentation.
+    '''
+
     if request.user.is_authenticated:
         form = QuestionForm(request.POST or None)
         if form.is_valid():
@@ -50,6 +62,10 @@ def create_question(request):
         return redirect('codele-home')
 
 def answer(request, question_id):
+    '''
+    Still needs documentation.
+    '''
+    
     if request.user.is_authenticated:
         form = AnswerForm(request.POST or None)
         context = {
