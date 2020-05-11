@@ -2,5 +2,5 @@ from django.urls import path, include
 from . import views
 
 urlpatterns = [
-    path('blog/', views.blog)
+    path('blog/', views.blog, name='codele-blog')
 ]
