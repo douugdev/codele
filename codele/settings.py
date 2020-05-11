@@ -25,7 +25,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'ph#=3r*d6g$sxk&3w*wx1k(v#1mbjudfezbe&t#9*pgqce%4)j'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+dotenv_file = os.path.join(BASE_DIR, ".env")
+if os.path.isfile(dotenv_file):
+    DEBUG = True
+    dotenv.load_dotenv(dotenv_file)
 
 ALLOWED_HOSTS = ['localhost', 'codele.herokuapp.com']
 
@@ -33,6 +36,7 @@ ALLOWED_HOSTS = ['localhost', 'codele.herokuapp.com']
 # Application definition
 
 INSTALLED_APPS = [
+    'blog.apps.BlogConfig',
     'questions.apps.QuestionsConfig',
     'home.apps.HomeConfig',
     'users.apps.UsersConfig',
@@ -78,9 +82,7 @@ WSGI_APPLICATION = 'codele.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-dotenv_file = os.path.join(BASE_DIR, ".env")
-if os.path.isfile(dotenv_file):
-    dotenv.load_dotenv(dotenv_file)
+
 
 DATABASES = {}
 DATABASES['default'] = dj_database_url.config(conn_max_age=600)

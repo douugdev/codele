@@ -4,34 +4,40 @@ from .forms import QuestionForm, AnswerForm
 from django.contrib.auth.models import User
 
 def questions(request):
-    '''
-    Still needs documentation.
-    '''
-
+    #Search query yay
     query = request.GET.get("query")
     if query:
+        #Checks if query exists then search for it in the questions
+        #stored in the database, looking for matching titles.
         queryset_list = Question.objects.filter(title__icontains=query)
         for item in Question.languages:
             if query.upper() in item:
                 queryset_list = Question.objects.filter(language__icontains=item[0])
+
+            #This conditional looks confusing, it checks if the
+            #user made an input of a language (e.g: JS or PY) instead of a
+            #question title, then display all questions related to that
+            #specific language.
             elif query.capitalize() in list(map(lambda x: str(x).capitalize(),item)):
                 queryset_list = Question.objects.filter(language__icontains=item[0])
     else:
         queryset_list = Question.objects.all()
     context = {
+        #Ugly way of showing the most recent questions.
         'questions': queryset_list[::-1]
     }
     return render(request, 'questions/questions.html', context)
 
 def question(request, question_id):
     '''
-    Still needs documentation.
+    This function renders a specific question and its answers.
     '''
 
     qt = Question.objects.filter(id__icontains=question_id).first()
     user = User.objects.filter(username=qt.author).first()
     answers = Answer.objects.filter(question=qt)
     answersauthors = []
+
     for answer in answers:
         answersauthors.append(User.objects.filter(username=answer.author).first().username)
 
@@ -49,7 +55,8 @@ def question(request, question_id):
 
 def create_question(request):
     '''
-    Still needs documentation.
+    Render function for the question creation view. It contains
+    a form that contacts a database model in models.py
     '''
 
     if request.user.is_authenticated:
@@ -62,10 +69,6 @@ def create_question(request):
         return redirect('codele-home')
 
 def answer(request, question_id):
-    '''
-    Still needs documentation.
-    '''
-    
     if request.user.is_authenticated:
         form = AnswerForm(request.POST or None)
         context = {

@@ -11,8 +11,8 @@ class Question(models.Model):
     author = models.CharField(max_length=100)
     title = models.CharField(max_length=100)
     question = models.TextField()
-    language = models.CharField(max_length=4,choices=languages, default='NONE')
-    
+    language = models.CharField(max_length=4, choices=languages, default='NONE')
+
     def __str__(self):
         return f'{self.title}'
 
