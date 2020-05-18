@@ -76,38 +76,7 @@ main {
   text-align: center;
   justify-items: center;
   justify-content: center;
-  margin-left: 5rem;
-}
 
-input {
-  font-family: GothamBook;
-  font-weight: 300;
-  width: 15rem;
-  background-color: var(--text-primary);
-  padding: 12px 20px;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 2rem;
-  box-sizing: border-box;
-  filter: opacity(0.7);
-  transition: 200ms ease;
-  margin: 2rem;
-  margin-right: 0.7rem;
-  height: 2.5rem;
-}
-
-input:not(:placeholder-shown) {
-  background-color: var(--text-secondary);
-  filter: opacity(1);
-  width: 50rem;
-  height: 2.5rem;
-}
-
-input:placeholder-shown {
-}
-
-input:focus, textarea {
-    outline: none !important;
 }
 
 p {
@@ -129,14 +98,14 @@ p {
   font-family: GothamBook;
   color: var(--text-secondary);
   height: 100vh;
-  width: 30rem;
+
   margin: 0;
   font-weight: 700;
   display: flex;
   flex-direction: column;
   overflow-wrap: break-word;
   overflow: hidden;
-  background-image: var(--background-gradient);
+
   text-overflow: ellipsis;
   font-size: 1rem;
 }
@@ -183,8 +152,12 @@ p {
 @media only screen and (min-width: 769px){
   .card {
     padding: 0 2rem;
+    width: 30rem;
+    background-image: var(--background-gradient);
   }
 
   main{
+    padding: 0 2rem;
+    margin-left: 5rem;
   }
 }
