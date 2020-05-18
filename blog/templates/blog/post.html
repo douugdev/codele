@@ -1,11 +1,17 @@
-post{% extends "home/base.html" %}
+{% extends "home/base.html" %}
 {% load static %}
 {% load index %}
 
 {% block css_import %}<link rel="stylesheet" href="{% static 'blog/css/post.css' %}">{% endblock %}
 
 {% block main %}
-    <div class="">
-      
+    <div class="card">
+      <div class="header">
+        <h1 class="title">{{ post.title }}</h1>
+        <span class="author">by {{ post.author }}</span>
+      </div>
+      <div class="content">
+        <p>{{ post.post }}</p>
+      </div>
     </div>
 {% endblock %}

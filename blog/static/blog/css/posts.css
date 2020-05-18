@@ -81,7 +81,7 @@ input:focus, textarea {
   padding: 2rem;
   display: grid;
   grid-gap: 1rem;
-  grid-template-columns: repeat(auto-fill, 15rem);
+  grid-template-columns: repeat(auto-fill, 17rem);
   grid-auto-rows: 25rem;
 }
 

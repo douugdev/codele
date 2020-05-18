@@ -9,7 +9,7 @@
 {% block main %}
       <div class="grid">
       {% for post in posts %}
-        <a style="text-decoration: none" href="#" class="card">
+        <a style="text-decoration: none" href="{% url 'codele-post' post.id %}" class="card">
           <div class="img-div">
             <img class="img" src="{{ post.image.url }}" alt="">
           </div>

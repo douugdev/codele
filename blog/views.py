@@ -9,3 +9,13 @@ def blog(request):
     }
 
     return render(request, 'blog/posts.html', context)
+
+def post(request, post_id):
+
+    post = Post.objects.filter(id__icontains=post_id).first()
+
+    context = {
+        "post": post,
+    }
+
+    return render(request, 'blog/post.html', context)
