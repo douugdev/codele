@@ -24,7 +24,6 @@ main {
 .card {
   color: var(--text-secondary);
   height: auto;
-  margin: auto;
   border-radius: 2rem;
   align-items: center;
   text-align: center;
@@ -43,12 +42,8 @@ a {
   grid-gap: 0.5rem;
   grid-template-areas:
     "welcome welcome"
-    "first-name last-name"
     "username username"
-    "email email"
     "passwd passwd"
-    "terms terms"
-    "captcha captcha"
     "btn btn";
 }
 

@@ -3,7 +3,7 @@
   font-family: 'Roboto', sans-serif;
   --text-primary: #b6b6b6;
   --text-secondary: #ececec;
-  --bg-primary: #4ac448;
+  --bg-primary: #299d49;
   --bg-secondary: #0b131a;
   --bg-green: #54b13e;
   --background-gradient: linear-gradient(110deg, #83bb77, #1f9a41);
@@ -42,31 +42,25 @@ main {
   text-align: center;
   justify-items: center;
   justify-content: center;
-  margin-left: 5rem;
   padding: 1rem;
 }
 
 input {
   font-family: GothamBook;
   font-weight: 300;
-  width: 15rem;
   background-color: var(--text-primary);
   padding: 12px 20px;
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 2rem;
   box-sizing: border-box;
-  filter: opacity(0.7);
   transition: 200ms ease;
-  margin: 2rem;
-  margin-right: 0.7rem;
   height: 2.5rem;
 }
 
 input:not(:placeholder-shown) {
   background-color: var(--text-secondary);
   filter: opacity(1);
-  width: 50rem;
   height: 2.5rem;
 }
 
@@ -95,7 +89,6 @@ input:focus, textarea {
   align-items: center;
   overflow: hidden;
   text-align: center;
-  background-image: var(--background-gradient);
   text-overflow: ellipsis;
   font-size: 1rem;
 }
@@ -114,7 +107,7 @@ input:focus, textarea {
 	padding: 0.6rem 0.6rem;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #2f6627;
-  margin-right: 0.7rem;
+  margin-left: 1rem;
 }
 
 .btn:focus {
@@ -129,6 +122,8 @@ input:focus, textarea {
 /* for mobile */
 @media only screen and (max-width: 768px){
   main {
+    display: flex;
+    flex-direction: column;
     background-color: var(--bg-primary);
   }
 
@@ -137,33 +132,57 @@ input:focus, textarea {
   }
 
   .card {
-    padding: 1rem;
+    padding: 2rem;
     margin-top:0.2rem;
+    background-color: var(--bg-secondary);
+  }
+
+  .btn {
+    background-color:var(--bg-secondary);
+  }
+
+  input {
+    width: 100%;
+    background-color: var(--text-secondary);
+    filter: opacity(1);
+    height: 2.5rem;
+  }
+
+  form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
   }
 }
 
 /* for pc */
 @media only screen and (min-width: 769px){
-  /* main::after {
-    content: "";
-    background: url("/static/users/img/background.jpg");
-    filter: blur(5px);
-    padding: 0;
-    opacity: 0.1;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    background-size: cover;
-    z-index: -1;
-  } */
+  input {
+    margin: 2rem;
+    width: 15rem;
+    filter: opacity(0.7);
+    margin-right: 0.7rem;
+  }
+
+  input:not(:placeholder-shown) {
+    background-color: var(--text-secondary);
+    filter: opacity(1);
+    width: 50rem;
+    height: 2.5rem;
+  }
+
+  input:placeholder-shown {
+  }
 
   .card {
     padding: 2rem;
+    background-image: var(--background-gradient);
   }
 
   main{
+    margin-left: 5rem;
     height: 90vh;
     width: 90vw;
   }
