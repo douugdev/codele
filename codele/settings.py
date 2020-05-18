@@ -26,8 +26,8 @@ SECRET_KEY = 'ph#=3r*d6g$sxk&3w*wx1k(v#1mbjudfezbe&t#9*pgqce%4)j'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 dotenv_file = os.path.join(BASE_DIR, ".env")
+DEBUG = True
 if os.path.isfile(dotenv_file):
-    DEBUG = True
     dotenv.load_dotenv(dotenv_file)
 
 ALLOWED_HOSTS = ['localhost', 'codele.herokuapp.com']

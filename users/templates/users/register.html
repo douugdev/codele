@@ -1,7 +1,7 @@
 {% extends "home/base.html" %}
 {% load static %}
 
-{% block css_import %}<link rel="stylesheet" href="{% static 'users/css/register.css' %}">{% endblock %}
+{% block css_import %}<link rel="stylesheet" href="{% static 'users/css/register.css' %}"><script src="https://www.google.com/recaptcha/api.js" async defer></script>{% endblock %}
 
 {% block main %}
     <div class="card">
@@ -23,6 +23,9 @@
         <input placeholder="Usuário (ex: jane.doe)" type="text" name="username" class="username" required value="">
         <input placeholder="E-mail (ex: janedoe@email.com)" type="email" name="email" class="email" required value="">
         <input placeholder="Senha (min: 8 caracteres)" type="password" name="password" class="passwd" required value="">
+        <div class="recaptcha">
+          <div class="g-recaptcha" data-sitekey="6LeCyPUUAAAAAHlB78tpcCn_m8El9gO1wBjdWYTj"></div>
+        </div>
         <button class="btn" type="submit" name="button">Cadastrar-se</button>
         <div class="terms"><small>Ao me cadastrar, declaro que concordo com os <a href="https://www.termsandconditionsgenerator.com/live.php?token=1wfOdZFfXugTmgP40ai5yYaNSiWpuQr1">Termos e Condições</a> e com a <a href="https://www.privacypolicygenerator.info/live.php?token=JrxWTjaNpzwfq9lsdIsw5eGRiAxoz5ay">Política de Privacidade</a></small>
         </div>

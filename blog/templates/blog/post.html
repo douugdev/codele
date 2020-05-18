@@ -2,38 +2,10 @@ post{% extends "home/base.html" %}
 {% load static %}
 {% load index %}
 
-{% block css_import %}<link rel="stylesheet" href="{% static 'posts/css/post.css' %}">{% endblock %}
+{% block css_import %}<link rel="stylesheet" href="{% static 'blog/css/post.css' %}">{% endblock %}
 
 {% block main %}
-    <div class="card">
-      <a style="text-decoration: none; cursor: pointer;" href="{% url 'codele-profile' author.username %}" class="author">
-        <img class="author-pic" src='{{ authorpic }}'>
-        <h3 class="author">{{ author.username }}</h3>
-        <span class="btn">{{ author.profile.badge }}</span>
-      </a>
-      <div class="content">
-        <h1>{{ title }}</h1>
-        <p>{{ question }}</p>
-      </div>
+    <div class="">
+      
     </div>
-    {% if user.is_authenticated %}
-    <div class="responder">
-      <a class="btn" href="{% url 'codele-create-answer' id %}">Responder</a>
-    </div>
-    {% endif %}
-    {% if answers %}
-    <h1 style="color: #ececec" >Respostas</h1>
-    {% endif %}
-    {% for answer in answers %}
-    <div style="margin-top: 1rem;" class="card">
-      <a style="text-decoration: none; cursor: pointer;" href="{% url 'codele-profile' answer.author %}" class="author">
-        <img class="author-pic" src='{{ answer.author|profile_pic }}'>
-        <h3 class="author">{{ answer.author|author }}</h3>
-        <span class="btn">{{ answer.author|badge }}</span>
-      </a>
-      <div class="content">
-        <p>{{ answer.answer }}</p>
-      </div>
-    </div>
-    {% endfor%}
 {% endblock %}

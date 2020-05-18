@@ -3,27 +3,21 @@
 {% load static %}
 
 {% block css_import %}
-<link rel="stylesheet" href="{% static 'posts/css/posts.css' %}">
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<script src="jquery.fittext.js"></script>
+<link rel="stylesheet" href="{% static 'blog/css/posts.css' %}">
 {% endblock %}
 
 {% block main %}
-    <div class="ask-something">
-      <form method="GET">
-        {% csrf_token %}
-        <input method type="text" placeholder="Qual a sua dúvida?" name="query" value="">
-        <button class="btn" type="submit"><i class="fas fa-search"></i></button>
-        {% if user.is_authenticated %}<a class="btn" href="{% url 'codele-create-question' %}"><i class="fas fa-plus"></i></a>{% endif %}
-      </form>
-    </div>
       <div class="grid">
-      {% for question in questions %}
-        <a style="text-decoration: none" href="{% url 'codele-question' question.id %}" class="card textfit">
-          <div style='text-overflow: ellipsis;font-size: 2vw;overflow:hidden; height:100%; width:100%; text-align: center'>
-            <span class='ttl'>
-              {% if not question.language == 'NONE' %} [{{question.language}}] {% endif %} {{ question.title }}
-            </span>
+      {% for post in posts %}
+        <a style="text-decoration: none" href="#" class="card">
+          <div class="img-div">
+            <img class="img" src="{{ post.image.url }}" alt="">
+          </div>
+          <div class='txt'>
+            <h4 class='ttl'>
+              {{ post.title }}
+            </h4>
+            <h5>by {{ post.author }}</h5>
           </div>
         </a>
       {% endfor %}

@@ -48,6 +48,7 @@ a {
     "email email"
     "passwd passwd"
     "terms terms"
+    "captcha captcha"
     "btn btn";
 }
 
@@ -60,6 +61,18 @@ a {
 
 .form-errors {
 
+}
+
+.recaptcha {
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  grid-area: captcha;
+}
+
+.g-recaptcha {
+  display: inline-block;
 }
 
 .error-card {
