@@ -14,6 +14,11 @@
   src: url('/static/home/font/Gotham-Book.otf');
 }
 
+a {
+  color: var(--text-secondary);
+  text-decoration: underline;
+}
+
 body {
   color: black;
   background-color: #16181E;
@@ -37,37 +42,21 @@ body::-webkit-scrollbar-thumb{
 }
 
 main {
-  display: block;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   text-align: center;
   justify-items: center;
   justify-content: center;
   margin-left: 5rem;
-  padding: 1rem;
+  height: 100vh;
+  padding: 0 4rem;
 }
 
 .logo-img {
-  filter: brightness(1.2) contrast(1) hue-rotate(354deg) saturate(0.9);
-}
-
-.separator {
-  width: 60%;
-  color: var(--bg-green);
-  border: none;
-  border-top: 0.2rem solid var(--bg-green);
-  padding: 0rem;
-}
-
-.slogan {
-  font-family: GothamBook;
-  font-weight: normal;
-  color: var(--bg-green);
-  padding: 2rem;
-}
-
-#aprenda {
-  color: var(--bg-green);
-  padding: 2rem;
+  padding-top: 2rem;
+  width: 20rem;
+  object-fit: cover;
 }
 
 .icon {
@@ -77,7 +66,63 @@ main {
   color: #229be8;
 }
 
-.icon-language {
+.title-h1 {
+  font-weight: bold;
+  letter-spacing: 0.1ch;
+  color: var(--text-secondary);
+}
+
+.title {
+  color: var(--text-secondary);
+  font-weight: lighter;
+  font-family: GothamBook;
+}
+
+.title span {
+  color: var(--bg-primary);
+}
+
+.content {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.btn {
+  grid-area: btn;
+  font-family: GothamBook, sans-serif;
+  background-image: var(--background-gradient);
+  border-radius: 2rem;
+  border: none;
+  color: white;
+  padding: 1.5rem 3rem;
+  letter-spacing: 0.1ch;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.3rem;
+  margin-top: 1.5rem;
+  cursor: pointer;
+}
+
+.footer {
+  color: var(--text-secondary);
+  display: flex;
+  flex-direction: column;
+  font-size: 0.7rem;
+  padding: 0.8rem;
+  line-height: 1.5rem;
+}
+
+
+.social i {
+  margin: 0 0.2rem;
+}
+
+/* .icon-language {
   font-size: 2rem;
   min-width: 2rem;
   margin: 0 1.5rem;
@@ -135,20 +180,18 @@ main {
 
 .card-language:hover .icon {
   filter: grayscale(0%) opacity(1) brightness(100%);
-}
+} */
 
 /* For pc */
 @media only screen and (min-width: 601px){
-  .logo-img {
-    padding: 2rem;
-  }
+
 
   main::after {
     content: "";
     background: url("/static/users/img/background.jpg");
-    filter: blur(5px);
+    filter: blur(10px);
     padding: 0;
-    opacity: 0.1;
+    opacity: 0.05;
     top: 0;
     left: 0;
     bottom: 0;
@@ -161,19 +204,6 @@ main {
 
 /* For mobile */
 @media only screen and (max-width: 600px){
-
-  .card-title {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-  }
-
-  .logo-img {
-    align-self: center;
-    width: 100%;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-  }
 
   main {
     margin: 0;

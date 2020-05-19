@@ -4,13 +4,31 @@
 {% block css_import %}<link rel="stylesheet" href="{% static 'home/css/index.css' %}">{% endblock %}
 
 {% block main %}
-<div class="card-title">
-  <img class="logo-img" src="{% static 'home/img/codele_1x.png' %}"></img>
-  <hr class="separator">
-  <h3 class="slogan">O primeiro site 100% gratuito para ensino de programação em português!</h3>
-  <h4 id="aprenda">Aprenda:</h4>
-</div>
-<div class="grid-languages">
+
+    <div class="header">
+      <img class="logo-img" src="{% static 'home/svg/logo.svg' %}"/>
+    </div>
+    <div class="content">
+      <h1 class="title-h1">Aprenda a programar com o suporte de professores.</h1>
+      <h2 class="title">Se torne um <span>desenvolvedor</span> agora mesmo!</h2>
+      <a class="btn" href="{% url 'codele-register' %}">Registrar-se Agora</a>
+    </div>
+    <div class="footer">
+      <div class="social">
+        <a href="https://www.github.com/douugbr/codele"><i class="fab fa-github fa-2x"></i></a>
+        <a href="https://www.facebook.com/doug-reis-silva"><i class="fab fa-facebook fa-2x"></i></a>
+        <a href="https://www.twitter.com/douugbr"><i class="fab fa-twitter fa-2x"></i></a>
+        <a href="https://www.instagram.com/douugbr"><i class="fab fa-instagram fa-2x"></i></a>
+        <a href="https://www.youtube.com/loveinbits"><i class="fab fa-youtube fa-2x"></i></a>
+      </div>
+      <div class="copyright">
+        <span>Copyright 2020 - Codele</span><br>
+        <a href="https://www.termsandconditionsgenerator.com/live.php?token=1wfOdZFfXugTmgP40ai5yYaNSiWpuQr1">Termos e Condições</a><span> - </span>
+        <a href="https://www.privacypolicygenerator.info/live.php?token=JrxWTjaNpzwfq9lsdIsw5eGRiAxoz5ay">Política de Privacidade</a>
+      </div>
+    </div>
+
+<!-- <div class="grid-languages">
   <a href="#" class="card-language">
     <svg class="icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48" version="1.1"><path d="M20.941 38h-1.695a5.55 5.55 0 0 1-4.816-2.824L8 24l8.023-14h8.325l-7.442 14.016.098.054L20.46 30h4.945zm-9.875-23.367l-2.18-3.79A1.718 1.718 0 0 0 7.415 10H0l6.848 11.984zm22.43-1.809A5.551 5.551 0 0 0 28.676 10h-2.067l-4.246 8h5.098L31 24l-7.77 14h8.668L40 24zm7.652 13.184l-4.234 7.32 2.2 3.828c.312.524.87.844 1.472.844H48z" fill="#8BC34A" id="surface1"><metadata><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dc="http://purl.org/dc/elements/1.1/"><rdf:Description about="https://iconscout.com/legal#licenses" dc:title="game,maker" dc:description="game,maker" dc:publisher="Iconscout" dc:date="2017-12-15" dc:format="image/svg+xml" dc:language="en"><dc:creator><rdf:Bag><rdf:li>Icons8</rdf:li></rdf:Bag></dc:creator></rdf:Description></rdf:RDF></metadata></svg>
   </a>
@@ -49,4 +67,6 @@
     	</g>
     </svg>
   </a>
-</div>{% endblock %}
+</div> -->
+
+{% endblock %}
