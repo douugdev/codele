@@ -95,7 +95,7 @@ main {
   grid-area: btn;
   font-family: GothamBook, sans-serif;
   background-image: var(--background-gradient);
-  border-radius: 2rem;
+  border-radius: 5rem;
   border: none;
   color: white;
   padding: 1.5rem 3rem;
@@ -106,6 +106,16 @@ main {
   font-size: 1.3rem;
   margin-top: 1.5rem;
   cursor: pointer;
+  box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
+  z-index: 0;
+  background-color: #83bb77;
+  transition: box-shadow 400ms, transform 400ms, background-color 400ms;
+}
+
+.btn:hover {
+  background: #1f9a41;
+  box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
+  transform: translateY(-3px) scale(1.01);
 }
 
 .footer {
@@ -204,6 +214,17 @@ main {
 
 /* For mobile */
 @media only screen and (max-width: 600px){
+  .btn {
+    margin-bottom: 2rem;
+  }
+
+  .header {
+    margin-top: 2rem;
+  }
+
+  .logo-img {
+    margin-top: 6rem;
+  }
 
   main {
     margin: 0;
