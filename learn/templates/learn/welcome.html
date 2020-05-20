@@ -9,7 +9,7 @@
   <div class="header">
     {% if last_lesson != 'None' %}
       <h1 class="title">Bem-vindo novamente {{ first_name }}!</h1>
-      <a class="btn" href="{% url 'codele-lesson' last_lesson_language last_lesson_id %}">Ver a ultima lição</a>
+      <a class="btn" href="{% url 'codele-lesson' last_lesson_language last_lesson_id %}">Continuar onde parei</a>
       <h3 class="new">Gostaria de aprender algo novo?</h3>
     {% else %}
       <h1>Bem-vindo</h1>

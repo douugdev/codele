@@ -31,11 +31,19 @@ def learn(request, language):
     return render(request, f'learn/{str(language)}/index.html')
 
 def lesson(request, language, lesson_id):
+    languages = ['python', 'java', 'gml', 'javascript']
+
+    try:
+        lesson_id = int(lesson_id)
+    except:
+        return redirect(request, 'codele-register')
+
     if not request.user.is_authenticated:
         return redirect(request, 'codele-register')
 
     user = User.objects.filter(username__icontains=request.user).first().profile
-    user.last_lesson = f'{language},{lesson_id}'
-    user.save()
+    if language in languages:
+        user.last_lesson = f'{language},{lesson_id}'
+        user.save()
 
     return render(request, f'learn/{str(language)}/{str(lesson_id)}.html', context)
