@@ -32,6 +32,7 @@ urlpatterns = [
     path('', include('questions.urls')),
     path('', include('users.urls')),
     path('', include('blog.urls')),
+    path('', include('learn.urls')),
 ]
 
 if settings.DEBUG:

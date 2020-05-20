@@ -2,11 +2,7 @@
 
 {% load static %}
 
-{% block css_import %}
-<link rel="stylesheet" href="{% static 'questions/css/questions.css' %}">
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<script src="jquery.fittext.js"></script>
-{% endblock %}
+{% block css_import %}<link rel="stylesheet" href="{% static 'questions/css/questions.css' %}">{% endblock %}
 
 {% block main %}
     <div class="ask-something">

@@ -36,6 +36,7 @@ ALLOWED_HOSTS = ['localhost', 'codele.herokuapp.com']
 # Application definition
 
 INSTALLED_APPS = [
+    'learn.apps.LearnConfig',
     'blog.apps.BlogConfig',
     'questions.apps.QuestionsConfig',
     'home.apps.HomeConfig',
