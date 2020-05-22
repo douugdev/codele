@@ -39,6 +39,48 @@ main {
   border: none;
   height: 10rem;
   width: 10rem;
+  transition: 200ms ease;
+  padding: 0;
+}
+
+.change-link {
+  border-radius: 50%;
+  border: none;
+  display: inline-block;
+  margin: 1rem 2rem 2rem 2rem;
+  cursor: pointer;
+}
+
+.change {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+}
+
+.change-icon {
+  position: absolute;
+  z-index: 2;
+  filter: opacity(0);
+  pointer-events: none;
+  fill: var(--text-secondary);
+  transition: 200ms ease;
+}
+
+.not-changeable {
+  margin: 1rem 2rem 2rem 2rem;
+}
+
+.changeable:hover {
+  filter: blur(10px) grayscale(50%) brightness(0.7);
+}
+
+.changeable:hover ~ .change-icon {
+  filter: opacity(1);
+}
+
+.file-upload {
+  display: none;
 }
 
 .fundador {
@@ -171,7 +213,6 @@ input, select {
   }
 
   .profile-pic {
-    padding: 1rem 2rem 2rem 2rem;
   }
 
   .card{

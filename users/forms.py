@@ -3,6 +3,13 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.forms import ValidationError
 from django.core.validators import RegexValidator
+from .models import Profile
+
+class ChangePicForm(ModelForm):
+    class Meta:
+        model = Profile
+        fields = ['image']
+
 
 class RegisterForm(ModelForm):
     class Meta:

@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
-from .forms import RegisterForm
+from .forms import RegisterForm, ChangePicForm
+from .models import Profile
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 
@@ -22,8 +23,19 @@ def account_created(request):
         return render(request, 'users/success.html')
 
 def profile(request, user_name):
-
     user = User.objects.filter(username=f'{user_name}').first()
+
+    if request.method == 'POST':
+        form = ChangePicForm(request.POST, request.FILES, instance=request.user.profile)
+        if form.is_valid():
+            profile = form.save(commit=False)
+            profile.user = user
+            print(request.FILES)
+            if 'picture' in request.FILES:
+                profile.image = request.FILES['picture']
+
+            profile.save()
+
     context = {
         'badge' : user.profile.badge,
         'profile_pic': user.profile.image.url,
@@ -38,9 +50,6 @@ def profile(request, user_name):
 
     return render(request, 'users/profile.html', context)
 
-
+@login_required
 def profile_w(request):
-    if request.user.is_authenticated:
         return profile(request, request.user.username)
-    else:
-        return redirect('codele-home')

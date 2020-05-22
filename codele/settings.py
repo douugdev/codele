@@ -80,6 +80,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'codele.wsgi.application'
 
+LOGIN_URL = 'codele-login'
+
+LOGIN_REDIRECT_URL = 'codele-home'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
@@ -131,5 +134,3 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
-
-LOGIN_REDIRECT_URL = 'codele-home'
