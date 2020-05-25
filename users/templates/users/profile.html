@@ -19,7 +19,7 @@
             <a id="change-link" class="change-link">
               <div class="change">
                 <input id="file-upload" class="file-upload" type="file" name="image" >
-                <img class="profile-pic changeable" src="{{ profile_pic }}"/>
+                <img class="profile-pic changeable" onerror="this.onerror=null;this.src='{% static 'users/img/default.jpg' %}';" src="{{ profile_pic }}"/>
                 <svg class="change-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve">
                   <g>
                     <g transform="matrix(1 0 0 -1 0 480)">
