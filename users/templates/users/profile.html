@@ -31,7 +31,7 @@
             </a>
           </form>
           {% else %}
-          <img class="profile-pic not-changeable" src="{{ profile_pic }}"/>
+          <img class="profile-pic not-changeable" onerror="this.onerror=null;this.src='{% static 'users/img/default.jpg' %}';" src="{{ profile_pic }}"/>
           {% endif %}
         </div>
         <div class="fundador">
