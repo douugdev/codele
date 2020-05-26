@@ -1,0 +1,166 @@
+,:root {
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  --text-primary: #b6b6b6;
+  --text-secondary: #ececec;
+  --bg-primary: #4ac448;
+  --bg-secondary: #0b131a;
+  --bg-thirdoption: #01161b;
+  --background-gradient: linear-gradient(110deg, #83bb77, #1f9a41);
+}
+
+@font-face {
+  font-family: GothamBook;
+  src: url('/static/home/font/Gotham-Book.otf');
+}
+
+body::-webkit-scrollbar{
+  width: 0.5rem;
+}
+
+body::-webkit-scrollbar-track{
+  background: #01161b;
+}
+
+body::-webkit-scrollbar-thumb{
+  background: var(--bg-primary);
+  border-radius: 0.75rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+a {
+  color: var(--text-secondary);
+  text-decoration: underline;
+}
+
+ol {
+  list-style-type: lower-alpha;
+}
+
+input, select {
+  font-family: GothamBook;
+  width: 100%;
+  padding: 12px 20px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 1rem;
+  box-sizing: border-box;
+}
+
+.card {
+  user-select: none;
+  display: inline-flex;
+  flex-direction: row;
+  color: var(--text-secondary);
+  height: auto;
+  margin-top: 1rem;
+  width: 50vw;
+  padding: 1rem 1.5rem;
+  border-radius: 0.75rem;
+  align-items: center;
+  text-align: left;
+  background-image: linear-gradient(220deg, #83bb77, #2f9f4e);
+  z-index: 1;
+}
+
+.card img {
+  user-select: none;
+  transition: transform ease 500ms;
+}
+
+.courses {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  position: relative;
+  display: inline-flex;
+  flex-direction: row;
+  color: var(--text-secondary);
+  max-height: 10rem;
+  overflow: hidden;
+  margin-top: 0rem;
+  width: 50vw;
+  padding: 0.5rem 1rem;
+  border-radius: 0 0 0.75rem 0.75rem;
+  align-items: center;
+  text-align: left;
+  background-color: var(--bg-thirdoption);
+  filter: opacity(1);
+  transition: ease 1s;
+}
+
+.courses ol li {
+  margin: 0.3rem;
+}
+
+.clickado img {
+  transform: rotate(180deg);
+}
+
+.clickado + .courses {
+  display: inline-flex;
+  max-height: 0;
+  background-color: transparent;
+  transition: ease 1s;
+}
+
+.clickado + .courses ol{
+  filter: opacity(0);
+  transition: ease 1s;
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none;
+}
+
+.arrow {
+  filter: invert(1);
+  margin-left: auto;
+  width: 1.5rem;
+}
+
+/* for mobile */
+@media only screen and (max-width: 768px){
+  main {
+    background-color: var(--bg-primary);
+  }
+
+  body {
+    background-color: var(--bg-primary);
+  }
+}
+
+/* for pc */
+@media only screen and (min-width: 769px){
+
+  main::after {
+    content: "";
+    background: url("/static/users/img/background.jpg");
+    filter: blur(10px);
+    padding: 0;
+    opacity: 0.05;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    background-size: cover;
+    z-index: -1;
+  }
+
+  html, body {
+    margin: 0;
+    height: 100%;
+}
+
+  main {
+    /* margin: 0rem auto; */
+  }
+}

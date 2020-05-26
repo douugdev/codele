@@ -30,7 +30,7 @@ DEBUG = True
 if os.path.isfile(dotenv_file):
     dotenv.load_dotenv(dotenv_file)
 
-ALLOWED_HOSTS = ['localhost', 'codele.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', 'codele.herokuapp.com', '189.102.183.88', '192.168.0.120', 'codele1.ddns.net']
 
 
 # Application definition
