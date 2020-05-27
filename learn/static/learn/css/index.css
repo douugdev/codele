@@ -92,7 +92,7 @@ input, select {
   border-radius: 0 0 0.75rem 0.75rem;
   align-items: center;
   text-align: left;
-  background-color: var(--bg-thirdoption);
+  background-color: var(--bg-secondary);
   filter: opacity(1);
   transition: ease 1s;
 }
@@ -101,18 +101,18 @@ input, select {
   margin: 0.3rem;
 }
 
-.clickado img {
+.retracted img {
   transform: rotate(180deg);
 }
 
-.clickado + .courses {
+.retracted + .courses {
   display: inline-flex;
   max-height: 0;
   background-color: transparent;
   transition: ease 1s;
 }
 
-.clickado + .courses ol{
+.retracted + .courses ol{
   filter: opacity(0);
   transition: ease 1s;
   pointer-events: none;
@@ -161,6 +161,6 @@ input, select {
 }
 
   main {
-    /* margin: 0rem auto; */
+    padding-top: 2rem;
   }
 }
