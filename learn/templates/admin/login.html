@@ -1,0 +1,16 @@
+{% extends "home/base.html" %}
+{% load static %}
+
+{% block css_import %}<link rel="stylesheet" href="{% static 'admin/css/login.css' %}">{% endblock %}
+
+{% block main %}
+    <div class="card">
+      <form class="form" method="post">
+        {% csrf_token %}
+        <h3 class="title">Bem-vindo administrador</h3>
+        <input placeholder="Usuário" type="text" name="username" class="username" value="">
+        <input placeholder="Senha" type="password" name="password" class="passwd" value="">
+        <button class="btn" type="submit" name="button">Logar</button>
+      </form>
+    </div>
+{% endblock %}

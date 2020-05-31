@@ -73,7 +73,7 @@ def answer(request, question_id):
         form = AnswerForm(request.POST or None)
         context = {
             'questionid' : question_id,
-            'qt' : Question.objects.filter(id__icontains=question_id).first().id
+            'qt' : Question.objects.filter(id__icontains=question_id).first()
         }
         if form.is_valid():
             form.save()

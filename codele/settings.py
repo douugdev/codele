@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-import dj_database_url
 import dotenv
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)a
@@ -25,12 +24,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'ph#=3r*d6g$sxk&3w*wx1k(v#1mbjudfezbe&t#9*pgqce%4)j'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-dotenv_file = os.path.join(BASE_DIR, ".env")
-DEBUG = True
-if os.path.isfile(dotenv_file):
-    dotenv.load_dotenv(dotenv_file)
 
-ALLOWED_HOSTS = ['localhost', 'codele.herokuapp.com', '189.102.183.88', '192.168.0.120', 'codele1.ddns.net']
+DEBUG = True
+
+dotenv_file = os.path.join(BASE_DIR, ".env")
+dotenv.load_dotenv(dotenv_file)
+
+ALLOWED_HOSTS = ['localhost', 'codele.herokuapp.com', '189.102.183.88', '192.168.0.120', 'codele1.ddns.net', 'codele.digital']
 
 
 # Application definition
@@ -60,6 +60,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+X_FRAME_OPTIONS = 'DENY'
+
 ROOT_URLCONF = 'codele.urls'
 
 TEMPLATES = [
@@ -88,8 +90,16 @@ LOGIN_REDIRECT_URL = 'codele-home'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 
-DATABASES = {}
-DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'codeledb',
+        'USER': 'postgres',
+        'PASSWORD': str(os.getenv('DATABASE_PASSWORD')),
+        'HOST': 'localhost',
+        'PORT': '5432'
+    }
+}
 
 
 # Password validation

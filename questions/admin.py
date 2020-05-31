@@ -1,5 +1,5 @@
-from django.contrib import admin
+from codele.admin import admin_site
 from .models import Question, Answer
 # Register your models here.
-admin.site.register(Question)
-admin.site.register(Answer)
+admin_site.register(Question)
+admin_site.register(Answer)

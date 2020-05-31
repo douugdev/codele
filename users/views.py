@@ -3,21 +3,40 @@ from .forms import RegisterForm, ChangePicForm
 from .models import Profile
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
-
+from django.core.exceptions import ValidationError
+import requests
 
 def register(request):
     if not request.user.is_authenticated:
         form = RegisterForm(request.POST or None)
+        context = {
+        'form':form
+        }
+
         if form.is_valid():
+            try:
+                validate_recaptcha()
+                form.save()
+                return redirect('codele-registration-success')
+            except:
+                context['captcha'] = 'invalid'
 
-            form.save()
-
-            return redirect('codele-registration-success')
-
-        return render(request, 'users/register.html', {'form':form})
+        return render(request, 'users/register.html', context)
     else:
         return redirect('codele-profile-w')
 
+def validate_recaptcha():
+    recaptcha_response = request.POST.get('g-recaptcha-response')
+    data = {
+        'secret': '6LeCyPUUAAAAAJl7UvFkgwqejapS4DtXrbcS2q7z',
+        'response': recaptcha_response
+    }
+    r = requests.post('https://www.google.com/recaptcha/api/siteverify', data=data)
+    result = r.json()
+    if result['sucess']:
+        return True
+    else:
+        return False
 
 def account_created(request):
         return render(request, 'users/success.html')

@@ -1,3 +1,3 @@
-from django.contrib import admin
+from codele.admin import admin_site
 
 # Register your models here.

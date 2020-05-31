@@ -3,7 +3,7 @@
   font-family: 'Roboto', sans-serif;
   --text-primary: #b6b6b6;
   --text-secondary: #ececec;
-  --bg-primary: #4ac448;
+  --bg-primary: #299d49;
   --bg-secondary: #0b131a;
   --bg-green: #54b13e;
   --background-gradient: linear-gradient(110deg, #83bb77, #1f9a41);
@@ -13,6 +13,8 @@
   font-family: GothamBook;
   src: url('/static/home/font/Gotham-Book.otf');
 }
+
+
 
 a {
   color: var(--text-secondary);
@@ -49,7 +51,6 @@ main {
   justify-items: center;
   justify-content: center;
   margin-left: 5rem;
-  height: 100vh;
   padding: 0 4rem;
 }
 
@@ -143,28 +144,67 @@ main {
 
  .card-language .icon-language {
   font-size: 5rem;
-  filter: grayscale(100%) opacity(0.7) brightness(10%) blur(0.1px);
   transition: 400ms;
   z-index: -1;
  }
 
-.card-language:hover {
-  /* background: var(--bg-secondary); */
-  box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
-  transform: translateY(-3px) scale(1.1);
-}
-
-.card-language:hover .icon-language {
-  filter: grayscale(0%) opacity(1) brightness(100%);
-}
-
 /* For pc */
-@media only screen and (min-width: 601px){
+@media only screen and (min-width: 769px){
+  main::after {
+    content: "";
+    background: url("/static/users/img/background.jpg");
+    filter: blur(10px);
+    padding: 0;
+    opacity: 0.05;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    background-size: cover;
+    z-index: -1;
+  }
+
+  main {
+    height: 100vh;
+  }
+
+  .card-language:hover {
+    background: var(--bg-secondary);
+    box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
+    transform: translateY(-3px) scale(1.1);
+  }
+
+  .icon-language {
+    filter: grayscale(100%) opacity(0.7) brightness(10%) blur(0.1px);
+  }
+
+  .card-language:hover .icon-language {
+    filter: grayscale(0%) opacity(1) brightness(100%);
+  }
 
 }
 
 /* For mobile */
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 768px){
+
+  main {
+    background-color: var(--bg-primary);
+    height: 100%;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+  }
+
+  .card-language {
+    background: var(--bg-secondary);
+  }
+
+  .btn {
+    background: var(--bg-secondary);
+  }
+
   main {
     margin: 0;
     margin-top: 2rem;

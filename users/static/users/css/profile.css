@@ -3,7 +3,7 @@
   font-family: 'Roboto', sans-serif;
   --text-primary: #b6b6b6;
   --text-secondary: #ececec;
-  --bg-primary: #4ac448;
+  --bg-primary: #299d49;
   --bg-secondary: #0b131a;
   --bg-thirdoption: #01161b;
   --background-gradient: linear-gradient(110deg, #83bb77, #1f9a41);
@@ -35,8 +35,6 @@ main {
 
 .profile-pic {
   margin: auto;
-  border-radius: 50%;
-  border: none;
   height: 10rem;
   width: 10rem;
   transition: 200ms ease;
@@ -83,7 +81,7 @@ main {
   display: none;
 }
 
-.fundador {
+.badge {
   height: auto;
   width: 100%;
   margin: auto;
@@ -99,7 +97,7 @@ main {
   text-decoration: none;
 }
 
-.fundador a {
+.badge a {
   text-decoration: none;
   color: #38cdd5;
   font-weight: bold;
@@ -110,7 +108,6 @@ main {
   flex-direction: column;
   font-family: GothamBook, sans-serif;
   font-size: 1.5rem;
-  margin: 1rem;
 }
 
 .btn {
@@ -175,7 +172,9 @@ input, select {
   }
 
   .profile-pic {
-    padding-bottom: 2rem;
+    border-radius: 50%;
+    border: none;
+    margin-bottom: 2rem;
   }
 
   main {
@@ -213,6 +212,12 @@ input, select {
   }
 
   .profile-pic {
+    border-radius: 50%;
+    border: none;
+  }
+
+  .profile {
+    margin: 1rem;
   }
 
   .card{

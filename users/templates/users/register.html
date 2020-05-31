@@ -9,13 +9,16 @@
         {% csrf_token %}
 
         <h3 class="title">Bem-vindo ao Codele!</h3>
-        {% if form.errors %}
+        {% if form.errors or captcha == 'invalid' %}
         <div class="title error-card">
           {% for field in form %}
           {% for error in field.errors %}
             <span class="title form-errors">{{ error }}</span>
           {% endfor %}
           {% endfor %}
+          {% if captcha == 'invalid' %}
+          <span class="title form-errors">Invalid Captcha</span>
+          {% endif %}
         </div>
         {% endif %}
         <input placeholder="Nome (ex: Jane)" type="text" name="first_name" class="first-name" required value="">

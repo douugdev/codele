@@ -14,15 +14,17 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib.auth import views as auth_views
-from django.contrib import admin
+from .admin import admin_site
 from django.urls import path, include
 from users import views as user_views
 from django.conf.urls.static import static
 from django.conf import settings
 from django.contrib.auth.models import User
+from . import robots
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin_site.urls),
+    path('robots.txt', robots.robots_txt),
     path('perfil/', user_views.profile_w, name='codele-profile-w'),
     path('perfil/<user_name>/', user_views.profile, name='codele-profile'),
     path('registro/', user_views.register, name='codele-register'),

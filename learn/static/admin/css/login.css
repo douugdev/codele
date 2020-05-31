@@ -25,11 +25,10 @@ main {
 .card {
   color: var(--text-secondary);
   height: auto;
-  margin: auto;
   border-radius: 2rem;
   align-items: center;
   text-align: center;
-
+  background-color: none;
 }
 
 a {
@@ -43,52 +42,74 @@ a {
   display: grid;
   grid-gap: 1rem;
   grid-template-areas:
-    "welcome"
-    "title"
-    "question"
-    "language"
-    "language-dd"
-    "btn";
+    "welcome welcome"
+    "username username"
+    "passwd passwd"
+    "btn btn";
 }
 
-.welcome {
-  font-size: 1.5rem;
-  font-weight: 500;
+.title {
   grid-area: welcome;
   font-family: GothamBook, sans-serif;
   align-items: center;
   text-align: center;
 }
 
-.title {
-  grid-area: title;
-  font-family: GothamBook, sans-serif;
+.form-errors {
+
+}
+
+.recaptcha {
+  align-self: center;
   align-items: center;
-  text-align: left;
+  justify-content: center;
+  text-align: center;
+  grid-area: captcha;
 }
 
-.question {
-  grid-area: question;
-  font-family: GothamBook;
-  width: 100%;
-  padding: 12px 20px;
+.g-recaptcha {
   display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 1rem;
-  box-sizing: border-box;
 }
 
-.language {
-  grid-area: language;
+.error-card {
+  background-color: #e74d4d;
+  height: auto;
+  width: 100%;
+  margin: auto;
+  display: static;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0rem 0.5rem 0rem; /* top right bottom left  */
 }
 
-.language-dd {
-  grid-area: language-dd;
+.first-name {
+  grid-area: first-name;
+}
+
+.last-name {
+  grid-area: last-name;
+}
+
+.username {
+  grid-area: username;
+}
+
+.email {
+  grid-area: email;
+}
+
+.passwd {
+  grid-area: passwd;
+}
+
+.terms {
+  grid-area: terms;
+  padding: 1rem;
 }
 
 .btn {
   grid-area: btn;
   font-family: GothamBook, sans-serif;
+  background-color: var(--bg-thirdoption);
   border-radius: 2rem;
   border: none;
   color: white;
@@ -107,21 +128,6 @@ input, select {
   border: 1px solid #ccc;
   border-radius: 1rem;
   box-sizing: border-box;
-  -webkit-appearance: none;
-  appearance: none;
-
-}
-
-select {
-  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
-  background-repeat: no-repeat;
-  background-position-x: 100%;
-  background-position-y: 0.5rem;
-}
-
-.already-have {
-  display: flex;
-  flex-direction: column;
 }
 
 .log-in {
@@ -130,17 +136,12 @@ select {
 
 /* for mobile */
 @media only screen and (max-width: 768px){
-  .already-have {
-    margin-top: 1rem;
-  }
-
   .log-in {
     font-size: 1rem;
     margin-top: 1rem;
   }
 
   main {
-    height: 90vh;
     background-color: var(--bg-primary);
   }
 
@@ -149,14 +150,8 @@ select {
   }
 
   .card {
-    margin: 0;
-    padding: 2rem;
+    padding: 1rem;
     margin-top:0.2rem;
-    background-color: var(--bg-secondary);
-  }
-
-  .btn {
-    background-color: var(--bg-primary);
   }
 
   .form {
@@ -183,14 +178,9 @@ select {
 
   .card {
     width: 24rem;
-    padding: 1.5rem 2.3rem 2rem 2.3rem;
     background-image: var(--background-gradient);
+    padding: 1rem 2.3rem 2rem 2.3rem;
   }
-
-  .btn {
-    background-color: var(--bg-secondary);
-  }
-
   main{
     height: 90vh;
     width: 90vw;

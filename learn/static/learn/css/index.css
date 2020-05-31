@@ -3,7 +3,7 @@
   font-family: 'Roboto', sans-serif;
   --text-primary: #b6b6b6;
   --text-secondary: #ececec;
-  --bg-primary: #4ac448;
+  --bg-primary: #299d49;
   --bg-secondary: #0b131a;
   --bg-thirdoption: #01161b;
   --background-gradient: linear-gradient(110deg, #83bb77, #1f9a41);
@@ -28,7 +28,7 @@ body::-webkit-scrollbar-thumb{
 }
 
 main {
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   align-content: center;
   justify-content: flex-start;
@@ -61,12 +61,10 @@ input, select {
   color: var(--text-secondary);
   height: auto;
   margin-top: 1rem;
-  width: 50vw;
   padding: 1rem 1.5rem;
   border-radius: 0.75rem;
   align-items: center;
   text-align: left;
-  background-image: linear-gradient(220deg, #83bb77, #2f9f4e);
   z-index: 1;
 }
 
@@ -129,11 +127,17 @@ input, select {
 /* for mobile */
 @media only screen and (max-width: 768px){
   main {
+    width: 99vw;
     background-color: var(--bg-primary);
   }
 
   body {
     background-color: var(--bg-primary);
+  }
+
+  .card {
+    width: 55vw;
+    background: var(--bg-secondary);
   }
 }
 
@@ -161,6 +165,14 @@ input, select {
 }
 
   main {
-    padding-top: 2rem;
+    width: 93vw;
+    margin-left: 5rem;
+    margin-top: 2rem;
   }
+
+  .card {
+    width: 51vw;
+    background-image: linear-gradient(220deg, #83bb77, #2f9f4e);
+  }
+
 }

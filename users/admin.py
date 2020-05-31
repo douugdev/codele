@@ -1,5 +1,5 @@
-from django.contrib import admin
+from codele.admin import admin_site
 from .models import Profile
 
 # Register your models here.
-admin.site.register(Profile)
+admin_site.register(Profile)

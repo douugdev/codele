@@ -1,4 +1,4 @@
-from django.contrib import admin
+from codele.admin import admin_site
 from .models import Post
 # Register your models here.
-admin.site.register(Post)
+admin_site.register(Post)

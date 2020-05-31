@@ -1,11 +1,17 @@
 {% extends "home/base.html" %}
 {% load static %}
 
-{% block css_import %}<link rel="stylesheet" href="{% static 'home/css/index.css' %}">{% endblock %}
+{% block css_import %}
+<link rel="stylesheet" href="{% static 'home/css/index.css' %}">
+<script type="text/javascript">
+  document.domain = "codele.digital";
+</script>
+{% endblock %}
 
 {% block main %}
     <div class="header">
-      <img class="logo-img" src="{% static 'home/svg/logo.svg' %}"/>
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+      <object class="logo-img" data="{% static 'home/svg/logo.svg' %}"></object>
     </div>
     <div class="content">
       <h1 class="title-h1">Aprenda a programar com o suporte de professores.</h1>

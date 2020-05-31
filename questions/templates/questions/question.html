@@ -8,7 +8,7 @@
     <div class="card">
       <a style="text-decoration: none; cursor: pointer;" href="{% url 'codele-profile' author.username %}" class="author">
         <img class="author-pic" src='{{ authorpic }}'>
-        <h3 class="author">{{ author.username }}</h3>
+        <h3 class="author-username">{{ author.username }}</h3>
         <span class="btn">{{ author.profile.badge }}</span>
       </a>
       <div class="content">
@@ -17,7 +17,7 @@
       </div>
     </div>
     {% if user.is_authenticated %}
-    <div class="responder">
+    <div class="card">
       <a class="btn" href="{% url 'codele-create-answer' id %}">Responder</a>
     </div>
     {% endif %}
@@ -29,7 +29,7 @@
     <div style="margin-top: 1rem;" class="card">
       <a style="text-decoration: none; cursor: pointer;" href="{% url 'codele-profile' answer.author %}" class="author">
         <img class="author-pic" src='{{ answer.author|profile_pic }}'>
-        <h3 class="author">{{ answer.author|author }}</h3>
+        <h3 class="author-username">{{ answer.author|author }}</h3>
         <span class="btn">{{ answer.author|badge }}</span>
       </a>
       <div class="content">

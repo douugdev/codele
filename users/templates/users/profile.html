@@ -34,7 +34,7 @@
           <img class="profile-pic not-changeable" onerror="this.onerror=null;this.src='{% static 'users/img/default.jpg' %}';" src="{{ profile_pic }}"/>
           {% endif %}
         </div>
-        <div class="fundador">
+        <div class="badge">
           <a href="{% url 'codele-about' %}">{{ badge }}</a>
         </div>
         <h2>{{ first_name }} {{ last_name }}</h2>
