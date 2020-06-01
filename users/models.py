@@ -9,7 +9,7 @@ class Profile(models.Model):
     courses_completed = models.PositiveSmallIntegerField(default=0)
     last_lesson = models.TextField(max_length=100)
     banned = models.BooleanField(default=False)
-    badge = models.CharField(max_length=10,choices=BADGES, default='STUDENT')
+    badge = models.CharField(max_length=10,choices=BADGES, default='ESTUDANTE')
 
     def __str__(self):
         return f'{self.user.username} profile'

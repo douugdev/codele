@@ -13,25 +13,24 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 import os
 import dotenv
 
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)a
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+# Load .env file
+dotenv_file = os.path.join(BASE_DIR, ".env")
+dotenv.load_dotenv(dotenv_file)
 
 ## Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'ph#=3r*d6g$sxk&3w*wx1k(v#1mbjudfezbe&t#9*pgqce%4)j'
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-
 DEBUG = True
 
-dotenv_file = os.path.join(BASE_DIR, ".env")
-dotenv.load_dotenv(dotenv_file)
-
-ALLOWED_HOSTS = ['localhost', 'codele.herokuapp.com', '189.102.183.88', '192.168.0.120', 'codele1.ddns.net', 'codele.digital']
-
+ALLOWED_HOSTS = ['localhost', os.getenv('MY_IP'), '192.168.0.120', 'codele.digital']
 
 # Application definition
 
@@ -89,7 +88,6 @@ LOGIN_REDIRECT_URL = 'codele-home'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -100,7 +98,6 @@ DATABASES = {
         'PORT': '5432'
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -120,7 +117,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
@@ -133,9 +129,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
-#dotenv
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/

@@ -4,7 +4,10 @@ from .models import Profile
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.core.exceptions import ValidationError
+from codele.settings import dotenv_file
 import requests
+import os
+import dotenv
 
 def register(request):
     if not request.user.is_authenticated:
@@ -26,9 +29,10 @@ def register(request):
         return redirect('codele-profile-w')
 
 def validate_recaptcha():
+    dotenv.load_dotenv(dotenv_file)
     recaptcha_response = request.POST.get('g-recaptcha-response')
     data = {
-        'secret': '6LeCyPUUAAAAAJl7UvFkgwqejapS4DtXrbcS2q7z',
+        'secret': os.getenv('CAPTCHA_SECRET'),
         'response': recaptcha_response
     }
     r = requests.post('https://www.google.com/recaptcha/api/siteverify', data=data)

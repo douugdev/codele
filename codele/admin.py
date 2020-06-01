@@ -1,4 +1,5 @@
 from django.contrib.admin import AdminSite
+from django.contrib.auth.models import User
 
 class CustomAdmin(AdminSite):
     site_header = 'Codele Admin'
@@ -8,3 +9,5 @@ class CustomAdmin(AdminSite):
 
 
 admin_site = CustomAdmin(name='myadmin')
+
+admin_site.register(User)
