@@ -6,5 +6,5 @@ from django.contrib.auth import logout
 def home(request):
     return render(request, 'home/index.html')
 
-def contact(request):
-    return render(request, 'home/contact.html')
+def view_help(request):
+    return render(request, 'home/help.html')

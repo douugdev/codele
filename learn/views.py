@@ -38,6 +38,6 @@ def lesson(request, language, lesson_id):
     if (language in languages) and (regex.match(lesson_id)):
         user.last_lesson = f'{language},{lesson_id}'
         user.save()
-        return render(request, f'learn/{str(language)}/lessons/{str(lesson_id)}.html', context)
+        return render(request, f'learn/{str(language)}/lessons/{str(lesson_id)}.html')
     else:
         return redirect('codele-welcome')
