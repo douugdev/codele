@@ -94,7 +94,7 @@ DATABASES = {
         'NAME': 'codeledb',
         'USER': 'postgres',
         'PASSWORD': str(os.getenv('DATABASE_PASSWORD')),
-        'HOST': 'localhost',
+        'HOST': str(os.getenv('DATABASE_IP')),
         'PORT': '5432'
     }
 }
