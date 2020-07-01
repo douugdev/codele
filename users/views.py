@@ -17,18 +17,17 @@ def register(request):
         }
 
         if form.is_valid():
-            try:
-                validate_recaptcha()
+            if validate_recaptcha(request):
                 form.save()
                 return redirect('codele-registration-success')
-            except:
+            else:
                 context['captcha'] = 'invalid'
 
         return render(request, 'users/register.html', context)
     else:
         return redirect('codele-profile-w')
 
-def validate_recaptcha():
+def validate_recaptcha(request):
     dotenv.load_dotenv(dotenv_file)
     recaptcha_response = request.POST.get('g-recaptcha-response')
     data = {
@@ -37,7 +36,8 @@ def validate_recaptcha():
     }
     r = requests.post('https://www.google.com/recaptcha/api/siteverify', data=data)
     result = r.json()
-    if result['sucess']:
+    print(result)
+    if result['success']:
         return True
     else:
         return False
