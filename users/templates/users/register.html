@@ -17,14 +17,14 @@
           {% endfor %}
           {% endfor %}
           {% if captcha == 'invalid' %}
-          <span class="title form-errors">Invalid Captcha</span>
+          <span class="title form-errors">Captcha Inválido</span>
           {% endif %}
         </div>
         {% endif %}
-        <input placeholder="Nome (ex: Jane)" type="text" name="first_name" class="first-name" required value="">
-        <input placeholder="Sobrenome (ex: Doe)" type="text" name="last_name" class="last-name" required value="">
-        <input placeholder="Usuário (ex: jane.doe)" type="text" name="username" class="username" required value="">
-        <input placeholder="E-mail (ex: janedoe@email.com)" type="email" name="email" class="email" required value="">
+        <input placeholder="Nome" type="text" name="first_name" class="first-name" required value="">
+        <input placeholder="Sobrenome" type="text" name="last_name" class="last-name" required value="">
+        <input placeholder="Usuário (Use apenas letras, números e/ou _-.)" type="text" name="username" class="username" required value="">
+        <input placeholder="E-mail" type="email" name="email" class="email" required value="">
         <input placeholder="Senha (min: 8 caracteres)" type="password" name="password" class="passwd" required value="">
         <div class="recaptcha">
           <div class="g-recaptcha" data-sitekey="6LeCyPUUAAAAAHlB78tpcCn_m8El9gO1wBjdWYTj"></div>

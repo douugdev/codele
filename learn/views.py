@@ -10,19 +10,16 @@ def welcome(request):
     #This conditional just checks if it's the user's first access
     if user.profile.last_lesson != 'None':
         last_lesson_language, last_lesson_id = user.profile.last_lesson.split(',')
-        context = {
-            "last_lesson_id": last_lesson_id,
-            "last_lesson_language": last_lesson_language,
-            "last_lesson": user.profile.last_lesson,
-            "first_name": user.first_name.capitalize()
-        }
     else:
-        context = {
-            "last_lesson_id": 'None',
-            "last_lesson_language": 'None',
-            "last_lesson": user.profile.last_lesson,
-            "first_name": user.first_name.capitalize()
-        }
+        last_lesson_language, last_lesson_id = 'None', 'None'
+
+    context = {
+        "last_lesson_id": last_lesson_id,
+        "last_lesson_language": last_lesson_language,
+        "last_lesson": user.profile.last_lesson,
+        "first_name": user.first_name.capitalize()
+    }
+    
     return render(request, 'learn/welcome.html', context)
 
 @login_required

@@ -3,15 +3,18 @@ from .forms import RegisterForm, ChangePicForm
 from .models import Profile
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.http import require_GET
 from django.core.exceptions import ValidationError
 from codele.settings import dotenv_file
 import requests
 import os
 import dotenv
 
+@require_GET
 def register(request):
     if not request.user.is_authenticated:
         form = RegisterForm(request.POST or None)
+
         context = {
         'form':form
         }
@@ -36,7 +39,6 @@ def validate_recaptcha(request):
     }
     r = requests.post('https://www.google.com/recaptcha/api/siteverify', data=data)
     result = r.json()
-    print(result)
     if result['success']:
         return True
     else:
@@ -53,7 +55,6 @@ def profile(request, user_name):
         if form.is_valid():
             profile = form.save(commit=False)
             profile.user = user
-            print(request.FILES)
             if 'picture' in request.FILES:
                 profile.image = request.FILES['picture']
 
@@ -74,5 +75,5 @@ def profile(request, user_name):
     return render(request, 'users/profile.html', context)
 
 @login_required
-def profile_w(request):
+def my_profile(request):
         return profile(request, request.user.username)

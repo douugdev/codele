@@ -4,8 +4,10 @@ from .forms import QuestionForm, AnswerForm
 from django.contrib.auth.models import User
 
 def questions(request):
+
     #Search query yay
     query = request.GET.get("query")
+
     if query:
         #Checks if query exists then search for it in the questions
         #stored in the database, looking for matching titles.
@@ -18,7 +20,7 @@ def questions(request):
             #user made an input of a language (e.g: JS or PY) instead of a
             #question title, then display all questions related to that
             #specific language.
-            elif query.capitalize() in list(map(lambda x: str(x).capitalize(),item)):
+            elif query.capitalize() in list(map(lambda x: str(x).capitalize(), item)):
                 queryset_list = Question.objects.filter(language__icontains=item[0])
     else:
         queryset_list = Question.objects.all()
@@ -78,8 +80,6 @@ def answer(request, question_id):
         if form.is_valid():
             form.save()
             return redirect('codele-question', question_id)
-        else:
-            print(form.errors)
         return render(request, 'questions/answer.html', context)
     else:
         return redirect('codele-home')

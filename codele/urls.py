@@ -25,7 +25,7 @@ from . import robots
 urlpatterns = [
     path('admin/', admin_site.urls),
     path('robots.txt', robots.robots_txt),
-    path('perfil/', user_views.profile_w, name='codele-profile-w'),
+    path('perfil/', user_views.my_profile, name='codele-profile-w'),
     path('perfil/<user_name>/', user_views.profile, name='codele-profile'),
     path('registro/', user_views.register, name='codele-register'),
     path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='codele-login'),
