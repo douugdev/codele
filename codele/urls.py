@@ -35,6 +35,7 @@ urlpatterns = [
     path('', include('users.urls')),
     path('', include('blog.urls')),
     path('', include('learn.urls')),
+    path('', include('api.urls'))
 ]
 
 if settings.DEBUG:
