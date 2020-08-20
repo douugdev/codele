@@ -2,10 +2,50 @@
 {% load static %}
 
 {% block css_import %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="{% static 'learn/css/gml/lessons/1.css' %}">
 {% endblock %}
 
 {% block main %}
 
-<a href="{% url 'codele-lesson' 'gml' 2 %}">PROXIMO</a>
+<content>
+
+	<div class="header">
+		<h1>Lógica De Programação</h1>
+	</div>
+
+	<div class="intro">
+
+		<h1>Introdução</h1>
+
+		<p>Uma das primeiras coisas que alguém que é interessado na área de programação e desenvolvimento deveria aprender, sem dúvidas, é a lógica de programação… Para começar a escrever seus primeiros códigos e criar seus primeiros programas funcionais, você precisa primeiro de tudo, aprender o que é um algoritmo, como é sua estrutura, como ele funciona, e qual é a lógica… Dessa forma, poder aplicar essa lógica na linguagem que você escolher, de uma maneira que faça sentido para que seja possível “rodar”(isso fará mais sentido em breve).</p>
+
+	</div>
+
+	<div class="main_content">
+
+		<h1>Algoritmos</h1>
+
+		<p>Para começar, iniciamos pelo básico, entendendo o que é um algoritmo. 
+		Um algoritmo nada mais é do que um conjunto de “passos” e “atitudes” que são organizados como uma espécie “manual” para fazer algo… 
+		Vamos dar um exemplo: Você quer ir até o mercado e comprar uma lata de refrigerante… Para fazer isso, mesmo sem perceber, você segue um algoritmo, porque por mais que seja algo simples, você precisa SABER como fazer isso para que você consiga comprar o refrigerante, se você não seguir o algoritmo, você não vai conseguir comprar… “Como assim?”… Veja bem, não tem como você comprar um refrigerante sentado no sofá jogando video game, para isso, você precisa levantar, sair de casa, atravessar a rua, entrar no mercado, pegar o refrigerante, ir até o caixa, pagar, e só depois de tudo isso você terá seu refrigerante e poderá beber, se não seguir TODOS esses passos, você não conseguirá comprar seu refrigerante, então basicamente, todos esses passos que você tem que fazer, formam um algoritmo, veja:</p>
+
+		<p class="alg">Levantar > sair de casa > atravessar a rua > entrar no mercado > pegar o refrigerante > ir até o caixa > pagar > sair do mercado > fim -></p>
+
+		<p>Aqui seu algoritmo para comprar o refrigerante se encerra, e você inicia o algoritmo para voltar para casa -> tendo saído do mercado:</p>
+
+		<p class="alg">Atravessar a rua > ir até a sua casa > entrar na sua casa > fim</p>
+
+		<p>Se você reparar, TUDO que você faz no seu dia a dia, necessita de um algoritmo, tudo que você faz, tudo que seus amigos fazem, tudo que seu computador faz, tudo que seu video-game faz... definitivamente, tudo se move, tudo funciona seguindo um algoritmo... então, podemos concluir que, um algoritmo é um conjunto de passos necessários para se realizar determinada ação.
+		Mas agora preste atenção, o algoritmo somente, não torna a ação possível… Não é por ter em mente um conjunto de ações necessárias para ir até o mercado, que você de fato conseguirá fazer isso… Para que seja possível você realizar a ação, é necessária, a lógica.</p>
+
+
+	</div>
+
+	<div class="btn-next">
+		<li><a class="a-btn" href="{% url 'codele-lesson' 'gml' 2 %}">Próximo</a></li>
+	</div>
+
+</content>
+
 {% endblock %}
