@@ -1,0 +1,93 @@
+{% extends 'learn/gml/lessons/0.html' %}
+{% load static %}
+
+{% block css_import %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{% static 'learn/css/gml/lessons/1.css' %}">
+{% endblock %}
+
+{% block main %}
+
+<content>
+
+	<div class="header">
+		<h1>Lógica De Programação</h1>
+	</div>
+
+	<div class="main_content">
+
+		<h1>Keywords</h1>
+
+		<p>Vamos agora falar sobre keywords (palavras-chave). Uma coisa que muitas pessoas podem ficar receosas ao emprender programação, é em relação ao idioma, afinal as linguagens são escritas em inglês, e as pessoas que não sabem muito o idioma sentem medo de acabar não conseguindo entender, mas calma… o inglês é sim algo muito bom em todas a ocasiões, então é bom ter um conhecimento básico, mas preste atenção, não precisa saber inglês para programar, você só precisa entender algumas keywords, que podem ser o nome de uma estrutura condicional por exemplo, você já pode saber o que algumas palvras significam pra já ter um ideia de como ela funciona. Vou mostrar alguns exemplos:</p>
+
+		<ul class="alg">
+			<li>If = Se</li> 
+			<li>Else = Se não</li>
+			<li>For = para</li>
+			<li>While = enquanto</li> 
+			<li>Int (integer) = número inteiro</li> 
+			<li>Char (Character) = Caractere</li>
+			<li>Class = Classe</li>
+			<li>Double = Dobro</li>
+			<li>Long = Longo</li>
+			<li>Print = Imprimir</li>
+			<li>Catch = Pegar</li>
+			<li>Break = Quebrar</li>
+			<li>Return = Retorna</li>
+			<li>goto = ir a/para</li>
+			<li>When = Quando</li>
+			<li>Do = Faça</li>
+			<li>Or = ou</li>
+			<li>And = E</li>
+			<li>As = Como</li>
+			<li>Try = Tente</li>
+			<li>Except = Exceto</li>
+			<li>Finally = Finalmente</li>
+			<li>Import = Importar</li>
+			<li>Include = Incluir</li>
+			<li>Export = Exportar</li>
+			<li>Var/Variable = variável</li>
+			<li>With = Com</li>
+			<li>List = Lista</li>
+			<li>From = de</li>
+			<li>Is = é</li>
+			<li>True = Verdadeiro</li>
+			<li>False = Falso</li>
+		</ul>
+
+		<p>Enfim, essas são algumas das keywords de linguagens variadas, que na verdade, grande parte, não é somente de uma determinada linguagem específica, mas pode ser usada em várias, mas estamos colocando essa lista para você saber o que essas palavras significam, podem ser tipos de variáveis, funções, loops, etc.</p>
+
+
+	</div>
+
+	<div class="btns">
+
+		<div class="btn-back">
+			<li><a class="a-btn" href="{% url 'codele-lesson' 'gml' 7 %}">Anterior</a></li>
+		</div>
+
+		<div class="btn-next">
+			<li><a class="a-btn" href="{% url 'codele-lesson' 'gml' 9 %}">Próximo</a></li>
+		</div>
+
+	</div>
+
+	<h1>Lições</h1>
+
+	<div class="nav-lessons">
+		<a href="{% url 'codele-learn' 'gml' %}" class="home">Início</a>
+		<a href="{% url 'codele-lesson' 'gml' 1 %}">1</a>
+		<a href="{% url 'codele-lesson' 'gml' 2 %}">2</a>
+		<a href="{% url 'codele-lesson' 'gml' 3 %}">3</a>
+		<a href="{% url 'codele-lesson' 'gml' 4 %}">4</a>
+		<a href="{% url 'codele-lesson' 'gml' 5 %}">5</a>
+		<a href="{% url 'codele-lesson' 'gml' 6 %}">6</a>
+		<a href="{% url 'codele-lesson' 'gml' 7 %}">7</a>
+		<a href="{% url 'codele-lesson' 'gml' 8 %}">8</a>
+		<a href="{% url 'codele-lesson' 'gml' 9 %}">9</a>
+	</div>
+
+</content>
+
+{% endblock %}
+

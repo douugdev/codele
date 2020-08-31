@@ -1,0 +1,95 @@
+{% extends 'learn/gml/lessons/0.html' %}
+{% load static %}
+
+{% block css_import %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{% static 'learn/css/gml/lessons/1.css' %}">
+{% endblock %}
+
+{% block main %}
+
+<content>
+
+	<div class="header">
+		<h1>Lógica De Programação</h1>
+	</div>
+
+	<div class="main_content">
+
+		<h1>Sintaxe</h1>
+
+		<p>A sintaxe da programação é a maneira correta de escrever o código, e cada linguagem tem sua própria sintaxe, umas tem a sintaxe parecida com outras, geralmente por justamente se inspirar uma na outra.
+		Tem uma infinidade de linguagens de programação, desde as mais famosas, até aquelas que ninguém ouviu falar. Irei usar duas linguagens diferentes como exemplo para explicar sintaxe, vou usar a linguagem c++ e o python, duas lingugens bem famosas, vou mostrar dois códigos simples e seus outputs.
+		Vou começar usando um exemplo de um código em c++:</p>
+
+		<ul class="alg">
+			<li>#include <iostream></li>
+			<li>Int main() {</li>
+			<li>std::cout << “Hello World!”;</li>
+			<li>return 0;</li>
+			<li>}</li>
+		</ul>
+
+		<br><br>
+
+		<ul class="alg-terminal">
+			<li>- Hello World!</li>
+		</ul>
+
+		<p>Essa é uma parte bem simples de um código c++ onde ele simplesmente escreve “Hello World!” (“Olá Mundo!”) na tela. Não se preocupe se você não entender o funcionamento desse código, se você nunca teve contato com programação ou com a linguagem, é normal você não entender alguns trechos de códigos por mais simples que sejam, mas no momento você não precisa entender o funcionamento do código, é apenas um exemplo de sintaxe. Mas voltando pro assunto principal, vamos reparar neste trecho. No c++ é usado um “;” para indicar que a linha chegou ao fim, e as chaves “{}” são usadas para delimitar um bloco de comandos que devem ser executados, no caso temos a função “int main()”, e dentro desta função está o código principal para escrever “hello world!” na tela, repare que cada linha que não seja a função em si, termina sempre com “;”, isso para seu código entender que a linha acaba ali, então o c++ possui esse delimitador de linha, se você se esquecer de colocá-las, seu programa não irá rodar e irá aparecer uma mensagem de erro, este seria um erro de sintaxe, pois todo final de linha em c++ deve terminar com um “;” (isso faz parte da sintaxe do c++). Basicamente, isso tudo é exemplo de sintaxe, o fato de ter que colocar “;” no final, usar as {} em funções, estruturas condicionais, loops, escrever as keywords corretamente (que é um assunto que veremos mais a frente), enfim, tudo isso é sintaxe, é a maneira correta de se escrever o código em determinada linguagem, para que ele funcione como esperado.</p>
+
+		<p>Vou usar agora um exemplo em python:</p>
+
+		<ul class="alg">
+			<li>num = int(input(“Digite um número: “))</li>
+			<li>If num > 0:</li>
+			<li class="indent">print(num, “é um número positivo.”)</li>
+			<li>else:</li>
+			<li class="indent">print(num, “é um número negativo.”)</li>   
+		</ul>
+
+		<br><br>
+
+		<ul class="alg-terminal">
+			<li>- Digite um número: <u>12</u><span> -> Usuário digita o número 12.</span></li>
+			<li>- 12 é um número positivo.</li>
+		</ul>
+
+		<p>Pronto, este é um programa que pede pro usuário digitar um número, e depois ele verifica se o número é negativo ou não. Neste caso, não temos “;” ao final, nem temos {}, mas temos indetação para delimitar um bloco de códigos, temos a simples função print(x) onde seu conteúdo dentro dos parênteses (x) é o conteúdo que será “printado” ou “mostrado na tela”, a sintaxe não é simplesmente a adição de pontos, aspas, chaves e etc, mas implica também em tudo que se refira ao modo de escrever, por exemplo, no exemplo acima, temos a função <u>print()</u>, se sem querer, escrevermos <u>prnt()</u>, nosso código não irá funcionar, ou então, se escrevermos <u>print(x</u>  -> (sem fechar os parêntesis), ele também não irá funcionar, isso porque escrevemos errado. Isso pode ser óbvio, mas, muitas vezes podemos cometer erros como esses e ficar procurando algum erro no código, quando na verdade, apenas escrevos algo errado, e no início, esse tipo de erro pode ser comum, por se esquecer como se escreve ou até mesmo a estrutura correta de alguma coisa em seu código</p>
+
+		<p>Resumindo, cada linguagem tem sua maneira correta de escrever seus códigos, quando você for aprender uma linguagem específica você irá entender sua sintaxe por completo, e isso não é nem um pouco complicado. Se você estiver vendo este início a respeito de lógica de programação, onde você não está aprendendo como programar de fato, está apenas começando a entender sua lógica, e achar que terá que decorar um monte de regras e nomes difíceis e ser um gênio para conseguir decifrar códigos complicados para poder aprender a programar, saiba que isso não é verdade, neste início pode parecer que de fato você tem que decorar muitas coisas e que vai ser muito complicado escrever códigos, mas quando você de fato começar a programar, você vai perceber que é muito mais simples do que imaginava, escrever códigos não é difícil, e na verdade, é até divertido, quando você começa a pegar o jeito e seus programas começam a funcionar, você sente que tem super poderes e percebe que não foi tão difícil aprender tantas funções, propriedades, e tantas outras coisas que todos pensam ser complicado, a lógica passa fazer sentido em sua cabeça, você sem perceber, começa a pensar com a lógica da programação.</p>
+
+		<p>Mas enfim, os erros de sintaxe são os mais comuns no início, se no c++ você esquecer um “;”, receberá um aviso de erro de sintaxe indicando que você escreveu algo errado… Se você estiver programando em python e você não colocar os “:” ao final da declaração da condição, também irá mostrar um erro de sintaxe, te dizendo que você escreveu algo errado.</p>
+
+	</div>
+
+	<div class="btns">
+
+		<div class="btn-back">
+			<li><a class="a-btn" href="{% url 'codele-lesson' 'gml' 6 %}">Anterior</a></li>
+		</div>
+
+		<div class="btn-next">
+			<li><a class="a-btn" href="{% url 'codele-lesson' 'gml' 8 %}">Próximo</a></li>
+		</div>
+
+	</div>
+
+	<h1>Lições</h1>
+
+	<div class="nav-lessons">
+		<a href="{% url 'codele-learn' 'gml' %}" class="home">Início</a>
+		<a href="{% url 'codele-lesson' 'gml' 1 %}">1</a>
+		<a href="{% url 'codele-lesson' 'gml' 2 %}">2</a>
+		<a href="{% url 'codele-lesson' 'gml' 3 %}">3</a>
+		<a href="{% url 'codele-lesson' 'gml' 4 %}">4</a>
+		<a href="{% url 'codele-lesson' 'gml' 5 %}">5</a>
+		<a href="{% url 'codele-lesson' 'gml' 6 %}">6</a>
+		<a href="{% url 'codele-lesson' 'gml' 7 %}">7</a>
+		<a href="{% url 'codele-lesson' 'gml' 8 %}">8</a>
+		<a href="{% url 'codele-lesson' 'gml' 9 %}">9</a>
+	</div>
+
+</content>
+
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'learn/gml/lessons/0.html' %}
+{% load static %}
+
+{% block css_import %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{% static 'learn/css/gml/lessons/1.css' %}">
+{% endblock %}
+
+{% block main %}
+
+<content>
+
+	<div class="header">
+		<h1>Lógica De Programação</h1>
+	</div>
+
+	<div class="main_content">
+
+		<h1>Final</h1>
+
+		<p>Bom, se você conseguiu compreender tudo que foi abordado nessas explicações, podemos considerar que você já sabe lógica de programação e está pronto pra começar a aprender sua primeira linguagem. Se você não entendeu direito alguma parte seja lá do que for, não esite em nos chamar para nos fazer perguntas, estaremos à disposição para tirar suas dúvidas. Dica: não se preocupe se estiver tendo dificuldade em alguma coisa, entender tudo isso que foi abordado, logo de cara, não é totalmente necessário, afinal, você irá acabar aprendendo involuntariamente e de maneira mais profunda sobre lógica, quando você começar a ter seus primeiros contatos com alguma linguagem, você irá entender como funciona, a ideia que você precisa manter em mente, é: “a programação é acessível para todos”, você não precisa de requisitos mínimos, não precisa de talento, não precisa ter facilidade com exatas, não precisa ser fluente em inglês, nem ter sempre a solução pra tudo na cabeça, você apenas precisa querer fazer isso, se você ama a área da tecnologia e de desenvolvimento, e tem vontade de trabalhar com isso, ou simplesmente quer fazer como um hobbie, ou seja lá qual for seu objetivo, vai em frente, existe uma infinidade de funções que voçê pode exercer, e coisas que voçê pode fazer, não se fruste com as primeiras dificuldades, lembre-se que até mesmo os maiores desenvolvedores que você conhece começaram do 0, então, que tal começar logo? Just Do It!</p>
+
+	</div>
+
+	<div class="btns">
+
+		<div class="btn-back">
+			<li><a class="a-btn" href="{% url 'codele-lesson' 'gml' 8 %}">Anterior</a></li>
+		</div>
+
+		<div class="btn-next">
+			<li><a class="a-btn" href="{% url 'codele-learn' 'gml' %}">Início</a></li>
+		</div>
+
+	</div>
+
+	<h1>Lições</h1>
+
+	<div class="nav-lessons">
+		<a href="{% url 'codele-learn' 'gml' %}" class="home">Início</a>
+		<a href="{% url 'codele-lesson' 'gml' 1 %}">1</a>
+		<a href="{% url 'codele-lesson' 'gml' 2 %}">2</a>
+		<a href="{% url 'codele-lesson' 'gml' 3 %}">3</a>
+		<a href="{% url 'codele-lesson' 'gml' 4 %}">4</a>
+		<a href="{% url 'codele-lesson' 'gml' 5 %}">5</a>
+		<a href="{% url 'codele-lesson' 'gml' 6 %}">6</a>
+		<a href="{% url 'codele-lesson' 'gml' 7 %}">7</a>
+		<a href="{% url 'codele-lesson' 'gml' 8 %}">8</a>
+		<a href="{% url 'codele-lesson' 'gml' 9 %}">9</a>
+	</div>
+
+</content>
+
+{% endblock %}

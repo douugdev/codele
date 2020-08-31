@@ -1,0 +1,90 @@
+{% extends "home/base.html" %}
+{% load static %}
+
+{% block css_import %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{% static 'learn/css/gml/lessons/1.css' %}">
+{% endblock %}
+
+{% block main %}
+
+<content>
+
+	<div class="header">
+		<h1>Lógica De Programação</h1>
+	</div>
+
+	<div class="main_content">
+
+		<h1>Input e Output</h1>
+
+		<p>Vamos entender os conceitos de input e output, de maneira literal, podemos entender:</p>
+
+		<ul class="alg">
+			<li>input = entrada</li>
+			<li>output = saída</li> 
+		</ul>
+
+		<p>Basicamente, input é a inserção de dados, e output é a saída dos dados… Vou usar um exemplo mais próximo do dia a dia, vamos supor que você tenha um amigo que seja desenhista, vamos chamá-lo de Gustavo. Gustavo é um artista que ama desenhar… suponhamos que Gustavo não consegue desenhar sem ouvir música, isso porque, é através da música que ele tira inspiração para suas artes, então basicamente, o dispositivo Gustavo recebe um input que é a música, e quando ele recebe esse input, ele libera o output que é o desenho, então:</p>
+
+		<ul class="alg">
+			<li>input = música/inspiração</li>
+			<li>output = desenho</li> 
+		</ul>
+
+		<p>Na programação, o input nada mais é do que receber algum dado, e o output seria liberar dados. Quando você escreve o código, você está fazendo um input, você está inserindo dados no código, e quando você roda o programa, você libera seu output, que é o que o seu programa realiza quando você coloca ele pra “rodar”. Ou então quando você faz um programa que interaja com o usuário, por exemplo, você faz um programa que pergunte ao usuário o seu nome, aí o quando o usuário digita seu nome e aperta Enter, ele está fazendo um input em seu programa, ele está inserindo o dado que é o seu nome, depois que ele faz isso, seu programa mostra uma mensagem dando boas vindas ao usuário, chamando pelo seu nome, que no caso é o output. Vamos imaginar que já fizemos esse programa, e agora colocamos ele pra rodar, você não precisa ver agora a estrutura do código, apenas repare no programa rodando:</p>
+
+		<p class="title">Código que você escreveu e salvou (Input):</p>
+
+		<ul class="alg">
+			<li>Escreva("Qual é o seu nome?: ")</li>
+			<li>Escreva("Olá {Variável "Nome"}! Como vai?")</li>
+		</ul>
+		
+		<br><br>
+
+		<p class="title">Programa rodando no terminal(Output):</p>
+
+		<ul class="alg-terminal">
+			<li>- Qual é o seu nome? : <u>Gustavo</u><span> -> Input que o usuário fez colocando seu nome.</span></li>
+			<br><br>
+			<li>Output:</li>
+			<br>
+			<li>- <u>Olá Gustavo! como vai?</u><span> -> Output que libera a mensagem de boas vindas.</span></li>
+		</ul>
+
+		<p>Este é o terminal... Aquela famosa "tela preta" onde o programa está sendo executado depois que você colocou ele para rodar</p>	
+
+	</div>
+
+		<div class="btns">
+
+			<div class="btn-back">
+				<li><a class="a-btn" href="{% url 'codele-lesson' 'gml' 3 %}">Anterior</a></li>
+			</div>
+
+			<div class="btn-next">
+				<li><a class="a-btn" href="{% url 'codele-lesson' 'gml' 5 %}">Próximo</a></li>
+			</div>
+
+		</div>
+
+	<h1>Lições</h1>
+
+	<div class="nav-lessons">
+		<a href="{% url 'codele-learn' 'gml' %}" class="home">Início</a>
+		<a href="{% url 'codele-lesson' 'gml' 1 %}">1</a>
+		<a href="{% url 'codele-lesson' 'gml' 2 %}">2</a>
+		<a href="{% url 'codele-lesson' 'gml' 3 %}">3</a>
+		<a href="{% url 'codele-lesson' 'gml' 4 %}">4</a>
+		<a href="{% url 'codele-lesson' 'gml' 5 %}">5</a>
+		<a href="{% url 'codele-lesson' 'gml' 6 %}">6</a>
+		<a href="{% url 'codele-lesson' 'gml' 7 %}">7</a>
+		<a href="{% url 'codele-lesson' 'gml' 8 %}">8</a>
+		<a href="{% url 'codele-lesson' 'gml' 9 %}">9</a>
+	</div>
+
+
+</content>
+
+{% endblock %}

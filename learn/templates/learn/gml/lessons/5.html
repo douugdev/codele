@@ -1,0 +1,102 @@
+{% extends 'learn/gml/lessons/0.html' %}
+{% load static %}
+
+{% block css_import %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{% static 'learn/css/gml/lessons/1.css' %}">
+{% endblock %}
+
+{% block main %}
+
+<content>
+
+	<div class="header">
+		<h1>Lógica De Programação</h1>
+	</div>
+
+	<div class="main_content">
+
+		<h1>Lógica e condições</h1>
+
+		<p>Vamos agora analizar mais algumas outras coisas, aprofundando um pouco mais… Podemos ainda usar o exemplo de ir no mercado:</p>
+
+		<ul class="alg">
+			<li>Levante;</li>
+			<li>Saia de casa;</li>
+			<li>Chegue na calçada;</li>
+			<li>Olhe para os dois lados da rua;</li>
+			<li>Se estiver passando carros: </li>
+			<li class="indent">Espere;</li>
+			<li>Se não: </li>
+			<li class="indent">Atravesse;</li>
+			<li>Entre no mercado;</li>
+			<li>Pegue o refrigerante;</li>
+			<li>Vá até o caixa;</li>
+			<li>Pague;</li>
+			<li>Fim;</li>
+		</ul>
+
+		<p>Podemos verificar que, neste código, temos condições, consegue identificá-las? As condições são:</p> 
+
+		<p class="title">Condição 1:</p>
+
+		<div class="alg">
+			<u>se estiver passando carros:</u> -> Condição
+		</div>
+
+		<br><br>
+
+		<div class="alg">
+			<u>Faça algo  (Espere;)</u> -> Comando que deve ser executado se a condição 1 for confirmada.
+		</div>
+
+		<br><br>
+
+		<p class="title">Condição 2:</p>
+
+		<div class="alg">
+			<u>Se não (estiver passando carros):</u> -> Condição contrária a primeira.
+		</div>
+
+		<br><br>
+
+		<div class="alg">
+			<u>Faça outra coisa (Atravesse;)</u> -> Comando que deve ser executado se a condição 2 for confimada. 
+		</div>
+
+		<p>Só será confirmada a condição 2 se a 1 não for, e então esta condição 1 será ignorada, e vice-versa. Uma condição anula a outra, então no momento que você chega nessa parte, supondo que não esteja passando carros, você não terá que tomar a primeira atitude: <u>Espere;</u>, e ela será totalmente ignorada, afinal, existe a outra condição que diz: <u>se não:</u>, neste caso você fará apenas a atitude da condição: <u>se não:</u>, e a condição: <u>se estiver passando carros</u>: com seu comando interno: <u>Espere;</u> será ignorada. Isso pode parecer ridículo e você pode pensar: “isso é óbvio”, mas eu estou dando este exemplo para te explicar que a lógica da programação é bem parecida com a lógica humana, a lógica muitas vezes é confundida com algo óbvio, e isso também se aplica na programação.</p>
+
+		<p>Veja que neste trecho do código tem a condição, e a atitude de cada condição está mais “para dentro”, você percebe? Esse “mais pra dentro” chama-se indentação, geralmente na programação usamos a indentação ou para tornar o código mais legível ou então para delimitar um bloco de código para uma determinada atitude ou condição específica para que ele funcione corretamente, isso varia de lingugem para linguagem. Repare também como por exemplo a forma para dizer que uma linha chegou ao seu fim, como você pode reparar neste código de ir ao mercado que estamos usando como exemplo, cada final de linha tem no final um “;” eu usei isso para se tornar mais legível na explicação indicando onde termina cada passo do código… Mas a respeito do uso desse tipo de ferramenta na programação ser necessária ou não, como eu já disse, varia de linguagem para linguagem, para entrar nesse assunto, vamos falar um pouco de sintaxe...</p>
+
+	</div>
+
+	<div class="btns">
+
+		<div class="btn-back">
+			<li><a class="a-btn" href="{% url 'codele-lesson' 'gml' 4 %}">Anterior</a></li>
+		</div>
+
+		<div class="btn-next">
+			<li><a class="a-btn" href="{% url 'codele-lesson' 'gml' 6 %}">Próximo</a></li>
+		</div>
+
+	</div>
+
+	<h1>Lições</h1>
+
+	<div class="nav-lessons">
+		<a href="{% url 'codele-learn' 'gml' %}" class="home">Início</a>
+		<a href="{% url 'codele-lesson' 'gml' 1 %}">1</a>
+		<a href="{% url 'codele-lesson' 'gml' 2 %}">2</a>
+		<a href="{% url 'codele-lesson' 'gml' 3 %}">3</a>
+		<a href="{% url 'codele-lesson' 'gml' 4 %}">4</a>
+		<a href="{% url 'codele-lesson' 'gml' 5 %}">5</a>
+		<a href="{% url 'codele-lesson' 'gml' 6 %}">6</a>
+		<a href="{% url 'codele-lesson' 'gml' 7 %}">7</a>
+		<a href="{% url 'codele-lesson' 'gml' 8 %}">8</a>
+		<a href="{% url 'codele-lesson' 'gml' 9 %}">9</a>
+	</div>
+
+</content>
+
+{% endblock %}

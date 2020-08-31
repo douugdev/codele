@@ -1,0 +1,73 @@
+{% extends 'learn/gml/lessons/0.html' %}
+{% load static %}
+
+{% block css_import %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{% static 'learn/css/gml/lessons/1.css' %}">
+{% endblock %}
+
+{% block main %}
+
+<content>
+
+	<div class="header">
+		<h1>Lógica De Programação</h1>
+	</div>
+
+	<div class="main_content">
+
+		<h1>Tipos Primitivos</h1>
+
+		<p>Na programação temos muitas funcionalidades e ferramentas, temos por exemplo: loops, cujo o objetivo é criar laços de repetição para que uma ação seja repetida tantas vezes quanto forem determinadas, temos bibliotecas que são como um pacote de funcionalidades e propriedades para serem usadas no nosso código, e para usá-las precisamos “trazer” a biblioteca que as possui para o nosso programa, entre outras coisas, mas tudo isso, é algo que você aprenderá mais pra frente no aprendizado de uma linguagem específica também, mas o principal objeto que eu quero falar é sobre variáveis… que são espécies de espaços da memória que podemos criar para guardar informações, é o que usamos para manipular dados, como por exemplo, criamos uma variável nome, com o objetivo de pegar um nome de alguem ou algo e armazenar essa informação para que possamos usar no programa. E o tópico é justamente sobre isso: “informações” e seus tipos… quando você vê em algum código com algum trecho com aspas é porque está se tratando de uma mensagem de texto… Mas texto não é o único tipo de dado que temos, portanto vou listar agora alguns tipos primitivos de dados:</p>
+
+		<ul class="alg">
+			<li>Texto: Se trata de uma mensagem de texto, sempre delimitado por aspas, pode ser uma palavra, uma frase, um nome, um texto, uma citação, ou até mesmo um número, contanto que ele esteja ali apenas para ser mostrado e não para fazer cálculos.<br>
+			Exemplo: “Computador”, “Lógica de programação é fácil”, “Olá mundo!”, “Agente 46”, “10”.</li>
+			<br>
+			<li>Inteiro: É um dado do tipo “inteiro”, ou seja, um número inteiro, então, qualquer número inteiro é considerado int, quando você planeja usá-lo em algum cálculo, neste caso, não se coloca aspas.<br> 
+			Exemplo: 5, 12, 16, 145, -8, 500.</li>
+			<br>
+			<li>Real: São números reais, ou seja, com casa decimal, números que tenham “.”, não necessariamente precisa ser um número quebrado.<br>
+			Exemplo: 13.0, 5.6, 0000.14, -10.0.</li>
+			<br>
+			<li>Lógico: São o que chamamos de "valores lógicos" que apenas comportam os valores: True (verdadeiro) ou False (Falso)</li>
+		</ul>
+
+		<p>Claro que podemos ter em determinadas linguagens alguns outros tipos, como por exemplo, em java, temos o tipo byte que é capaz de armazenar valores entre -128 até 127. Enfim, os tipos primitivos de dados são importantes para declarar um tipo de variável, ou um tipo de dado que será recebido através de uma interação com o usuário... De maneira geral, os tipos de dados são importantes para que você possa manipulá-los.</p>
+
+
+	</div>
+
+		<div class="btns">
+
+			<div class="btn-back">
+				<li><a class="a-btn" href="{% url 'codele-lesson' 'gml' 2 %}">Anterior</a></li>
+			</div>
+
+			<div class="btn-next">
+				<li><a class="a-btn" href="{% url 'codele-lesson' 'gml' 4 %}">Próximo</a></li>
+			</div>
+
+		</div>
+
+
+	<h1>Lições</h1>
+
+	<div class="nav-lessons">
+		<a href="{% url 'codele-learn' 'gml' %}" class="home">Início</a>
+		<a href="{% url 'codele-lesson' 'gml' 1 %}">1</a>
+		<a href="{% url 'codele-lesson' 'gml' 2 %}">2</a>
+		<a href="{% url 'codele-lesson' 'gml' 3 %}">3</a>
+		<a href="{% url 'codele-lesson' 'gml' 4 %}">4</a>
+		<a href="{% url 'codele-lesson' 'gml' 5 %}">5</a>
+		<a href="{% url 'codele-lesson' 'gml' 6 %}">6</a>
+		<a href="{% url 'codele-lesson' 'gml' 7 %}">7</a>
+		<a href="{% url 'codele-lesson' 'gml' 8 %}">8</a>
+		<a href="{% url 'codele-lesson' 'gml' 9 %}">9</a>
+	</div>
+
+
+</content>
+
+{% endblock %}
+

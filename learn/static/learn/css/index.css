@@ -82,7 +82,7 @@ input, select {
   display: inline-flex;
   flex-direction: row;
   color: var(--text-secondary);
-  max-height: 10rem;
+  max-height: 15rem;
   overflow: hidden;
   margin-top: 0rem;
   width: 50vw;

@@ -21,33 +21,31 @@
 		<p>Bom, agora que você já entendeu o que é um algoritmo, está na hora de você entender a lógica.
 		Mas afinal, o que seria essa lógica? A lógica, seria a ideia necessária para que o algoritmo funcione… O algoritmo determina o necessário para realizar a ação, já a lógica, torna o algoritmo funcional, dando “sentido lógico” para o algoritmo, tornando a ação de fato possível. Dê uma olhada de novo no algoritmo para comprar o refrigerante:</p>
 
-		<p class="alg">Levantar > sair de casa > atravessar a rua > entrar no mercado > pegar o refrigerante > ir até o caixa > pagar > sair do mercado > fim -></p>
+		<div class="alg">
+			Levantar > sair de casa > atravessar a rua > entrar no mercado > pegar o refrigerante > ir até o caixa > pagar > sair do mercado > fim ->
+		</div>
 
 		<p>Para que essa ação seja bem sucedida você precisa seguir uma lógica básica, ou seja, esse algoritmo precisa ter sentido, certo? Por exemplo, se você levantar, e tentar atravessar a rua sem ter saído de casa, isso não vai dar muito certo não é mesmo? Da mesma forma não daria certo se você tentasse pegar o refrigerante sem ter levantado do sofá, nem saído de casa, nem atravessado a rua, nem entrado no mercado… 
 		Então, logo de cara entendemos que a lógica necessita de uma ORDEM a ser seguida para que dê certo, mas… Aí você pode pensar: “bom, então a lógica é simplesmente seguir uma ordem correta em um algoritmo?”…  
 		Bem, sim e não… de fato é necessário seguir uma ordem, mas nem sempre é necessário somente seguir a ordem… Sabe por quê? Bem, imagine que você tente fazer isso tudo na ordem correta, então, você levanta do sofá, sai de casa, atravessa a rua… maaas, você é atropelado… Por que você foi atropelado? Simples, você não olhou para os dois lados da rua antes de atravessar… Pode ser que você more na mesma rua do mercado, e bem ao lado dele, neste caso você não precisaria atravessar a rua e muito menos olhar para os lados, seria algo mais simples, então seria necessário apenas seguir a ordem correta dos passos sem pular nenhum deles e isso já seria suficiente... Mas vamos ver então qual seria o algorítmo correto para comprar o refrigerante tendo que atravessar uma rua… Vamos imaginar você falando para si mesmo os passos a serem seguidos:</p>
 
-		<div class="test">
+		<ul class="alg">
+			<li>Levante;</li>
+			<li>Saia de casa;</li>
+			<li>Chegue na calçada;</li>
+			<li>Olhe para os dois lados da rua;</li>
+			<li>Se estiver passando carros: </li>
+			<li class="indent">Espere;</li>
+			<li>Se não: </li>
+			<li class="indent">Atravesse;</li>
+			<li>Entre no mercado;</li>
+			<li>Pegue o refrigerante;</li>
+			<li>Vá até o caixa;</li>
+			<li>Pague;</li>
+			<li>Fim;</li>
+		</ul>
 
-			<ul class="alg">
-				<li>Levante;</li>
-				<li>Saia de casa;</li>
-				<li>Chegue na calçada;</li>
-				<li>Olhe para os dois lados da rua;</li>
-				<li>Se estiver passando carros: </li>
-				<li class="indent">Espere;</li>
-				<li>Se não: </li>
-				<li class="indent">Atravesse;</li>
-				<li>Entre no mercado;</li>
-				<li>Pegue o refrigerante;</li>
-				<li>Vá até o caixa;</li>
-				<li>Pague;</li>
-				<li>Fim;</li>
-			</ul>
-
-			<p>Veja que neste caso, você não vai apenas fazer as coisas na ordem, você precisa verificar algo, e dependendo desta condição, você vai tomar uma atitude e deixar de tomar outra, afinal não da pra fazer as duas coisas ao mesmo tempo, isso fugiria da lógica. Vamos agora entender um pouco melhor sobre "condicionais".</p>
-
-		</div>
+		<p>Veja que neste caso, você não vai apenas fazer as coisas na ordem, você precisa verificar algo, e dependendo desta condição, você vai tomar uma atitude e deixar de tomar outra, afinal não da pra fazer as duas coisas ao mesmo tempo, isso fugiria da lógica. Vamos agora entender um pouco melhor sobre "condicionais".</p>
 
 	</div>
 
@@ -58,9 +56,24 @@
 		</div>
 
 		<div class="btn-next">
-			<li><a class="a-btn" href="{% url 'codele-lesson' 'gml' 2 %}">Próximo</a></li>
+			<li><a class="a-btn" href="{% url 'codele-lesson' 'gml' 3 %}">Próximo</a></li>
 		</div>
 
+	</div>
+
+	<h1>Lições</h1>
+
+	<div class="nav-lessons">
+		<a href="{% url 'codele-learn' 'gml' %}" class="home">Início</a>
+		<a href="{% url 'codele-lesson' 'gml' 1 %}">1</a>
+		<a href="{% url 'codele-lesson' 'gml' 2 %}">2</a>
+		<a href="{% url 'codele-lesson' 'gml' 3 %}">3</a>
+		<a href="{% url 'codele-lesson' 'gml' 4 %}">4</a>
+		<a href="{% url 'codele-lesson' 'gml' 5 %}">5</a>
+		<a href="{% url 'codele-lesson' 'gml' 6 %}">6</a>
+		<a href="{% url 'codele-lesson' 'gml' 7 %}">7</a>
+		<a href="{% url 'codele-lesson' 'gml' 8 %}">8</a>
+		<a href="{% url 'codele-lesson' 'gml' 9 %}">9</a>
 	</div>
 
 

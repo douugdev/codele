@@ -1,0 +1,72 @@
+{% extends 'learn/gml/lessons/0.html' %}
+{% load static %}
+
+{% block css_import %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{% static 'learn/css/gml/lessons/1.css' %}">
+{% endblock %}
+
+{% block main %}
+
+<content>
+
+	<div class="header">
+		<h1>Lógica De Programação</h1>
+	</div>
+
+	<div class="main_content">
+
+		<h1>Loop</h1>
+
+		<p>Os loops são recursos usados para criar repetições. Se precisamos no nosso programa, realizar uma mesma tarefa várias vezes, ao invés de escrevê-la inúmeras vezes (muitas vezes não sabemos quantas vezes serão necessárias), nós criamos um laço de repetição, um loop, e dentro desse loop, nós escrevemos o que queremos fazer uma únicaa vez, determinando que essa ação se repita x vezes, ou até mesmo, infinitas vezes, até que haja uma interrupção.</p>
+
+		<p>Para entender os loops, vamos ver o famoso <u>for loop</u>. For que significa "para", é uma estrutura de repetição muito usada e necessária.</p>
+
+		<p>Exemplo de uso do for(para) loop</p>
+
+		<ul class="alg">
+			<li>para ( inicio (0) -> aqui você determina o começo do loop ; final (10) -> aqui onde seu loop deve acabar ) {</li>
+			<br>
+			<li class="indent">Aqui você escreve o código que você quer que se repita, e ele irá se repetir a quantidade de vezes que você determinou na contagem de 0 (início), até 10 (final), sendo assim, esse código se repete 10 vezes.</li>
+			<br>
+			<li>} -> fechamento do loop</li>
+		</ul>
+
+		<p>Vamos supor que você precisa fazer um programa que conte até dez, então, ao invés de você escrever o código para escrever o número 1, depois escrever o mesmo código de novo pra escrever o número 2, depois o 3,... Até o 10... Você cria um loop, onde você escreve o código de escrever o número uma única vez, para que ele se repita 10 vezes, mudando o número, começando pelo 1, até chegar no 10.</p>
+
+		<p>A estrutura de um loop é diferente em cada linguagem, então não se preocupe se ainda parece meio confuso a maneira de escrever o código de um loop, você irá aprender a escrever e usar o loop nas linguagens que você quiser aprender, esse não é o objetivo agora, por enquanto, apenas queremos que você entenda o conceito de <u>loop</u>.</p>
+
+	</div>
+
+	<div class="btns">
+
+		<div class="btn-back">
+			<li><a class="a-btn" href="{% url 'codele-lesson' 'gml' 5 %}">Anterior</a></li>
+		</div>
+
+		<div class="btn-next">
+			<li><a class="a-btn" href="{% url 'codele-lesson' 'gml' 7 %}">Próximo</a></li>
+		</div>
+
+	</div>
+
+	<h1>Lições</h1>
+
+	<div class="nav-lessons">
+		<a href="{% url 'codele-learn' 'gml' %}" class="home">Início</a>
+		<a href="{% url 'codele-lesson' 'gml' 1 %}">1</a>
+		<a href="{% url 'codele-lesson' 'gml' 2 %}">2</a>
+		<a href="{% url 'codele-lesson' 'gml' 3 %}">3</a>
+		<a href="{% url 'codele-lesson' 'gml' 4 %}">4</a>
+		<a href="{% url 'codele-lesson' 'gml' 5 %}">5</a>
+		<a href="{% url 'codele-lesson' 'gml' 6 %}">6</a>
+		<a href="{% url 'codele-lesson' 'gml' 7 %}">7</a>
+		<a href="{% url 'codele-lesson' 'gml' 8 %}">8</a>
+		<a href="{% url 'codele-lesson' 'gml' 9 %}">9</a>
+	</div>
+
+</content>
+
+{% endblock %}
+
+
