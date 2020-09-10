@@ -10,7 +10,6 @@ import requests
 import os
 import dotenv
 
-@require_GET
 def register(request):
     if not request.user.is_authenticated:
         form = RegisterForm(request.POST or None)

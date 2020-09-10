@@ -6,10 +6,17 @@ class PostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
         fields = '__all__'
-    
-class Question(serializers.ModelSerializer):
+
+class AnswerSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Answer
+        fields = ['id', 'author', 'answer']
+
+class QuestionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Question
         fields = '__all__'
+
+    answers = AnswerSerializer(many=True, read_only=True)
 
 
