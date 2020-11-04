@@ -1,0 +1,71 @@
+{% extends 'learn/gml/lessons/0.html' %}
+{% load static %}
+
+{% block css_import %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{% static 'learn/css/gml/lessons/1.css' %}">
+{% endblock %}
+
+{% block main %}
+
+<content>
+
+	<div class="header">
+		<h1>Introdução à plataforma</h1>
+	</div>
+
+	<div class="main_content">
+
+		<h1>Criação de Objetos</h1>
+
+		<p>Na aula de hoje, aprenderemos a criar objetos no Game Maker Studio 2, no projeto em que estamos trabalhando desde o começo das aulas.</p>
+
+		<hr>
+
+		<p>Para realizar a ação de criar objetos, primeiramente vamos criar uma sprite e um objeto para o mesmo que iremos criar na room. Depois de darmos um nome ao nosso objeto, e atribui-lo uma sprite, iremos ao código step do nosso player.</p>
+
+		<p>Para criar objetos na room, é usada uma função chamada “instance_create()”, no qual dentro dos parêntesis deve ser inserida a localização em x onde o objeto será criado, a localização em y, a deph, e o objeto que deve ser criado.</p>
+
+		<p>Iremos escrever um código que faça com que ao apertar a tecla “Z“, nosso objeto seja criado 10 pixels a frente do player. O código ficará parecido com isso:</p>
+
+		<ul class="alg">
+			<li>if keyboard_check(ord("Z")) {</li>
+			<li>instance_create_depth(x+10,y,1,obj_1)</li>	
+			<li>}</li>
+		</ul>
+
+		<p><b>Obs</b>: “obj_1” deve ser trocado pelo nome do objeto no qual você irá criar.</p>
+
+		<br>
+
+		<p>Na aula de hoje aprendemos a criar objetos no Game Maker, na próxima, entenderemos como usar o Alarm, para que possamos adicionar um delay entre o tempo de criação de objetos, ou qualquer tipo de forma de trabalhar com o  tempo no game Maker. Até a próxima!</p>
+
+	</div>
+
+	<div class="btns">
+
+		<div class="btn-root">
+			<li><a class="a-btn" href="{% url 'codele-lesson' 'gml' 16 %}">Anterior</a></li>
+		</div>
+
+		<div class="btn-next">
+			<li><a class="a-btn" href="{% url 'codele-learn' 'gml'  %}">Início</a></li>
+		</div>
+
+	</div>
+
+	<div class="nav-lessons">
+		<a href="{% url 'codele-learn' 'gml' %}" class="home">Início</a>
+		<a href="{% url 'codele-lesson' 'gml' 10 %}">1</a>
+		<a href="{% url 'codele-lesson' 'gml' 11 %}">2</a>
+		<a href="{% url 'codele-lesson' 'gml' 12 %}">3</a>
+		<a href="{% url 'codele-lesson' 'gml' 13 %}">4</a>
+		<a href="{% url 'codele-lesson' 'gml' 14 %}">5</a>
+		<a href="{% url 'codele-lesson' 'gml' 15 %}">6</a>
+		<a href="{% url 'codele-lesson' 'gml' 16 %}">7</a>
+		<a href="{% url 'codele-lesson' 'gml' 17 %}">8</a>
+	</div>
+
+</content>
+
+{% endblock %}

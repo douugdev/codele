@@ -1,0 +1,65 @@
+{% extends 'learn/gml/lessons/0.html' %}
+{% load static %}
+
+{% block css_import %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{% static 'learn/css/gml/lessons/1.css' %}">
+{% endblock %}
+
+{% block main %}
+
+<content>
+
+	<div class="header">
+		<h1>Introdução à plataforma</h1>
+	</div>
+
+	<div class="main_content">
+
+		<h1>Colisões</h1>
+
+		<p>Hoje iremos aprender um pouco sobre colisões no Game Maker Studio 2. Criar colisões é algo muito simples, começaremos criando a sprite e o objeto de uma parede. Em seguida, iremos posicionar a parede que criamos na room.</p>
+
+		<p>Depois de ter feito isto, basta abrir o objeto da parede e do player, e marcar a opção “solid”, que a partir daí o Game Maker adicionará automaticamente a colisão entre estes dois objetos. Porem em casos mais distintos, pode-se usar a função apresentada na ultima aula a “place_meeting” para trabalhar em volta da colisão.</p>
+
+		<p>Para podermos testar melhor nossa colisão, vamos melhorar nosso código de movimentação. Por hora, o jogador pode se mover apenas para a direita, para conseguirmos fazer com que o jogador se movimente para 8 direções (esquerda, direita, cima, baixo, e diagonais), basta repetir o código de movimentação que fizemos anteriormente, mas substituir:</p>
+
+		<ul class="alg">
+			<li>- A tecla no qual o jogador ira se movimentar para determinada direção</li>
+			<li>- O valor positivo ou negativo do x (para movimentação em horizontal) ou do y (para movimentação em vertical) de acordo com o plano cartesiano.</li>
+		</ul>
+
+		<br><br>
+
+		<p>Hoje aprendemos a fazer uma colisão simples, e a movimentar o jogador para outas direções, na próxima aula, iremos aprender a trabalhar com mais um elemento essencial para muitos jogos, a barra de vida. Até Mais!</p>
+
+	</div>
+
+	<div class="btns">
+
+		<div class="btn-root">
+			<li><a class="a-btn" href="{% url 'codele-lesson' 'gml' 13 %}">Anterior</a></li>
+		</div>
+
+		<div class="btn-next">
+			<li><a class="a-btn" href="{% url 'codele-lesson' 'gml' 15 %}">Próximo</a></li>
+		</div>
+
+	</div>
+
+	<div class="nav-lessons">
+		<a href="{% url 'codele-learn' 'gml' %}" class="home">Início</a>
+		<a href="{% url 'codele-lesson' 'gml' 10 %}">1</a>
+		<a href="{% url 'codele-lesson' 'gml' 11 %}">2</a>
+		<a href="{% url 'codele-lesson' 'gml' 12 %}">3</a>
+		<a href="{% url 'codele-lesson' 'gml' 13 %}">4</a>
+		<a href="{% url 'codele-lesson' 'gml' 14 %}">5</a>
+		<a href="{% url 'codele-lesson' 'gml' 15 %}">6</a>
+		<a href="{% url 'codele-lesson' 'gml' 16 %}">7</a>
+		<a href="{% url 'codele-lesson' 'gml' 17 %}">8</a>
+	</div>
+
+</content>
+
+{% endblock %}
+

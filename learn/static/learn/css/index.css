@@ -112,7 +112,7 @@ input, select {
 
 .retracted + .courses ol{
   filter: opacity(0);
-  transition: ease 1s;
+  transition: ease 0.5s;
   pointer-events: none;
   cursor: default;
   text-decoration: none;

@@ -1,0 +1,77 @@
+{% extends 'learn/gml/lessons/0.html' %}
+{% load static %}
+
+{% block css_import %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{% static 'learn/css/gml/lessons/1.css' %}">
+{% endblock %}
+
+{% block main %}
+
+<content>
+
+	<div class="header">
+		<h1>Introdução à plataforma</h1>
+	</div>
+
+	<div class="main_content">
+
+		<h1>Barra de Vida</h1>
+
+		<p>Hoje aprenderemos a como criar uma barra de vida simples no Game Maker Studio 2. Primeiramente, precisaremos criar uma variável no “create” do player, para a quantidade de vida que ele terá.</p>
+
+		<p>Em seguida, iremos criar um “if”, determinando que quando os pontos de vida do jogador forem iguais o menores que 0, o objeto do jogador seja destruído. O código ficará parecido com isto:</p>
+
+		<ul class="alg">
+			<li>if hp <= 0 {</li>
+			<li>instance_destroy()</li>	
+			<li>}</li>
+		</ul>
+
+		<br><br>
+
+		<p>Agora, iremos partir para o objeto do inimigo, e apagaremos o código que faz com que o inimigo seja destruído ao entrar em contato com o inimigo, e em vez disso, escreveremos um que fará com que a o jogador perca pontos de vida enquanto estiver colidindo com o inimigo, o código ficará mais ou menos assim:</p>
+
+		<ul class="alg">
+			<li>if place_meeting(x,y,obj_player) {</li>
+			<li>obj_player.hp -= 0.3</li>	
+			<li>}</li> 
+		</ul>
+
+		<p>Com isto, o inimigo enquanto estiver colidindo com o jogador, tirará pontos de vida dele.</p>
+
+		<br>
+
+		<p>Hoje aprendemos um pouco sobre como funcionam os pontos de vida, e na próxima aula, aprenderemos sobre o que é uma HUD, e como aplicar no nosso jogo. Até mais!</p>
+
+	</div>
+
+	<div class="btns">
+
+		<div class="btn-root">
+			<li><a class="a-btn" href="{% url 'codele-lesson' 'gml' 14 %}">Anterior</a></li>
+		</div>
+
+		<div class="btn-next">
+			<li><a class="a-btn" href="{% url 'codele-lesson' 'gml' 16 %}">Próximo</a></li>
+		</div>
+
+	</div>
+
+	<div class="nav-lessons">
+		<a href="{% url 'codele-learn' 'gml' %}" class="home">Início</a>
+		<a href="{% url 'codele-lesson' 'gml' 10 %}">1</a>
+		<a href="{% url 'codele-lesson' 'gml' 11 %}">2</a>
+		<a href="{% url 'codele-lesson' 'gml' 12 %}">3</a>
+		<a href="{% url 'codele-lesson' 'gml' 13 %}">4</a>
+		<a href="{% url 'codele-lesson' 'gml' 14 %}">5</a>
+		<a href="{% url 'codele-lesson' 'gml' 15 %}">6</a>
+		<a href="{% url 'codele-lesson' 'gml' 16 %}">7</a>
+		<a href="{% url 'codele-lesson' 'gml' 17 %}">8</a>
+	</div>
+
+</content>
+
+{% endblock %}
+
+

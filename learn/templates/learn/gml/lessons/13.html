@@ -1,0 +1,111 @@
+{% extends 'learn/gml/lessons/0.html' %}
+{% load static %}
+
+{% block css_import %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{% static 'learn/css/gml/lessons/1.css' %}">
+{% endblock %}
+
+{% block main %}
+
+<content>
+
+	<div class="header">
+		<h1>Introdução à plataforma</h1>
+	</div>
+
+	<div class="main_content">
+
+		<h1>Inteligência artificial simples para inimigos</h1>
+
+		<p>Hoje, aprenderemos a criar de forma mais simples possível, um código para que um inimigo de seu jogo comesse a te perseguir caso o jogador chegue a determinada distancia dele.</p>
+
+		<p>Para isso, precisaremos em primeiro lugar, fazer o processo de criação do objeto do inimigo. Criaremos uma sprite para nosso inimigo, e em seguida, um objeto para o mesmo. 
+		Para que seja mais fácil trabalhar com o código, dê o nome “obj_inimigo” para o objeto do inimigo.</p> 
+
+		<p>Em primeira mão, iremos ao objeto do inimigo, e criaremos um evento “Create”, para darmos ao mesmo uma velocidade, como já foi explicado nas aulas anteriores. Em seguida, criaremos um evento “Step” no objeto do inimigo, então começaremos a escrever o código que fara o inimigo correr atrás do jogador.</p>
+
+		<p>Para fazer o inimigo perseguir o jogador, usaremos duas funções. A primeira, usaremos acompanhada do “if”, que é a “distance_to_object()”. Essa função verifica a distancia no qual o objeto se encontra de outro objeto, e executa o código que estiver dentro do “If”. Vamos criar um código que faça o inimigo se mover quando o player estiver a 100 pixels de distancia do mesmo, então, o código ficará assim:</p>
+
+		<ul class="alg">
+			<li>if distance_to_object(obj_player) < 100</li>
+			<li>{</li>
+			<li>}</li>
+		</ul>
+
+		<p>Podemos ler esse código como: “Se a distancia para o objeto (player) for menor (<) que 100:”
+		Agora, colocaremos dentro do if, uma função chamava “move_towards_point()”, que será responsável pela movimentação do objeto inimigo.</p>
+
+		<p>Dentro dos parêntesis, precisamos determinar:</p>
+
+		<ul class="alg">
+			<li>X – A direção em X que o objeto deverá se mover</li>
+			<li>Y – A direção em Y que o objeto deverá se mover</li>
+			<li>Sp – A velocidade no qual deverá se mover.</li>
+		</ul>
+
+		<br><br>
+
+		<p>Como queremos que o objeto se mova em direção ao jogador, no lugar do X, colocaremos “obj_player.x” e no lugar do Y, colocaremos “obj_player.y”. Isto fará com que o código mova o inimigo na direção X e Y do jogador. Depois disso, colocaremos a variável que criamos para a velocidade do inimigo. Então, o código ficará assim:</p>
+
+		<ul class="alg">
+			<li>if distance_to_object(obj_player) < 100</li>
+			<li>{</li>
+			<li>move_towards_point(obj_player.x, obj_player.y,velocidade)</li>
+			<li>}</li>
+		</ul>
+
+		<br><br>
+
+		<p>Depois disso, basta apenas posicionar o objeto do inimigo na room, criando alguma distancia entre o Jogador e o inimigo.</p>
+
+		<br>
+
+		<p>Podemos criar um código também, que faça com que quando o inimigo tocar o jogador, o inimigo deixe de existir. Para isso, no step do inimigo, escreveremos o código:</p>
+
+		<ul class="alg">
+			<li>if place_meeting(x,y,obj_player) {</li>
+			<li>instance_destroy()</li>	
+			<li>}</li>
+		</ul>
+
+		<p>A função “place_meeting()” serve para verificar se o objeto no qual esta função se encontra, encosta no objeto determinado entre parêntesis (no caso o objeto do jogador).
+		E a função “instance_destroy()” faz com que o objeto no qual esta função se encontra seja destruído.</p>
+
+		<br>
+
+		<p>Hoje aprendemos a criar uma inteligência artificial simples, e a como destruir objetos do seu jogo, na aula que vem, aprenderemos sobre mais códigos avançados que podem ser uteis em seu  jogo. Até mais!</p>
+
+
+	</div>
+
+	<div class="btns">
+
+		<div class="btn-root">
+			<li><a class="a-btn" href="{% url 'codele-lesson' 'gml' 12 %}">Anterior</a></li>
+		</div>
+
+		<div class="btn-next">
+			<li><a class="a-btn" href="{% url 'codele-lesson' 'gml' 14 %}">Próximo</a></li>
+		</div>
+
+	</div>
+
+	<div class="nav-lessons">
+		<a href="{% url 'codele-learn' 'gml' %}" class="home">Início</a>
+		<a href="{% url 'codele-lesson' 'gml' 10 %}">1</a>
+		<a href="{% url 'codele-lesson' 'gml' 11 %}">2</a>
+		<a href="{% url 'codele-lesson' 'gml' 12 %}">3</a>
+		<a href="{% url 'codele-lesson' 'gml' 13 %}">4</a>
+		<a href="{% url 'codele-lesson' 'gml' 14 %}">5</a>
+		<a href="{% url 'codele-lesson' 'gml' 15 %}">6</a>
+		<a href="{% url 'codele-lesson' 'gml' 16 %}">7</a>
+		<a href="{% url 'codele-lesson' 'gml' 17 %}">8</a>
+	</div>
+
+</content>
+
+{% endblock %}
+
+
+

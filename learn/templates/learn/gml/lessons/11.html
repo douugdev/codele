@@ -1,0 +1,143 @@
+{% extends 'learn/gml/lessons/0.html' %}
+{% load static %}
+
+{% block css_import %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{% static 'learn/css/gml/lessons/1.css' %}">
+{% endblock %}
+
+{% block main %}
+
+<content>
+
+	<div class="header">
+		<h1>Introdução à plataforma</h1>
+	</div>
+
+	<div class="main_content">
+
+		<h1>Criando o primeiro jogo</h1>
+
+		<p>Na ultima aula, aprendemos como criar um projeto no Game Maker Studio 2, e sobre suas principais ferramentas (Objetos, Sprites, Scripts, entre outros). Na Aula de hoje, iremos começar a interagir com estas ferramentas, para entender melhor seu funcionamento de forma prática, e criarmos nosso primeiro mini game na plataforma.</p>
+
+		<hr>
+		<br>
+
+		<p class="title">Primeiros passos</p>
+
+		<p>Para começarmos nosso projeto, em primeira mão é necessário um objeto para que possamos interagir. Para criar um objeto, clique na barra “Objetos” (Que fica no lado direito da tela, na aba “Resources”) com o botão direito do mouse, e clique em “Create Object”, ou então, clique nas teclas “ALT+O” no teclado para criar um objeto rapidamente. 
+		Agora que o objeto foi criado, surgiu uma nova janela para ele em nosso Workspace, e nela podemos manipular alguns atributos de nosso objeto, como se ele será visível na room aos olhos do jogador, com a opção “Visible”, e entre outras customizações, que entenderemos melhor futuramente.</p>
+
+		<p>Renomeie o objeto para “obj_player”, e em seguida na janela “Event” que estará ao lado da janela do objeto, clique em “Add Event” para abrir as opções de eventos que podemos utilizar para programar nosso objeto.</p>
+
+		<br>
+
+		<p class="title">Conhecendo os Eventos</p>
+
+		<p>Eventos, são a base para orientação dos objetos dentro da plataforma, de forma resumida, eles que ditam quando coisas vão acontecer, por exemplo, quando o player conseguirá atirar, pular, quando determinada ação irá acontecer, determinam quando o player irá colidir com paredes e objetos, entre diversas outras coisas.</p>
+
+		<p>Os principais eventos que iremos utilizar durante nosso curso, serão: <u>Create</u>, <u>Mouse</u>, <u>Destroy</u>, <u>Other</u>, <u>Alarm</u>, <u>Draw</u>, <u>Step</u> e <u>Collision</u>.</p>
+
+		<ul class="alg">
+			<li><b>Create</b> – O evento create é responsável por executar o código dentro dele, no momento em que o objeto é criado na Room.</li>
+			<br>
+			<li><b>Mouse</b> – Evento utilizado para usar o mouse em determinada situação, seja para executar comandos, controlar o personagem, e afins.</li>
+ 			<br>
+			<li><b>Destroy</b> – Quando o código dentro do evento “Destroy” for executado, o objeto será destruído.</li>
+			<br>
+			<li><b>Other</b> – Alguns outros eventos, como por exemplo: Game Start (Executa código quando o jogo começa), Game End (Executa código quando jogo termina), Room Start (Executa código quando a room é iniciada).</li>
+			<br>
+			<li><b>Alarm</b> – Cria um evento de tempo, onde é criado um alarme, que quando chega a 0, executa o código presente no evento.</li>
+			<br>
+			<li><b>Draw</b> – Usado para desenhar imagens na tela quando determinado código for executado. Apenas neste evento os códigos com “draw”  no inicio funcionam.</li>
+			<br>
+			<li><b>Step</b> – É um dos evento mais importantes do jogo, senão o mais importante. O Step executa o código dentro dele a cada frame do jogo continuamente.</li>
+			<br>
+			<li><b>Collision</b> – Executa um código quando o objeto colide com um objeto determinado.</li>
+		</ul>
+
+		<br><br>
+
+		<p class="title">Criando e movimentando o jogador.</p>
+
+		<p>Em primeira mão, criaremos apenas um cubo para ser nosso personagem. Depois de ter criado o objeto do personagem, é hora de criar uma sprite para ele. Ao criar a sprite, clique em “Edit image”, e com o balde de tinta do editor de imagem, pinte o quadrado com a cor que desejar. Depois de pintado, volte para o Workspace. Agora, chegou a hora de centralizar a sprite de nosso personagem, para fazer isso, clique na caixa onde há escrito “Top Left” ( se encontra acima da imagem da sprite no centro), e mude esta opção para “Middle Centre”, para centralizar as coordenadas x e y da sprite.</p>
+
+		<p>Agora, de volta ao objeto player, iremos selecionar a sprite que acabamos de criar. Na janela “Obj_Player” no Workspace, abaixo do nome do objeto, estará a parte onde se muda a sprite do mesmo. Clique na caixa onde está marcado “No sprite”, e selecione a Sprite que criamos.</p>
+
+		<p>Agora que criamos nosso personagem, chegou a hora de começarmos a dar os primeiros passos para fazer ele se movimentar. Vamos criar um evento de “Create” para nosso personagem, para que possamos atribuir alguns valores e características para o jogador.</p>
+
+		<p>Com o evento “Create” criado, iremos criar uma variável chamada “velocidade”, e seu valor será igual a 5. O código ficará parecido com isto:</p>
+
+		<p class="alg">Velocidade = 5</p>
+
+		<p>A velocidade do personagem é um valor de suma importância para começarmos a programar a movimentação do objeto.</p>
+
+		<p>Depois de terminarmos no evento create, hora de criar um novo evento, o “Step”. No momento em que clicarmos no evento step, ele nos mostrará 3 opções de Step: Step, Begin Step, e End Step. Porém, em primeira mão iremos apenas trabalhar com o Step. Depois de criado, iremos escrever um código para fazer o personagem andar para a direita, depois, iremos explicar passo a passo como o código funciona. Para fazer o personagem andar para a direta, o código necessário será:</p>
+
+		<ul class="alg">
+			<li>if keyboard_check(vk_right) = true {</li>
+			<li>x+=velocidade</li>	
+			<li>}</li>
+		</ul>
+
+		<br><br>
+
+		<p class="title">EXPLICANDO O CÓDIGO:</p>
+
+		<p>Para entendermos esse código, é necessário compreender o que cada parte dele significa, e tentarmos ler ele como se fosse uma frase.</p>
+
+		<ul class="alg">
+			<li><b>If</b> = se</li>
+			<br>
+			<li><b>kbeyboard_check()</b> = determinada tecla for pressionada</li>
+			<br>
+			<li><b>vk_right</b> = seta direita do teclado</li>
+			<br>
+			<li><b>= true</b> = for verdadeira</li>
+			<br>
+			<li>{</li>
+			<br>
+			<li><b>X</b> = posição do objeto na room</li>
+			<br>
+			<li><b>+= velocidade</b> = adição de valor na posição x do personagem, ou seja, a posição dele mais 5 (que é a velocidade)</li>
+			<br>
+			<li>}</li>
+		</ul>
+
+		<p>Se fossemos ler esse código como uma frase, se pareceria como: se a seta direta do teclado for pressionada, o x do personagem irá crescer em 5 (velocidade). E como o evento step verificada o código dentro dele a cada segundo, enquanto a seta direita for pressionada, o objeto continuará avançando para a direita.</p>
+
+		<p>Agora que terminamos a programação do personagem, vamos testa-la colocando nosso personagem numa room, e iniciando o jogo. Vá na aba “Rooms” no game Maker, e provavelmente já irá ter uma chamada “Room 0”, caso não haja, crie uma e abra-a. Para adicionar um objeto a uma room, basta arrasta-lo da aba de objetos para dentro da room. Como o objeto já dentro da room, hora de iniciar o jogo, apertando a tecla F5.</p>
+
+		<br>
+
+		<p class="title">>>>Obrigado por ler esta aula e utilizar nosso site! Nos vemos na próxima aula, até mais!</p>
+
+	</div>
+
+	<div class="btns">
+
+		<div class="btn-root">
+			<li><a class="a-btn" href="{% url 'codele-lesson' 'gml' 10 %}">Anterior</a></li>
+		</div>
+
+		<div class="btn-next">
+			<li><a class="a-btn" href="{% url 'codele-lesson' 'gml' 12 %}">Próximo</a></li>
+		</div>
+
+	</div>
+
+	<div class="nav-lessons">
+		<a href="{% url 'codele-learn' 'gml' %}" class="home">Início</a>
+		<a href="{% url 'codele-lesson' 'gml' 10 %}">1</a>
+		<a href="{% url 'codele-lesson' 'gml' 11 %}">2</a>
+		<a href="{% url 'codele-lesson' 'gml' 12 %}">3</a>
+		<a href="{% url 'codele-lesson' 'gml' 13 %}">4</a>
+		<a href="{% url 'codele-lesson' 'gml' 14 %}">5</a>
+		<a href="{% url 'codele-lesson' 'gml' 15 %}">6</a>
+		<a href="{% url 'codele-lesson' 'gml' 16 %}">7</a>
+		<a href="{% url 'codele-lesson' 'gml' 17 %}">8</a>
+	</div>
+
+</content>
+
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'learn/gml/lessons/0.html' %}
+{% load static %}
+
+{% block css_import %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{% static 'learn/css/gml/lessons/1.css' %}">
+{% endblock %}
+
+{% block main %}
+
+<content>
+
+	<div class="header">
+		<h1>Exercícios</h1>
+	</div>
+
+	<div class="main_content">
+
+		<h1>Exercício 1</h1>
+
+		<div class="requirements">
+			<i>Requerimentos: Ter concluído as aulas de numero 1 e 2</i>.
+		</div>
+
+		<br>
+
+		<div class="challenge">
+			<b>Objetivo</b>: Criar um jogo com um objeto que se movimente em 8 direções (cima, baixo, direita, esquerda, e diagonais)
+		</div>
+
+		<div class="challenge">
+			<b>Desafio bônus</b>: Fazer com que enquanto uma tecla determinada seja apertada, a velocidade do objeto aumente ou diminua.
+		</div>
+
+	</div>
+
+	<div class="btns">
+
+		<div class="btn-root">
+			<li><a class="a-btn" href="{% url 'codele-learn' 'gml' %}">Início</a></li>
+		</div>
+
+	</div>
+
+</content>
+
+{% endblock %}
+
+

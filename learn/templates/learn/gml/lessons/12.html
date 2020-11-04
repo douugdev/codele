@@ -1,0 +1,108 @@
+{% extends 'learn/gml/lessons/0.html' %}
+{% load static %}
+
+{% block css_import %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{% static 'learn/css/gml/lessons/1.css' %}">
+{% endblock %}
+
+{% block main %}
+
+<content>
+
+	<div class="header">
+		<h1>Introdução à plataforma</h1>
+	</div>
+
+	<div class="main_content">
+
+		<h1>Trabalhando com Animações</h1>
+
+		<p>Antes de começar animar o nosso jogo, vamos criar as definições: o que é animação? Animações são sequências de imagens que criam a ilusão de movimento. Cada imagem que forma a sequência é chamada de Quadro (ou Frame), tanto que uma qualidade de animação pode ser medida em FPS (Frames Per Seconds). Essa métrica indica quantos quadros são usados para gerar 1 segundo de animação. Por exemplo, muitos filmes possuem FPS de 24, ou seja, 24 imagens para gerar 1 segundo. Jogos costumam estar entre 30 e 60 FPS, porque em filmagens é possível criar efeitos de velocidade com apenas manejo da câmera, mas o mesmo não pode ser facilmente aplicado em jogos.</p>
+
+		<p>Vamos trabalhar encima desse conceito de animação, com o projeto que criamos na aula passada. O objetivo, é fazer com que o cubo que foi criado mude de cor quando começar a se mover.</p>
+
+		<p>Para isso, é necessário criar uma nova sprite para o cubo, e pintá-la de uma nova cor.
+		Em seguida, iremos para o código “Step” no jogador, e dentro do “if” onde está o código de movimentação do jogador, iremos escrever:</p>
+
+		<p class="alg">Sprite_index = x</p>
+
+		<p>(“x” corresponde ao nome da sprite de nova cor que foi criada).</p>
+
+		<br>
+
+		<p>Desta forma, o código ficará assim:</p>
+
+		<ul class="alg">
+			<li>if keyboard_check(vk_right) = true {</li>
+			<li>x+=velocidade</li>
+			<li>sprite_index = x</li>
+			<li>}</li>
+		</ul>
+
+		<br><br>
+
+		<p>Depois de compilar o jogo, é possível perceber que depois de movimentar o cubo, a cor do objeto muda, porém não volta a cor original quando para de se mover. Para resolver isso, iremos voltar ao nosso código, e utilizar a função “Else” depois do “If”, desta forma:</p>
+
+		<ul class="alg">
+			<li>else {</li>
+			<li>sprite_index = y</li> 	
+			<li>}</li>
+		</ul>
+
+		<p>(“y” corresponde ao nome da sprite original do cubo).</p>
+
+		<br>
+
+		<p>Então, o código inteiro ficará dessa forma:</p>
+
+		<ul class="alg">
+			<li>if keyboard_check(vk_right) = true {</li>
+			<li>x+=velocidade</li>
+			<li>sprite_index = x</li>
+			<li>}</li>
+			<li>else {</li>
+			<li>sprite_index = y</li> 
+			<li>}</li>
+		</ul>
+
+		<br><br>
+
+		<p>Com este conceito, é possível criar animações de movimento, pulo, ataque, morte, entre diversas outras. Também é possível usar o código “image_speed = x” para definir a velocidade de animação que o objeto terá.</p>
+
+		<br>
+
+		<p>Hoje aprendemos a como trabalhar com animações de forma simples. Na próxima aula, iremos trabalhar com alguns códigos mais avançados. Até mais!</p>
+
+	</div>
+
+	<div class="btns">
+
+		<div class="btn-root">
+			<li><a class="a-btn" href="{% url 'codele-lesson' 'gml' 11 %}">Anterior</a></li>
+		</div>
+
+		<div class="btn-next">
+			<li><a class="a-btn" href="{% url 'codele-lesson' 'gml' 13 %}">Próximo</a></li>
+		</div>
+
+	</div>
+
+	<div class="nav-lessons">
+		<a href="{% url 'codele-learn' 'gml' %}" class="home">Início</a>
+		<a href="{% url 'codele-lesson' 'gml' 10 %}">1</a>
+		<a href="{% url 'codele-lesson' 'gml' 11 %}">2</a>
+		<a href="{% url 'codele-lesson' 'gml' 12 %}">3</a>
+		<a href="{% url 'codele-lesson' 'gml' 13 %}">4</a>
+		<a href="{% url 'codele-lesson' 'gml' 14 %}">5</a>
+		<a href="{% url 'codele-lesson' 'gml' 15 %}">6</a>
+		<a href="{% url 'codele-lesson' 'gml' 16 %}">7</a>
+		<a href="{% url 'codele-lesson' 'gml' 17 %}">8</a>
+	</div>
+
+</content>
+
+{% endblock %}
+
+
+

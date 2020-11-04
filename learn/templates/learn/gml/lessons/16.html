@@ -1,0 +1,79 @@
+{% extends 'learn/gml/lessons/0.html' %}
+{% load static %}
+
+{% block css_import %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{% static 'learn/css/gml/lessons/1.css' %}">
+{% endblock %}
+
+{% block main %}
+
+<content>
+
+	<div class="header">
+		<h1>Introdução à plataforma</h1>
+	</div>
+
+	<div class="main_content">
+
+		<h1>HUD</h1>
+
+		<p>Hoje, aprenderemos sobre o que é uma HUD, e como criar um pequeno exemplo de uma no Game Maker.</p>
+
+		<hr>
+
+		<p>A HUD (heads-up display - tela de alerta) é a sigla para representação dos objetos do jogo, tais como: life - do inglês vida, force - do inglês força), magia (às vezes representados por: mana - ou MP, Mana Points -). Esses atributos (assim como são chamados no jogo) variam de nome e de valor de acordo com o jogo (podendo ser traduzido para a língua original do projeto). Pode ser também usada para representar itens e outras objetos do projeto/jogo. Hoje, criaremos uma HUD simples, que mostre na tela apenas os pontos de vida do jogador, a aula de hoje também servirá de porta de entrada para que você possa criar diferentes tipos de HUD.</p>
+
+		<p>Para trabalhar com esse conceito no game Maker, usaremos o evento “Draw”. Crie um objeto, e dê a ele o nome de “obj_hud”, em seguida, dentro deste objeto crie um evento  “Draw”. Usaremos um código deste evento para mostrarmos a quantidade de vida do jogador na tela, usaremos a função “draw_text” dentro de um if, e a condição para que a função “draw_text” seja executada, é que o objeto do jogador exista na sala. Para isso, usaremos uma função chamada “instance_exists()”, o código ficará assim:</p>
+
+		<ul class="alg">
+			<li>if instance_exists(obj_player) {</li>
+			<li>draw_text(x,y,obj_player.hp)</li>
+			<li>}</li>
+		</ul>
+
+		<p>Este código pode ser lido como:</p>
+
+		<p>“Se o obj_player existir: desenhar texto(hp do obj_player)”</p>
+
+		<br>
+
+		<p><b>Obs</b>: É importante lembrar que não se deve adicionar uma sprite ao “obj_hud”</p>
+
+		<br>
+
+		<p>Agora, basta adicionar o obj_hud no canto de sua room, e assim iniciar o jogo.</p>
+
+		<br>
+
+		<p>Hoje aprendemos um sistema básico de HUD para jogos, na próxima aula, aprenderemos como fazer uma barra de vida personalizada com os conhecimentos aprendidos hoje. Até mais!</p>
+
+	</div>
+
+	<div class="btns">
+
+		<div class="btn-root">
+			<li><a class="a-btn" href="{% url 'codele-lesson' 'gml' 15 %}">Anterior</a></li>
+		</div>
+
+		<div class="btn-next">
+			<li><a class="a-btn" href="{% url 'codele-lesson' 'gml' 17 %}">Próximo</a></li>
+		</div>
+
+	</div>
+
+	<div class="nav-lessons">
+		<a href="{% url 'codele-learn' 'gml' %}" class="home">Início</a>
+		<a href="{% url 'codele-lesson' 'gml' 10 %}">1</a>
+		<a href="{% url 'codele-lesson' 'gml' 11 %}">2</a>
+		<a href="{% url 'codele-lesson' 'gml' 12 %}">3</a>
+		<a href="{% url 'codele-lesson' 'gml' 13 %}">4</a>
+		<a href="{% url 'codele-lesson' 'gml' 14 %}">5</a>
+		<a href="{% url 'codele-lesson' 'gml' 15 %}">6</a>
+		<a href="{% url 'codele-lesson' 'gml' 16 %}">7</a>
+		<a href="{% url 'codele-lesson' 'gml' 17 %}">8</a>
+	</div>
+
+</content>
+
+{% endblock %}
