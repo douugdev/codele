@@ -17,7 +17,7 @@ class Question(models.Model):
         return f'{self.title}'
 
 class Answer(models.Model):
-    question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    question = models.ForeignKey(Question, related_name='answers', on_delete=models.CASCADE)
     answer = models.TextField()
     author = models.CharField(max_length=100)
 

@@ -5,10 +5,11 @@
 
 {% block main %}
     <div class="card">
-        <h1 style="margin-top: 2rem;">Sua conta foi criada, faça o login!</h1>
+        <h2 style="margin-top: 2rem;">Sua conta foi criada com sucesso! Faça o login!</h2>
+        <h3>Caso você não seja redirecionado <a href="{% url 'codele-login' %}">clique aqui.</a></h3>
         <script>
           var timer = setTimeout(function() {
-              window.location="{% url 'codele-home' %}"
+              window.location="{% url 'codele-login' %}"
           }, 3000);
         </script>
     </div>

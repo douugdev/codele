@@ -82,10 +82,10 @@ input, select {
   display: inline-flex;
   flex-direction: row;
   color: var(--text-secondary);
-  max-height: 15rem;
   overflow: hidden;
   margin-top: 0rem;
   width: 50vw;
+  max-height: 15rem;
   padding: 0.5rem 1rem;
   border-radius: 0 0 0.75rem 0.75rem;
   align-items: center;
@@ -93,6 +93,18 @@ input, select {
   background-color: var(--bg-secondary);
   filter: opacity(1);
   transition: ease 1s;
+}
+
+.c1 {
+  max-height: 15rem;
+}
+
+.c2 {
+  max-height: 10rem;
+}
+
+.c2 {
+  max-height: 10rem;
 }
 
 .courses ol li {

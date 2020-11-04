@@ -22,7 +22,7 @@ class QuestionForm(ModelForm):
 class AnswerForm(ModelForm):
     class Meta:
         model = Answer
-        fields = ['question','author', 'answer']
+        fields = ['author', 'question', 'answer']
 
     def clean_answer(self):
         bad_words = ['shit', 'fuck', 'ass', 'bitch']

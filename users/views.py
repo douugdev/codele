@@ -10,8 +10,11 @@ import requests
 import os
 import dotenv
 
-@require_GET
 def register(request):
+    '''
+    This function renders and parses the registering form.
+    '''
+
     if not request.user.is_authenticated:
         form = RegisterForm(request.POST or None)
 
@@ -20,7 +23,7 @@ def register(request):
         }
 
         if form.is_valid():
-            if validate_recaptcha(request):
+            if validate_recaptcha(request.POST.get('g-recaptcha-response')):
                 form.save()
                 return redirect('codele-registration-success')
             else:
@@ -30,9 +33,13 @@ def register(request):
     else:
         return redirect('codele-profile-w')
 
-def validate_recaptcha(request):
+def validate_recaptcha(recaptcha_response):
+    '''
+    This is pretty much self-explanatory.
+    '''
+
     dotenv.load_dotenv(dotenv_file)
-    recaptcha_response = request.POST.get('g-recaptcha-response')
+
     data = {
         'secret': os.getenv('CAPTCHA_SECRET'),
         'response': recaptcha_response
@@ -48,6 +55,10 @@ def account_created(request):
         return render(request, 'users/success.html')
 
 def profile(request, user_name):
+    '''
+    This renders each user's profile with info from the database.
+    '''
+
     user = User.objects.filter(username=f'{user_name}').first()
 
     if request.method == 'POST':
@@ -77,3 +88,5 @@ def profile(request, user_name):
 @login_required
 def my_profile(request):
         return profile(request, request.user.username)
+
+# I used the built-in loginView.as_view function to render the login page so it isn't here 

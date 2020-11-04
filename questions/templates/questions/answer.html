@@ -9,8 +9,8 @@
         {% csrf_token %}
         <span class="welcome">{{ qt.title }}</span>
         <input type="hidden" name="author" value="{{ user.username }}" />
-        <input type="hidden" name="question" value="{{ qt }}" />
-        <textarea style="resize: none, white-space: pre-wrap;" placeholder="Digite sua resposta &#10;&#13;(Dica: para códigos, use o pastebin.com e para imagens, o imgur.com)" name="answer" rows="10" cols="10" class="question" required value=""></textarea>
+        <input type="hidden" name="question" value="{{ qt.pk }}" />
+        <textarea style="resize: none, white-space: pre-wrap;" placeholder="Digite sua resposta &#10;&#13;(Dica: para códigos, use o pastebin.com e para imagens, o imgur.com)" name="answer" rows="10" cols="10" class="question"></textarea>
         <button class="btn" type="submit" name="button">Responder</button>
         </div>
       </form>

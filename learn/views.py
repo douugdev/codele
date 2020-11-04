@@ -5,6 +5,9 @@ import re
 
 @login_required
 def welcome(request):
+    '''
+    Renders homepage for learning section.
+    '''
     user = User.objects.filter(username__icontains=request.user).first()
 
     #This conditional just checks if it's the user's first access
@@ -28,6 +31,9 @@ def learn(request, language):
 
 @login_required
 def lesson(request, language, lesson_id):
+    '''
+    This function renders each language and lesson based on ID's
+    '''
     languages = ['python', 'java', 'gml', 'javascript']
     regex = re.compile('^[0-9]*$', re.I)
 
@@ -35,6 +41,6 @@ def lesson(request, language, lesson_id):
     if (language in languages) and (regex.match(lesson_id)):
         user.last_lesson = f'{language},{lesson_id}'
         user.save()
-        return render(request, f'learn/{str(language)}/lessons/{str(lesson_id)}.html')
+        return render(request, 'learn/{}/lessons/{}.html'.format(str(language), str(lesson_id)))
     else:
         return redirect('codele-welcome')

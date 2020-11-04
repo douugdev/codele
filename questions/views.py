@@ -77,9 +77,13 @@ def answer(request, question_id):
             'questionid' : question_id,
             'qt' : Question.objects.filter(id__icontains=question_id).first()
         }
+
         if form.is_valid():
             form.save()
             return redirect('codele-question', question_id)
+            
+        elif form.errors:
+            print(f'{form.fields}\n{form.errors}')
         return render(request, 'questions/answer.html', context)
     else:
         return redirect('codele-home')
