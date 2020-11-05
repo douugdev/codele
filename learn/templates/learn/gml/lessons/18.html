@@ -11,39 +11,63 @@
 <content>
 
 	<div class="header">
-		<h1>Exercícios</h1>
+		<h1>Introdução à plataforma</h1>
 	</div>
 
 	<div class="main_content">
 
-		<h1>Exercício 1</h1>
+		<h1>Alarms</h1>
 
-		<div class="requirements">
-			<i>Requerimentos: Ter concluído as aulas de numero 1 e 2</i>.
-		</div>
+		<p>Na aula de hoje aprenderemos sobre o uso de alarms. Um alarm tem a função de um alarme, ou seja, se ajusta um "horário" e quando a hora atual for igual a hora que você ajustou, ele realiza sua função.</p>
 
-		<br>
+		<p>O Game Maker disponibiliza até 12 alarmes para serem usados, sendo que esses vão desde o “0” até o “11”. É recomendado que sempre use os alarmes na ordem. Por exemplo, se precisar usar 3 alarmes, não use o alarm[7],alarm[2] e o alarm[10], isso pode complicar sua vida. Use de forma gradual, ou seja, alarm[0], alarm[1] e alarm[2].</p>
 
-		<div class="challenge">
-			<b>Objetivo</b>: Criar um jogo com um objeto que se movimente em 8 direções (cima, baixo, direita, esquerda, e diagonais)
-		</div>
+		<p>Vamos a parte prática agora. Pra começar, algo muito simples. Ativar um alarm no create.</p>
 
-		<div class="challenge">
-			<b>Desafio bônus</b>: Fazer com que enquanto uma tecla determinada seja apertada, a velocidade do objeto aumente ou diminua.
-		</div>
+		<ul class="alg">
+			<li>alarm[0]=30*3</li>
+		</ul>
+
+		<p>E no evento Alarm[0]:</p>
+
+		<ul class="alg">
+			<li>Instance_destroy()</li>
+		</ul>
+
+		<p>Esse objeto tem uma função muito simples, no Create¹, ele ativa o alarme, e no Alarm[0] ele se autodestrói.</p>
+
+		<p><b>Obs</b>: Cada “1” do alarme, representa 1 frame. 30 frames representam 1 segundo, “*3” multiplica 30 por três, que resulta 90 que é igual a 3 segundos. Se estiver usando um “room speed” diferente, o tempo não vai ser o mesmo!</p>
+
+		<p>Hoje aprendemos como usar Alarms, na próxima aula nos aprofundaremos em conceitos mais complexos. Até!</p>
 
 	</div>
 
 	<div class="btns">
 
 		<div class="btn-root">
-			<li><a class="a-btn" href="{% url 'codele-learn' 'gml' %}">Início</a></li>
+			<li><a class="a-btn" href="{% url 'codele-lesson' 'gml' 17 %}">Anterior</a></li>
 		</div>
 
+		<div class="btn-next">
+			<li><a class="a-btn" href="{% url 'codele-lesson' 'gml' 19 %}">Próximo</a></li>
+		</div>
+
+	</div>
+
+	<div class="nav-lessons">
+		<a href="{% url 'codele-learn' 'gml' %}" class="home">Início</a>
+		<a href="{% url 'codele-lesson' 'gml' 10 %}">1</a>
+		<a href="{% url 'codele-lesson' 'gml' 11 %}">2</a>
+		<a href="{% url 'codele-lesson' 'gml' 12 %}">3</a>
+		<a href="{% url 'codele-lesson' 'gml' 13 %}">4</a>
+		<a href="{% url 'codele-lesson' 'gml' 14 %}">5</a>
+		<a href="{% url 'codele-lesson' 'gml' 15 %}">6</a>
+		<a href="{% url 'codele-lesson' 'gml' 16 %}">7</a>
+		<a href="{% url 'codele-lesson' 'gml' 17 %}">8</a>
+		<a href="{% url 'codele-lesson' 'gml' 18 %}">9</a>
+		<a href="{% url 'codele-lesson' 'gml' 19 %}">10</a>
 	</div>
 
 </content>
 
 {% endblock %}
-
-

@@ -96,15 +96,15 @@ input, select {
 }
 
 .c1 {
-  max-height: 15rem;
+  max-height: 22rem;
 }
 
 .c2 {
-  max-height: 10rem;
+  max-height: 22rem;
 }
 
-.c2 {
-  max-height: 10rem;
+.c3 {
+  max-height: 22rem;
 }
 
 .courses ol li {

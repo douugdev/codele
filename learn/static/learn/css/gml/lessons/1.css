@@ -15,16 +15,13 @@
   src: url('/static/home/font/Gotham-Book.otf');
 }
 
-body{
-  background-color: var(--bg-primary);
-}
-
 content{
   display: grid;
   color: white;
   max-width: 960px;
   margin: 0 auto;
   align-content: center;
+  background: var(--bg-primary);
 }
 
 span{
@@ -50,25 +47,21 @@ a.home{
   align-items: center;
   margin: 50px auto;
   padding: 7px 100px;
-  background: linear-gradient(110deg, #83bb77, #1f9a41);
+  background: #83bb77;
   border-radius: 2rem;
 }
 
 .intro{
-  background: linear-gradient(110deg, #83bb77, #1f9a41);
   margin: 0 auto 50px auto;
-  border-radius: 20px;
   padding: 20px;
   text-align: justify;
 }
-/*linear-gradient(110deg, #83bb77, #1f9a41)*/
+
 .main_content{
-  background: black;
   margin: 0 auto;
   padding: 20px;
-  border-radius: 2rem;
   text-align: justify;
-}/*
+}
 
 .header h1{
   margin-top: 13.400px;
@@ -83,7 +76,11 @@ h1{
 
 .title{
   font-size: 20px;
-  margin-left: 50px;
+  text-align: center;
+}
+
+.alt{
+  font-size: 20px;
 }
 
 .alg{
@@ -99,7 +96,7 @@ h1{
 
 .terminal{
   display: inline-block;
-  border: 1px solid #16181e;
+  border: 1px solid black;
   font-family: 'GothamBook';
   border-radius: 20px;
   background: #16181e;
@@ -116,12 +113,20 @@ h1{
   border: 5px double white;
   border-radius: 36px;
   padding: 15px;
-  margin: ;
+  margin: 30px 10px;
+}
+
+.exercise{
+  text-align: justify;
+  margin: 30px 10px;
 }
 
 .challenge{
-  text-align: center;
-  margin: 20px 0 20px 0;
+  text-align: justify;
+  margin: 30px 10px 0px 10px;
+  padding: 15px;
+  border: 5px double white;
+  border-radius: 36px;
 }
 
 ul{
@@ -150,170 +155,195 @@ ul{
   list-style-type: none;
   text-decoration: none;
   color: white;
-  padding: 7px 100px;
-  background: linear-gradient(110deg, #83bb77, #1f9a41);
+  padding: 7px;
+  background: #83bb77;
   border-radius: 2rem;
 }
 
 .nav-lessons{
   display: flex;
   justify-content: space-between;
-  background: linear-gradient(110deg, #83bb77, #1f9a41);
-  padding: 7px 100px;
-  margin-bottom: 20px;
+  background: #83bb77;
+  padding: 7px 20px;
   color: white;
-  border-radius: 2rem;
   align-items: center;
 }
-*/
+
+
+/* for pc */
+
 @media only screen and (min-width: 769px){
-  body{
-    background-color: #16181E;
-  }
   content{
-  display: grid;
-  color: white;
-  max-width: 960px;
-  margin: 0 auto;
-  align-content: center;
+    display: grid;
+    color: white;
+    max-width: 960px;
+    margin: 0 auto;
+    align-content: center;
+    background: #16181e; 
+  }
+
+  span{
+    color: white;
+  }
+
+  a{
+    text-decoration: none;
+  }
+
+  a:visited{
+    color: white;
+  }
+
+  a.home{
+    border: solid 2px white;
+    border-radius: 2rem;
+    margin: 0;
+    padding: 5px;
+  }
+
+  .header{
+    align-items: center;
+    margin: 50px auto;
+    padding: 7px 100px;
+    background: linear-gradient(110deg, #83bb77, #1f9a41);
+    border-radius: 2rem;
+  }
+
+  .intro{
+    background: linear-gradient(110deg, #83bb77, #1f9a41);
+    margin: 0 auto 50px auto;
+    border-radius: 20px;
+    padding: 25px;
+    text-align: justify;
+  }
+
+  .main_content{
+    background: linear-gradient(110deg, #83bb77, #1f9a41);
+    margin: 0 auto;
+    padding: 25px;
+    border-radius: 2rem;
+    text-align: justify;
+  }
+
+  .header h1{
+    margin-top: 13.400px;
+  }
+
+  h1{
+    text-align: center;
+    font-family: GothamBook;
+    font-size: 20px;
+    margin-top: 0;
+  }
+
+  .title{
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .alt{
+    font-size: 20px;
+  }
+
+  .alg{
+    display: inline-block;
+    border: 1px solid white;
+    font-family: 'GothamBook';
+    border-radius: 20px;
+    background-color: white;
+    padding: 15px;
+    color: #38cdd5;
+    list-style-type: none;
+  }
+
+  .terminal{
+    display: inline-block;
+    border: 1px solid #16181e;
+    font-family: 'GothamBook';
+    border-radius: 20px;
+    background: black;
+    padding: 15px;
+    color: #38cdd5;
+    list-style-type: none;
+  }
+
+  .indent{
+    margin-left: 50px;
+  }
+
+  .requirements{
+    border: 5px double white;
+    border-radius: 36px;
+    padding: 15px;
+    margin: 30px 20px;
+  }
+
+  .exercise{
+    text-align: justify;
+    margin: 30px 20px;
+  }
+
+  .challenge{
+    text-align: justify;
+    margin: 30px 20px 0px 20px;
+    padding: 15px;
+    border: 5px double white;
+    border-radius: 36px;
+  }
+
+  ul{
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  .btns{
+    display: flex;
+  }
+
+  .btn-next, .btn-back, .btn-root{
+    list-style-type: none;
+    text-decoration: none;
+    align-items: center;
+    margin: 50px auto;
+    margin-bottom: 50px;
+    align-items: center;
+    font-family: 'GothamBook';
+  }
+
+  .a-btn, .a-btn:visited{
+    list-style-type: none;
+    text-decoration: none;
+    color: white;
+    padding: 7px 100px;
+    background: linear-gradient(110deg, #83bb77, #1f9a41);
+    border-radius: 2rem;
+  }
+
+  .nav-lessons{
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(110deg, #83bb77, #1f9a41);
+    padding: 7px 100px;
+    margin-bottom: 20px;
+    color: white;
+    border-radius: 2rem;
+    align-items: center;
+  }
 }
 
-span{
-  color: white;
+
+/* Alternative Resolutions */
+
+@media only screen and (max-width: 1080px){
+  content{
+    max-width: 650px;
+  }
 }
 
-a{
-  text-decoration: none;
-}
-
-a:visited{
-  color: white;
-}
-
-a.home{
-  border: solid 2px white;
-  border-radius: 2rem;
-  margin: 0;
-  padding: 5px;
-}
-
-.header{
-  align-items: center;
-  margin: 50px auto;
-  padding: 7px 100px;
-  background: linear-gradient(110deg, #83bb77, #1f9a41);
-  border-radius: 2rem;
-}
-
-.intro{
-  background: linear-gradient(110deg, #83bb77, #1f9a41);
-  margin: 0 auto 50px auto;
-  border-radius: 20px;
-  padding: 20px;
-  text-align: justify;
-}
-
-.main_content{
-  background: linear-gradient(110deg, #83bb77, #1f9a41);
-  margin: 0 auto;
-  padding: 20px;
-  border-radius: 2rem;
-  text-align: justify;
-}
-
-.header h1{
-  margin-top: 13.400px;
-}
-
-h1{
-  text-align: center;
-  font-family: GothamBook;
-  font-size: 20px;
-  margin-top: 0;
-}
-
-.title{
-  font-size: 20px;
-  margin-left: 50px;
-}
-
-.alg{
-  display: inline-block;
-  border: 1px solid white;
-  font-family: 'GothamBook';
-  border-radius: 20px;
-  background-color: white;
-  padding: 15px;
-  color: #38cdd5;
-  list-style-type: none;
-}
-
-.terminal{
-  display: inline-block;
-  border: 1px solid #16181e;
-  font-family: 'GothamBook';
-  border-radius: 20px;
-  background: #16181e;
-  padding: 15px;
-  color: #38cdd5;
-  list-style-type: none;
-}
-
-.indent{
-  margin-left: 50px;
-}
-
-.requirements{
-  border: 5px double white;
-  border-radius: 36px;
-  padding: 15px;
-  margin: ;
-}
-
-.challenge{
-  text-align: center;
-  margin: 20px 0 20px 0;
-}
-
-ul{
-  display: inline-block;
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-}
-
-.btns{
-  display: flex;
-}
-
-.btn-next, .btn-back, .btn-root{
-  list-style-type: none;
-  text-decoration: none;
-  align-items: center;
-  margin: 50px auto;
-  margin-bottom: 50px;
-  align-items: center;
-  font-family: 'GothamBook';
-}
-
-
-.a-btn, .a-btn:visited{
-  list-style-type: none;
-  text-decoration: none;
-  color: white;
-  padding: 7px 100px;
-  background: linear-gradient(110deg, #83bb77, #1f9a41);
-  border-radius: 2rem;
-}
-
-.nav-lessons{
-  display: flex;
-  justify-content: space-between;
-  background: linear-gradient(110deg, #83bb77, #1f9a41);
-  padding: 7px 100px;
-  margin-bottom: 20px;
-  color: white;
-  border-radius: 2rem;
-  align-items: center;
-}
+@media only screen and (max-width: 768px){
+  content{
+    max-width: 960px;
+  }
 }

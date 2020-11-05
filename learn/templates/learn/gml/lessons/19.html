@@ -1,0 +1,98 @@
+{% extends 'learn/gml/lessons/0.html' %}
+{% load static %}
+
+{% block css_import %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{% static 'learn/css/gml/lessons/1.css' %}">
+{% endblock %}
+
+{% block main %}
+
+<content>
+
+	<div class="header">
+		<h1>Introdução à plataforma</h1>
+	</div>
+
+	<div class="main_content">
+
+		<h1>Draw</h1>
+
+		<p>Na aula de hoje, nós iremos nos aprofundar no evento “Draw”, no qual já trabalhamos com pequenos conceitos anteriormente. No evento Draw, as ações são executadas instantaneamente. Você pode colocar o que quiser que desenhe na tela.</p>
+
+		<p>Algumas das principais funções do evento draw:</p>
+
+		<ul class="alg">
+			<li><b>Draw Sprite (Desenhar Sprite)</b>:</li>
+ 			<li>-> Esta ação desenha um sprite. Você especifica o sprite, a posição e a subimagem. Se o sprite não tiver subimagem, você poderá usar o número -1.</li>
+ 			<br>
+			<li><b>Draw Background (Desenhar Fundo)</b>:</li>
+			<li>-> Esta ação desenha um fundo. Você especifica o fundo, a posição e se ele vai ser em pedaços (explicado mais adiante).</li>
+			<br>
+			<li><b>Draw Text (Desenhar Texto)</b>:</li>
+			<li>-> Esta ação desenha um texto. Você especifica o texto e a posição. O símbolo # no texto é interpretado como uma nova linha.</li>
+			<br>
+			<li><b>Draw Scaled Text (Desenhar Texto Transformado)</b>:<li>
+			<li>-> Esta ação desenha um texto transformado. Você pode alterar a escala x e y e a rotação. Você digita o texto e determina a posição x e y. Este comando só está disponível na versão completa do Game Maker.</li>
+			<br>
+			<li><b>Draw Rectangle (Desenhar Retângulo)</b>:</li>
+			<li>-> Esta ação desenha um retângulo. Você especifica a altura (y1 e y2), a largura (x1 e x2) e se ele vai ser sólido ou só bordas.</li>
+			<br>
+			<li><b>Horizontal Gradient (Gradiente Horizontal)</b>:</li>
+			<li>-> Esta ação desenha um gradiente horizontalmente. Você especifica a altura (y1 e y2), a largura (x1 e x2) e a cor 1 e 2. Este comando só está disponível na versão completa do Game Maker.</li>
+			<br>
+			<li><b>Vertical Gradient (Gradiente Vertical)</b>:</li>
+			<li>-> Esta ação desenha um gradiente verticalmente. Você especifica a altura (y1 e y2), a largura (x1 e x2) e a cor 1 e 2. Este comando só está disponível na versão completa do Game Maker.</li>
+			<br>
+			<li><b>Draw Ellipse (Desenhar Elipse)</b>:</li>
+			<li>-> Esta ação desenha um elipse. Você especifica a altura (y1 e y2), a largura (x1 e x2) e se ele vai ser sólido ou só bordas.</li>
+		</ul>
+
+		<p>Agora, iremos aprender na prática como utilizar o evento draw, com a função “draw_circle”. Iremos ao nosso objeto do jogador, e criaremos um evento draw.</p>
+
+		<p class="alg">draw_set_color(c_white)</p>
+
+		<p>a cor pode ser qualquer uma, mas deverá ser escrita em inglês.</p>
+
+		<p>Em seguida, iremos digitar:</p>
+
+		<ul class="alg">
+			<li>x : <u>posição x do circulo</u></li>
+			<li>y : <u>posição y do circulo</u></li>
+			<li>50 : <u>tamanho do circulo</u></li>
+			<li>false : <u>preenchimento do círculo (true para um círculo oco)</u></li>
+		</ul>
+
+		<p>Na aula de hoje aprendemos mais sobre o evento draw e sobre suas funções, na próxima aula trabalharemos com o evento “Mouse” e entenderemos seu uso. Até!</p>
+
+	</div>
+
+	<div class="btns">
+
+		<div class="btn-root">
+			<li><a class="a-btn" href="{% url 'codele-lesson' 'gml' 18 %}">Anterior</a></li>
+		</div>
+
+		<div class="btn-next">
+			<li><a class="a-btn" href="{% url 'codele-learn' 'gml'  %}">Início</a></li>
+		</div>
+
+	</div>
+
+	<div class="nav-lessons">
+		<a href="{% url 'codele-learn' 'gml' %}" class="home">Início</a>
+		<a href="{% url 'codele-lesson' 'gml' 10 %}">1</a>
+		<a href="{% url 'codele-lesson' 'gml' 11 %}">2</a>
+		<a href="{% url 'codele-lesson' 'gml' 12 %}">3</a>
+		<a href="{% url 'codele-lesson' 'gml' 13 %}">4</a>
+		<a href="{% url 'codele-lesson' 'gml' 14 %}">5</a>
+		<a href="{% url 'codele-lesson' 'gml' 15 %}">6</a>
+		<a href="{% url 'codele-lesson' 'gml' 16 %}">7</a>
+		<a href="{% url 'codele-lesson' 'gml' 17 %}">8</a>
+		<a href="{% url 'codele-lesson' 'gml' 18 %}">9</a>
+		<a href="{% url 'codele-lesson' 'gml' 19 %}">10</a>
+	</div>
+
+</content>
+
+{% endblock %}

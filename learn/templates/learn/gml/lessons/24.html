@@ -1,0 +1,64 @@
+{% extends 'learn/gml/lessons/0.html' %}
+{% load static %}
+
+{% block css_import %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{% static 'learn/css/gml/lessons/1.css' %}">
+{% endblock %}
+
+{% block main %}
+
+<content>
+
+	<div class="header">
+		<h1>Exercícios</h1>
+	</div>
+
+	<div class="main_content">
+
+			<h1>Exercício 5</h1>
+
+		<div class="requirements">
+			Requerimentos: Ter concluído as aulas de número 1-9.
+		</div>
+
+		<div class="exercise">
+			<h1>Objetivo:</h1>
+			Criar um jogo onde a cada 15 segundos, um inimigo surja na tela e este mesmo poderá ser morto pelo jogador de qualquer maneira.
+		</div>
+
+		<div class="challenge">
+			<h1>Desafio bônus</h1>
+			Fazer com que o inimigo persiga o jogador, e ao encostar nele, faça o perder pontos. Caso o numero de pontos chegue a 0, o objeto do jogador seja deletado.
+		</div>
+
+	</div>
+
+	<div class="btns">
+
+		<div class="btn-back">
+			<li><a class="a-btn" href="{% url 'codele-lesson' 'gml' 23 %}">Anterior</a></li>
+		</div>
+
+		<div class="btn-next">
+			<li><a class="a-btn" href="{% url 'codele-learn' 'gml' %}">Início</a></li>
+		</div>
+
+	</div>
+
+	<h1>Exerícios:</h1>
+
+	<div class="nav-lessons">
+		<a href="{% url 'codele-learn' 'gml' %}" class="home">Início</a>
+		<a href="{% url 'codele-lesson' 'gml' 20 %}">1</a>
+		<a href="{% url 'codele-lesson' 'gml' 21 %}">2</a>
+		<a href="{% url 'codele-lesson' 'gml' 22 %}">3</a>
+		<a href="{% url 'codele-lesson' 'gml' 23 %}">4</a>
+		<a href="{% url 'codele-lesson' 'gml' 24 %}">5</a>
+	</div>
+
+
+
+</content>
+
+{% endblock %}
