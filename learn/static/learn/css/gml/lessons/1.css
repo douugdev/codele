@@ -151,7 +151,7 @@ ul{
 }
 
 
-.a-btn, .a-btn:visited{
+.a-btn, .a-btn:visited, .a-btn:hover, .a-btn:focus, .a-btn:active{
   list-style-type: none;
   text-decoration: none;
   color: white;
@@ -312,7 +312,7 @@ ul{
     font-family: 'GothamBook';
   }
 
-  .a-btn, .a-btn:visited{
+  .a-btn, .a-btn:visited, .a-btn:hover, .a-btn:focus, .a-btn:active{
     list-style-type: none;
     text-decoration: none;
     color: white;
