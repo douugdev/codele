@@ -4,3 +4,6 @@ gunicorn
 whitenoise
 python-dotenv
 pillow
+djangorestframework
+markdown
+django-filter
