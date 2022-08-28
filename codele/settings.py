@@ -28,7 +28,7 @@ dotenv.load_dotenv(dotenv_file)
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv('PRODUCTION') == 'False'
 
 ALLOWED_HOSTS = ['127.0.0.1','localhost', os.getenv('MY_IP'), '192.168.15.2', 'codele.digital']
 
@@ -101,11 +101,11 @@ if os.getenv('PRODUCTION') == 'True':
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'codeledb',
-            'USER': 'postgres',
+            'NAME': str(os.getenv('DATABASE_NAME')),
+            'USER': str(os.getenv('DATABASE_USER')),
             'PASSWORD': str(os.getenv('DATABASE_PASSWORD')),
             'HOST': str(os.getenv('DATABASE_IP')),
-            'PORT': '5432'
+            'PORT': str(os.getenv('DATABASE_PORT'))
         }
     }
 else:

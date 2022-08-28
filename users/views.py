@@ -1,10 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import RegisterForm, ChangePicForm
-from .models import Profile
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
-from django.views.decorators.http import require_GET
-from django.core.exceptions import ValidationError
 from codele.settings import dotenv_file
 import requests
 import os
@@ -54,12 +51,12 @@ def validate_recaptcha(recaptcha_response):
 def account_created(request):
         return render(request, 'users/success.html')
 
-def profile(request, user_name):
+def profile(request, username: str):
     '''
     This renders each user's profile with info from the database.
     '''
 
-    user = User.objects.filter(username=f'{user_name}').first()
+    user = User.objects.filter(username=username).first()
 
     if request.method == 'POST':
         form = ChangePicForm(request.POST, request.FILES, instance=request.user.profile)

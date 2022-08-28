@@ -19,15 +19,14 @@ from django.urls import path, include
 from users import views as user_views
 from django.conf.urls.static import static
 from django.conf import settings
-from django.contrib.auth.models import User
 from . import robots
 
 urlpatterns = [
     path('admin/', admin_site.urls),
     path('robots.txt', robots.robots_txt),
-    path('perfil/', user_views.my_profile, name='codele-profile-w'),
-    path('perfil/<user_name>/', user_views.profile, name='codele-profile'),
-    path('registro/', user_views.register, name='codele-register'),
+    path('profile/', user_views.my_profile, name='codele-profile-w'),
+    path('profile/<username>/', user_views.profile, name='codele-profile'),
+    path('register/', user_views.register, name='codele-register'),
     path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='codele-login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='codele-logout'),
     path('', include('home.urls')),
