@@ -28,7 +28,7 @@ dotenv.load_dotenv(dotenv_file)
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('PRODUCTION') == 'False'
+DEBUG = 'True'
 
 ALLOWED_HOSTS = ['127.0.0.1','localhost', os.getenv('MY_IP'), '192.168.15.2', 'codele.digital']
 
